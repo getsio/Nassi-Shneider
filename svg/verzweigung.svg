@@ -1,0 +1,16 @@
+<svg width="350" height="200" xmlns="http://www.w3.org/2000/svg">
+  <path fill="none" stroke="black" stroke-width="8" d="M0 0 L350 0 L350 200 L0 200 L0 0 L150 Z"/>
+  <path fill="none" stroke="black" stroke-width="4" d="M0 100 L350 100 Z"/>
+  <path fill="none" stroke="black" stroke-width="4" d="M175 100 L175 200 Z"/>
+  <path fill="none" stroke="black" stroke-width="4" d="M0 0 L175 100 L350 0 Z"/>
+  <text x="50%" y="15%" dominant-baseline="middle" text-anchor="middle" fill="black" 
+  style="font-size:32px; font-family: 'Roboto', sans-serif;">Verzweigung</text>
+  <text x="8%" y="35%" dominant-baseline="middle" text-anchor="middle" fill="black" 
+  style="font-size:32px; font-family: 'Roboto', sans-serif;">ja</text>
+  <text x="88%" y="35%" dominant-baseline="middle" text-anchor="middle" fill="black" 
+  style="font-size:32px; font-family: 'Roboto', sans-serif;">nein</text>
+  <text x="24%" y="75%" dominant-baseline="middle" text-anchor="middle" fill="black" 
+  style="font-size:48px; font-family: 'Roboto', sans-serif;">...</text>
+  <text x="76%" y="75%" dominant-baseline="middle" text-anchor="middle" fill="black" 
+  style="font-size:48px; font-family: 'Roboto', sans-serif;">...</text>
+</svg>

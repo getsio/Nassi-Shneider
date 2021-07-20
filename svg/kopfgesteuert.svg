@@ -1,0 +1,8 @@
+<svg width="350" height="150" xmlns="http://www.w3.org/2000/svg">
+  <path fill="none" stroke="black" stroke-width="8" d="M0 0 L350 0 L350 150 L0 150 Z"/>
+  <path fill="none" stroke="black" stroke-width="4" d="M30 150 L30 50 L350 50"/>
+  <text x="50%" y="20%" dominant-baseline="middle" text-anchor="middle" fill="black" 
+  style="font-size:28px; font-family: 'Roboto', sans-serif;">Kopfgesteuerte Schleife</text>
+  <text x="55%" y="60%" dominant-baseline="middle" text-anchor="middle" fill="black" 
+  style="font-size:48px; font-family: 'Roboto', sans-serif;">...</text>
+</svg>

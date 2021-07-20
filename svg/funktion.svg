@@ -1,0 +1,7 @@
+<svg width="350" height="100" xmlns="http://www.w3.org/2000/svg">
+  <rect width="350" height="100" style="fill:none;stroke-width:8;stroke:rgb(0,0,0);"/>
+  <path fill="none" stroke="black" stroke-width="4" d="M50 0 L50 100 Z"/>
+  <path fill="none" stroke="black" stroke-width="4" d="M300 0 L300 100 Z"/>
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="black" 
+  style="font-size:32px; font-family: 'Roboto', sans-serif;">Funktion</text>
+</svg>
