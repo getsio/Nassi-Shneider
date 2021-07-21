@@ -62,6 +62,7 @@ In diesem Bereich werden alle bereits implementierten, kommende, sowie fehlerhaf
 - Unterfunktionen
     - Select hinzufügen
     - Umbenennung der Unterfunktion
+    - entfernen
 - Druckansicht
 
 ### Kommende Features
@@ -71,7 +72,6 @@ In diesem Bereich werden alle bereits implementierten, kommende, sowie fehlerhaf
 - Fußgesteuerte Schleife
 - Test
 - Unterfunktionen
-    - entfernen
     - IDs filtern
 - Drag & Drop
 - Verschachtelung
