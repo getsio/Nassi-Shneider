@@ -387,6 +387,18 @@
         while(!parent.classList.value.includes('nassi')){
           parent = parent.parentElement;
         }
+        
+        if(parent.classList.contains('nassiFunction')){
+          var functionName = parent.children[1].innerText;
+          document.getElementById(functionName).remove();
+
+          for(var i = 0; i < diagramSelect.options.length; i++){
+            if(diagramSelect.options[i].value == functionName){
+              diagramSelect.options[i].remove();
+              break;
+            }
+          }
+        }
 
         parent.remove();
       }
