@@ -63,16 +63,14 @@ In diesem Bereich werden alle bereits implementierten, kommende, sowie fehlerhaf
     - Select hinzufügen
     - Umbenennung der Unterfunktion
     - entfernen
+    - benutzte Namen filtern
 - Druckansicht
 
 ### Kommende Features
 
 - Mehrfachverzweigung
 - Kopfgesteuerte Schleife
-- Fußgesteuerte Schleife
-- Test
-- Unterfunktionen
-    - IDs filtern
+- Fußgesteuerte Schleife    
 - Drag & Drop
 - Verschachtelung
     - Verzweigung
