@@ -197,12 +197,12 @@
       Fußgesteuerte Schleife fertigstellen
       Strukturen löschbar ------------------------------------- -<COMPLETED>-
       Diagramme löschen --------------------------------------- -<COMPLETED>-
-      Unterfunktionen erstellen
+      Unterfunktionen erstellen ------------------------------- -<COMPLETED>-
        - Unterfunktion dem Dropdown hinzufügen ---------------- -<COMPLETED>-
        - Unterfunktion im Maindiagram umbenennen -------------- -<COMPLETED>-
        - Unterfunktion im Header umbenennen ------------------- -<COMPLETED>-
        - Unterfunktion entfernen ------------------------------ -<COMPLETED>-
-       - Bereits belegte IDs filtern
+       - Bereits belegte IDs filtern -------------------------- -<COMPLETED>-
       Drag & Drop
        - ...
        - ...
