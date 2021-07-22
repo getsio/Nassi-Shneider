@@ -81,7 +81,7 @@
             <div class="draggables" onclick="console.log('Mehrfachverzweigung');" draggable="true" ondragstart="test(event);" ondragend="test2(event);">
               <img class="icons" src="svg/mehrfachverzweigung.svg" alt="Bild einer Mehrfachverzweigung" draggable="false">
             </div>
-            <div class="draggables" onclick="console.log('Kopfgesteuerte Schleife');" draggable="true" ondragstart="test(event);" ondragend="test2(event);">
+            <div class="draggables" onclick="appendStructure('templateHeadcontrolled');" draggable="true" ondragstart="test(event);" ondragend="test2(event);">
               <img class="icons" src="svg/kopfgesteuert.svg" alt="Bild einer kopfgesteuerten Schleife" draggable="false">
             </div>
             <div class="draggables" onclick="console.log('Fußgesteuerte Schleife');" draggable="true" ondragstart="test(event);" ondragend="test2(event);">
@@ -155,7 +155,23 @@
 
         </template>
         <template id="templateHeadcontrolled">
-
+          <div class="nassiHeadcontrolled">
+            <div class="textArea">
+              <div class="blockLoop"></div>
+              <p class="editableText" role="textbox" contenteditable spellcheck="false"
+              placeholder="Bedingung eingeben..." onclick="editText(this);" onkeydown="keyInput(event, this);"
+              onblur="finishEdit(this);"></p>
+              <button class="removeButton" onclick="removeStructure(this);">
+                <img class="removeIcon" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
+              </button>
+            </div>
+            <div class="loopArea">
+              <div class="blockLoop"></div>
+              <div class="loopText">
+                <p class="editableText">-</p>
+              </div>
+            </div>
+          </div>
         </template>
         <template id="templateFoodcontrolled">
 
@@ -193,7 +209,7 @@
       Funktion fertigstellen ---------------------------------- -<COMPLETED>-
       Verzweigung fertigstellen ------------------------------- -<COMPLETED>-
       Mehrfachverzweigung fertigstellen
-      Kopfgesteuerte Schleife fertigstellen
+      Kopfgesteuerte Schleife fertigstellen ------------------- -<COMPLETED>-
       Fußgesteuerte Schleife fertigstellen
       Strukturen löschbar ------------------------------------- -<COMPLETED>-
       Diagramme löschen --------------------------------------- -<COMPLETED>-
@@ -355,7 +371,8 @@
               }
             }
           }// Parentelement ist ein Unterdiagramm, welches schon existierte
-          else if(el.parentElement.parentElement.id == el.nameBefore){
+          else if(el.parentElement.parentElement.classList.contains('diagramContainer') &&
+           el.parentElement.parentElement.id == el.nameBefore){
             if(el.nameBefore != el.innerText && (blacklistedIds.includes(el.innerText) || checkId)){
               el.innerText = el.nameBefore;
               nameError.classList.remove('hide');
