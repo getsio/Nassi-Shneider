@@ -57,6 +57,8 @@ In diesem Bereich werden alle bereits implementierten, kommende, sowie fehlerhaf
 - Aktion
 - Funktion
 - Verzweigung
+- Kopfgesteuerte Schleife
+- Fußgesteuerte Schleife  
 - löschbare Strukturen
 - löschbare Diagramme
 - Unterfunktionen
@@ -68,9 +70,7 @@ In diesem Bereich werden alle bereits implementierten, kommende, sowie fehlerhaf
 
 ### Kommende Features
 
-- Mehrfachverzweigung
-- Kopfgesteuerte Schleife
-- Fußgesteuerte Schleife    
+- Mehrfachverzweigung  
 - Drag & Drop
 - Verschachtelung
     - Verzweigung
