@@ -13,6 +13,9 @@
     <title>Nassi-Shneiderman - Editor</title>
   </head>
   <body>
+    <?php
+      session_start();
+    ?>
     <div id="main">
       <!-- -------------------- Topbar -------------------- -->
       <div id="topbar">
