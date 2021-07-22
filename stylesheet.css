@@ -254,6 +254,31 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
     display: flex;
 }
 
+#nameError{
+    position: relative;
+    margin: 2rem 2rem 0 2rem;
+    background-color: #ab1212;
+}
+
+#nameError p{
+    color: white;
+    text-align: center;
+}
+
+.removeError{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    transition: 0.1s;
+}
+
+.removeError:hover{
+    background-color: #580e0e;
+}
+
 .diagramHeader{
     display: flex;
     flex-wrap: wrap;

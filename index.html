@@ -171,6 +171,12 @@
         </template>
         <!--- -------------------- Diagramarea -------------------- -->
         <div id="diagramPanel">
+          <div id="nameError" class="hide">
+            <p>Dieser Name ist bereits belegt. Bitte benutze einen anderen!</p>
+            <button class="removeError" onclick="this.parentElement.classList.add('hide');">
+              <img class="removeIcon" src="svg/times-solid_white.svg" alt="Bild eines x Symbols" draggable="false">
+            </button>
+          </div>
           <div class="diagramContainer activeDiagram" id="mainDiagram">
             <div class="diagramHeader">
               <h2 class="editableText headerText" role="textbox" contenteditable spellcheck="false" 
@@ -235,7 +241,6 @@
       // -------------------- Globale Variablen --------------------
       var editMode = true;
       var appendAfter = true;
-      var oldFunctionName = '';
       var ids = document.querySelectorAll('[id]');
       var blacklistedIds = Array.prototype.map.call(ids, function(el, i){
           return el.id;
@@ -298,7 +303,7 @@
 
           if(el.parentElement.classList.contains('nassiFunction') 
           || el.parentElement.parentElement.id != 'mainDiagram'){
-            oldFunctionName = el.innerText;
+            el.nameBefore = el.innerText;
           }
         }
       }
@@ -313,50 +318,65 @@
       // --- Funktion wird aufgerufen beim bestätigen eines neuen Textes
       function finishEdit(el){
         // Text des Textfeldes ist leer
+        var checkId = document.getElementById(el.innerText);
+
         if(el.innerText == ''){
           // Element ist vom Typen headerText (Diagrammüberschrift)
           if(el.classList.contains('headerText')){
             if(el.parentElement.parentElement.id == 'mainDiagram'){
               el.innerText = 'Main (klicken zum Bearbeiten)';
             }else{
-              el.innerText = oldFunctionName;
+              el.innerText = el.nameBefore;
             }
           }// Parentelement ist eine Funktionsstruktur
           else if(el.parentElement.classList.contains('nassiFunction')){
-            el.innerText = oldFunctionName;
+            el.innerText = el.nameBefore;
           }
         }// Text des Textfeldes ist nicht leer
         else{
           // Parentelement ist eine Funktionsstruktur
           if(el.parentElement.classList.contains('nassiFunction')){
-            // Funktion gab es noch nicht
-            if(oldFunctionName == ''){
-              var newOption = document.createElement('option');
-              newOption.value = el.innerText;
-              newOption.innerText = el.innerText;
-              diagramSelect.appendChild(newOption);
-              createNewDiagram(el.innerText);
-            }// Funktion gab es schon
-            else{
-              changeOldDiagram(el.innerText);
+            nameError.classList.add('hide');
+
+            if(el.nameBefore != el.innerText && (blacklistedIds.includes(el.innerText) || checkId)){
+              el.innerText = el.nameBefore;
+              nameError.classList.remove('hide');
+            }else{
+              // Funktion gab es noch nicht
+              if(el.nameBefore == ''){
+                var newOption = document.createElement('option');
+                newOption.value = el.innerText;
+                newOption.innerText = el.innerText;
+                diagramSelect.appendChild(newOption);
+                createNewDiagram(el.innerText);
+              }// Funktion gab es schon
+              else{
+                changeOldDiagram(el);
+              }
             }
-          }// Parentelement ist eine Unterfunktion Diagramm, welche schon existierte
-          else if(el.parentElement.parentElement.id == oldFunctionName){
-            changeOldDiagram(el.innerText);
+          }// Parentelement ist ein Unterdiagramm, welches schon existierte
+          else if(el.parentElement.parentElement.id == el.nameBefore){
+            if(el.nameBefore != el.innerText && (blacklistedIds.includes(el.innerText) || checkId)){
+              el.innerText = el.nameBefore;
+              nameError.classList.remove('hide');
+            }else{
+              nameError.classList.add('hide');
+              changeOldDiagram(el);
+            }
           }
         }
       }
 
       // --- Funktion ändert die dazugehörigen Werte einer bestehenden Unterfunktion
-      function changeOldDiagram(newText){
-        var oldDiagram = document.getElementById(oldFunctionName);
-        oldDiagram.id = newText;
-        oldDiagram.children[0].children[0].innerText = newText;
+      function changeOldDiagram(el){
+        var oldDiagram = document.getElementById(el.nameBefore);
+        oldDiagram.id = el.innerText;
+        oldDiagram.children[0].children[0].innerText = el.innerText;
 
         for(var i = 0; i < diagramSelect.options.length; i++){
-          if(diagramSelect.options[i].value == oldFunctionName){
-            diagramSelect.options[i].value = newText;
-            diagramSelect.options[i].innerText = newText;
+          if(diagramSelect.options[i].value == el.nameBefore){
+            diagramSelect.options[i].value = el.innerText;
+            diagramSelect.options[i].innerText = el.innerText;
           }
         }
       }
@@ -378,6 +398,11 @@
         var diagram = document.getElementsByClassName('activeDiagram')[0];
         var newStructure = structure.content.cloneNode(structure);
         diagram.appendChild(newStructure);
+
+        if(templateName == 'templateFunction'){
+          var newFunction = diagram.children[diagram.childElementCount - 1];
+          newFunction.children[1].nameBefore = '';
+        }
       }
 
       // --- Funktion löscht eine selektierte Struktur
