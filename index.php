@@ -453,7 +453,7 @@
           parent = parent.parentElement;
         }
         
-        if(parent.classList.contains('nassiFunction')){
+        if(parent.classList.contains('nassiFunction') && parent.children[1].innerText != ''){
           var functionName = parent.children[1].innerText;
           document.getElementById(functionName).remove();
 
