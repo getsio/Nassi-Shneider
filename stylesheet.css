@@ -400,6 +400,35 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
     flex-direction: row-reverse;
 }
 
+.specificBranchArea, .specificBranches, .defaultBranchArea, .defaultBranch{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background-color: inherit;
+    flex-grow: 1;
+}
+
+.specificBranchArea, .defaultBranchArea{
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.specificImageArea, .defaultImageArea{
+    height: calc(19.2px + 2rem);
+    flex-grow: 1;
+}
+
+.specificImageArea{
+    background: url('svg/leftLine.svg') no-repeat;
+    background-size: 100% 100%;
+}
+
+.defaultImageArea{
+    background: url('svg/rightLine.svg') no-repeat;
+    background-size: 100% 100%;
+}
+
 .removeButton{
     position: absolute;
     top: 0;
@@ -486,15 +515,7 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
         color-adjust: exact;
     }
 
-    .trueBranch{
-        background: url('svg/leftLine.svg') no-repeat;
-        background-size: 100% 100%;
-        -webkit-print-color-adjust: exact;
-        color-adjust: exact;
-    }
-    
-    .falseBranch{
-        background: url('svg/rightLine.svg') no-repeat;
+    .trueBranchImageArea, .falseBranchImageArea{
         background-size: 100% 100%;
         -webkit-print-color-adjust: exact;
         color-adjust: exact;

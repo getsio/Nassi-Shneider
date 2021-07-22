@@ -223,7 +223,33 @@
               onblur="finishEdit(this);">Main (klicken zum Bearbeiten)</h2>
             </div>
             <div class="nassiMultiplebranch">
-
+              <div class="textArea">
+                <p class="editableText" role="textbox" contenteditable spellcheck="false"
+                placeholder="Bedingung eingeben..." onclick="editText(this);" onkeydown="keyInput(event, this);"
+                onblur="finishEdit(this);"></p>
+                <button class="removeButton" onclick="removeStructure(this);">
+                  <img class="removeIcon" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
+                </button>
+              </div>
+              <div class="branchArea">
+                <div class="specificBranchArea">
+                  <div class="specificImageArea"></div>
+                  <div class="specificBranches">
+                    <div class="specificBranch emptySpace">
+                      -
+                    </div>
+                    <div class="specificBranch emptySpace">
+                      -
+                    </div>
+                  </div>
+                </div>
+                <div class="defaultBranchArea">
+                  <div class="defaultImageArea"></div>
+                  <div class="defaultBranch emptySpace">
+                    -
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
