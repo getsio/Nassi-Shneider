@@ -335,7 +335,7 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
     justify-content: space-between;
 }
 
-.nassiBranch{
+.nassiBranch, .nassiHeadcontrolled, .nassiFootcontrolled{
     flex-direction: column;
 }
 
@@ -406,6 +406,30 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
 .removeIcon{
     width: 0.8rem;
     height: auto;
+}
+
+.blockLoop{
+    height: 100%;
+    width: calc(2rem + 1px);
+}
+
+.nassiHeadcontrolled .textArea .editableText{
+    flex-grow: 1;
+    text-align: start;
+}
+
+.loopArea{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background-color: inherit;
+    width: 100%;
+}
+
+.loopText{
+    flex-grow: 1;
+    outline: solid black 1px;
 }
 
 @media print{
