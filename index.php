@@ -464,7 +464,6 @@
       // --- Funktion löscht alle Strukturen des Hauptdiagrammes und alle zusätzlichen Diagramme
       function removeAll(){
         var diagrams = document.getElementsByClassName('diagramContainer');
-        console.log(document.getElementsByClassName('activeDiagram'));
         showDiagram('mainDiagram');
 
         while(diagrams[0].childElementCount > 1){
