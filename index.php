@@ -84,7 +84,7 @@
             <div class="draggables" onclick="appendStructure('templateHeadcontrolled');" draggable="true" ondragstart="test(event);" ondragend="test2(event);">
               <img class="icons" src="svg/kopfgesteuert.svg" alt="Bild einer kopfgesteuerten Schleife" draggable="false">
             </div>
-            <div class="draggables" onclick="console.log('Fußgesteuerte Schleife');" draggable="true" ondragstart="test(event);" ondragend="test2(event);">
+            <div class="draggables" onclick="appendStructure('templateFootcontrolled');" draggable="true" ondragstart="test(event);" ondragend="test2(event);">
               <img class="icons" src="svg/fußgesteuert.svg" alt="Bild einer fußgesteuerten Schleife" draggable="false">
             </div>
           </div>
@@ -173,8 +173,24 @@
             </div>
           </div>
         </template>
-        <template id="templateFoodcontrolled">
-
+        <template id="templateFootcontrolled">
+          <div class="nassiFootcontrolled">
+            <div class="loopArea">
+              <div class="blockLoop"></div>
+              <div class="loopText">
+                <p class="editableText">-</p>
+              </div>
+              <button class="removeButton" onclick="removeStructure(this);">
+                <img class="removeIcon" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
+              </button>
+            </div>
+            <div class="textArea">
+              <div class="blockLoop"></div>
+              <p class="editableText" role="textbox" contenteditable spellcheck="false"
+              placeholder="Bedingung eingeben..." onclick="editText(this);" onkeydown="keyInput(event, this);"
+              onblur="finishEdit(this);"></p>
+            </div>
+          </div>
         </template>
         <template id="templateDiagram">
           <div class="diagramContainer">
@@ -210,7 +226,7 @@
       Verzweigung fertigstellen ------------------------------- -<COMPLETED>-
       Mehrfachverzweigung fertigstellen
       Kopfgesteuerte Schleife fertigstellen ------------------- -<COMPLETED>-
-      Fußgesteuerte Schleife fertigstellen
+      Fußgesteuerte Schleife fertigstellen -------------------- -<COMPLETED>-
       Strukturen löschbar ------------------------------------- -<COMPLETED>-
       Diagramme löschen --------------------------------------- -<COMPLETED>-
       Unterfunktionen erstellen ------------------------------- -<COMPLETED>-

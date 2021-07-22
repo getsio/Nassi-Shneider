@@ -413,8 +413,11 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
     width: calc(2rem + 1px);
 }
 
-.nassiHeadcontrolled .textArea .editableText{
-    flex-grow: 1;
+.nassiHeadcontrolled .textArea, .nassiFootcontrolled .textArea{
+    justify-content: start;
+}
+
+.nassiHeadcontrolled .textArea .editableText, .nassiFootcontrolled .textArea .editableText{
     text-align: start;
 }
 
@@ -430,6 +433,10 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
 .loopText{
     flex-grow: 1;
     outline: solid black 1px;
+}
+
+.loopText .editableText{
+    cursor: text;
 }
 
 @media print{
