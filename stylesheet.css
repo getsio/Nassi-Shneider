@@ -322,7 +322,7 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
 }
 
 .nassiAction, .nassiFunction, .nassiBranch, .nassiMultiplebranch, .nassiHeadcontrolled, .nassiFootcontrolled,
-.textArea, .branchArea, .trueBranch, .falseBranch, .trueDefault, .falseDefault{
+.textArea, .branchArea, .trueBranch, .falseBranch, .trueBranchImageArea, .falseBranchImageArea, .trueDefault, .falseDefault{
     display: flex;
     position: relative;
     align-items: center;
@@ -331,11 +331,15 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
     background-color: inherit;
 }
 
+.innerStructure{
+    flex-grow: 1;
+}
+
 .nassiFunction{
     justify-content: space-between;
 }
 
-.nassiBranch, .nassiHeadcontrolled, .nassiFootcontrolled{
+.nassiBranch, .nassiMultiplebranch, .nassiHeadcontrolled, .nassiFootcontrolled{
     flex-direction: column;
 }
 
@@ -346,31 +350,38 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
     outline: none;
 }
 
-.trueDefault, .falseDefault{
-    width: 100%;
-}
-
 .branchArea{
     margin-top: calc(calc(19.2px + 2rem) * -1);
-    height: calc(calc(19.2px + 2rem) * 3);
     width: 100%;
 }
 
-.trueBranch, .falseBranch{
+.trueBranch, .trueBranchImageArea, .falseBranch, .falseBranchImageArea{
     flex-direction: column;
     flex-grow: 1;
+    align-items: stretch;
+    justify-content: stretch;
     height: 100%;
     outline: none;
 }
 
-.trueBranch{
+.trueBranchImageArea{
+    max-height: calc(calc(19.2px + 2rem) * 2);
+    flex-grow: 1;
     background: url('svg/leftLine.svg') no-repeat;
     background-size: 100% 100%;
 }
 
-.falseBranch{
+.falseBranchImageArea{
+    max-height: calc(calc(19.2px + 2rem) * 2);
+    flex-grow: 1;
     background: url('svg/rightLine.svg') no-repeat;
     background-size: 100% 100%;
+}
+
+.trueDefault, .falseDefault{
+    flex-direction: column;
+    align-items: stretch;
+    flex-grow: 1;
 }
 
 .emptySpace{

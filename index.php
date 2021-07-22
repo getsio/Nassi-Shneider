@@ -132,20 +132,24 @@
             </div>
             <div class="branchArea">
               <div class="trueBranch">
-                <div class="emptySpace"></div>
-                <div class="emptySpace trueMark">
-                  <div class="blockFlex"></div>
-                  <p>true</p>
+                <div class="trueBranchImageArea">
+                  <div class="emptySpace"></div>
+                  <div class="emptySpace trueMark">
+                    <div class="blockFlex"></div>
+                    <p>true</p>
+                  </div>
                 </div>
                 <div class="trueDefault">
                   <p class="trueText">-</p>
                 </div>
               </div>
               <div class="falseBranch">
-                <div class="emptySpace"></div>
-                <div class="emptySpace falseMark">
-                  <div class="blockFlex"></div>
-                  <p>false</p>
+                <div class="falseBranchImageArea">
+                  <div class="emptySpace"></div>
+                  <div class="emptySpace falseMark">
+                    <div class="blockFlex"></div>
+                    <p>false</p>
+                  </div>
                 </div>
                 <div class="falseDefault">
                   <p class="falseText">-</p>
