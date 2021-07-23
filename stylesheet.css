@@ -254,13 +254,12 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
     display: flex;
 }
 
-#nameError{
+.nameError{
     position: relative;
-    margin: 2rem 2rem 0 2rem;
     background-color: #ab1212;
 }
 
-#nameError p{
+.nameError p{
     color: white;
     text-align: center;
 }
@@ -288,7 +287,7 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
     padding: 0 2rem;
 }
 
-.editableText, .trueText, .falseText{
+.editableText, .trueText, .falseText, .definedText, .defaultText{
     white-space: nowrap;
     margin: 1rem 0;
     padding: 0 0.5rem;
@@ -298,7 +297,7 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
     cursor: pointer;
 }
 
-.trueText, .falseText{
+.trueText, .falseText, .definedText, .defaultText{
     cursor: unset;
 }
 
@@ -400,33 +399,64 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
     flex-direction: row-reverse;
 }
 
-.specificBranchArea, .specificBranches, .defaultBranchArea, .defaultBranch{
+.definedBranches, .defaultBranch{
     display: flex;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    background-color: inherit;
-    flex-grow: 1;
-}
-
-.specificBranchArea, .defaultBranchArea{
     flex-direction: column;
-    align-items: stretch;
-}
-
-.specificImageArea, .defaultImageArea{
-    height: calc(19.2px + 2rem);
     flex-grow: 1;
+    background-color: inherit;
 }
 
-.specificImageArea{
+.definedImageArea, .defaultImageArea{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
     background: url('svg/leftLine.svg') no-repeat;
     background-size: 100% 100%;
+    background-color: inherit;
 }
 
 .defaultImageArea{
     background: url('svg/rightLine.svg') no-repeat;
     background-size: 100% 100%;
+    background-color: inherit;
+}
+
+.branch, .defBranch{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.branchPlaceholder{
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    background-color: inherit;
+    height: 3rem;
+}
+
+.branch .branchPlaceholder:last-child{
+    border-left: 1px solid black;
+}
+
+.definedTasks, .defaultTasks{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    background-color: inherit;
+    border-top: 1px solid black;
+}
+
+.definedTask, .defaultTask{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    flex-grow: 1;
+    outline: 1px solid black;
+    background-color: inherit;
 }
 
 .removeButton{
@@ -515,7 +545,7 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
         color-adjust: exact;
     }
 
-    .trueBranchImageArea, .falseBranchImageArea{
+    .trueBranchImageArea, .falseBranchImageArea, .definedImageArea, .defaultImageArea{
         background-size: 100% 100%;
         -webkit-print-color-adjust: exact;
         color-adjust: exact;

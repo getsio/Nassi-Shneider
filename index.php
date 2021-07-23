@@ -201,6 +201,12 @@
         </template>
         <template id="templateDiagram">
           <div class="diagramContainer">
+            <div class="nameError hide">
+              <p>Dieser Name ist bereits belegt. Bitte benutze einen anderen!</p>
+              <button class="removeError" onclick="this.parentElement.classList.add('hide');">
+                <img class="removeIcon" src="svg/times-solid_white.svg" alt="Bild eines x Symbols" draggable="false">
+              </button>
+            </div>
             <div class="diagramHeader">
               <h2 class="editableText headerText" role="textbox" contenteditable spellcheck="false" 
               placeholder="Überschrift eingeben..." onclick="editText(this);" onkeydown="keyInput(event, this);" 
@@ -210,13 +216,13 @@
         </template>
         <!--- -------------------- Diagramarea -------------------- -->
         <div id="diagramPanel">
-          <div id="nameError" class="hide">
-            <p>Dieser Name ist bereits belegt. Bitte benutze einen anderen!</p>
-            <button class="removeError" onclick="this.parentElement.classList.add('hide');">
-              <img class="removeIcon" src="svg/times-solid_white.svg" alt="Bild eines x Symbols" draggable="false">
-            </button>
-          </div>
           <div class="diagramContainer activeDiagram" id="mainDiagram">
+            <div class="nameError hide">
+              <p>Dieser Name ist bereits belegt. Bitte benutze einen anderen!</p>
+              <button class="removeError" onclick="this.parentElement.classList.add('hide');">
+                <img class="removeIcon" src="svg/times-solid_white.svg" alt="Bild eines x Symbols" draggable="false">
+              </button>
+            </div>
             <div class="diagramHeader">
               <h2 class="editableText headerText" role="textbox" contenteditable spellcheck="false" 
               placeholder="Überschrift eingeben..." onclick="editText(this);" onkeydown="keyInput(event, this);" 
@@ -232,21 +238,36 @@
                 </button>
               </div>
               <div class="branchArea">
-                <div class="specificBranchArea">
-                  <div class="specificImageArea"></div>
-                  <div class="specificBranches">
-                    <div class="specificBranch emptySpace">
-                      -
+                <div class="definedBranches" style="flex-grow: 2;">
+                  <div class="definedImageArea">
+                    <div class="branch">
+
                     </div>
-                    <div class="specificBranch emptySpace">
-                      -
+                    <div class="branch">
+                      <div class="branchPlaceholder"></div>
+                      <div class="branchPlaceholder"></div>
+                    </div>
+                  </div>
+                  <div class="definedTasks">
+                    <div class="definedTask">
+                      <p class="definedText">-</p>
+                    </div>
+                    <div class="definedTask">
+                      <p class="definedText">-</p>
                     </div>
                   </div>
                 </div>
-                <div class="defaultBranchArea">
-                  <div class="defaultImageArea"></div>
-                  <div class="defaultBranch emptySpace">
-                    -
+                <div class="defaultBranch">
+                  <div class="defaultImageArea">
+                    <div class="defBranch">
+                      <div class="branchPlaceholder"></div>
+                      <div class="branchPlaceholder"></div>
+                    </div>
+                  </div>
+                  <div class="defaultTasks">
+                    <div class="defaultTask">
+                      <p class="defaultText">-</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -271,6 +292,7 @@
        - Unterfunktion im Header umbenennen ------------------- -<COMPLETED>-
        - Unterfunktion entfernen ------------------------------ -<COMPLETED>-
        - Bereits belegte IDs filtern -------------------------- -<COMPLETED>-
+      NameError fixen (nur bei aktivem Diagramm anzeigen)
       Drag & Drop
        - ...
        - ...
