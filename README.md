@@ -5,7 +5,7 @@
 - [Benutzung](#benutzung)
     - [Strukturen](#strukturen)
     - [Oberes Menü](#oberes-menü)
-- [Features](#features)
+- [Roadmap](#roadmap)
     - [Implementierte Features](#implementierte-features)
     - [Kommende Features](#kommende-features)
     - [Bekannte Fehler](#bekannte-fehler)
@@ -47,7 +47,7 @@ Der Name dieses Diagramms kann beliebig verändert werden und wird auch überall
 
 (in bearbeitung)
 
-## Features
+## Roadmap
 
 In diesem Bereich werden alle bereits implementierten, kommende, sowie fehlerhaften Features aufgelistet.
 <details><summary>Features anzeigen</summary>
