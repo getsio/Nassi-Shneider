@@ -14,7 +14,7 @@
 
 ## Beschreibung
 
-Der Nassi-Shneiderman Editor bietet eine komfortable Möglichkeit Projekte zu dokumentieren und skizzieren. Ziel des Projekts ist genormte
+Der [Nassi-Shneiderman](https://de.wikipedia.org/wiki/Nassi-Shneiderman-Diagramm) Editor bietet eine komfortable Möglichkeit Projekte zu dokumentieren und skizzieren. Ziel des Projekts ist genormte
 Struktogramme in Gruppen und alleine erstellen zu können. Diese sollen bei Bedarf auf einer Datenbank und/oder lokal gespeichert werden können.
 Es soll möglich sein, seine Diagramme teilen zu können und miteinander an diesen zu Arbeiten.
 
