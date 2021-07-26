@@ -438,7 +438,7 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
 }
 
 .branch .branchPlaceholder:last-child{
-    border-left: 1px solid black;
+    box-shadow: -1px 1px 0 black;
 }
 
 .definedTasks, .defaultTasks{
