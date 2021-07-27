@@ -411,6 +411,7 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
     display: flex;
     flex-direction: row;
     flex-grow: 1;
+    height: 6rem;
     background: url('svg/leftLine.svg') no-repeat;
     background-size: 100% 100%;
     background-color: inherit;
@@ -422,31 +423,19 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
     background-color: inherit;
 }
 
-.branch, .defBranch{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-}
-
-.branchPlaceholder{
-    position: relative;
-    display: flex;
-    flex-grow: 1;
-    background-color: inherit;
-    height: 3rem;
-}
-
-.branch .branchPlaceholder:last-child{
-    box-shadow: -1px 1px 0 black;
-}
-
-.definedTasks, .defaultTasks{
+.definedCases, .defaultCases{
     display: flex;
     flex-direction: row;
     flex-grow: 1;
     background-color: inherit;
-    border-top: 1px solid black;
+    margin-top: -3rem;
+}
+
+.definedCase, .defaultCase{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: transparent;
 }
 
 .definedTask, .defaultTask{
@@ -456,7 +445,20 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
     justify-content: center;
     flex-grow: 1;
     outline: 1px solid black;
-    background-color: inherit;
+    background-color: white;
+    border-top: 1px solid black;
+}
+
+.definedEdit, .defaultEdit{
+    text-align: start;
+    z-index: 1;
+    height: 1.2rem;
+    margin: 1.2rem 0 0.6rem 0;
+}
+
+.defaultEdit{
+    text-align: end;
+    cursor: unset;
 }
 
 .removeButton{

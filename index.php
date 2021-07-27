@@ -240,33 +240,35 @@
               <div class="branchArea">
                 <div class="definedBranches" style="flex-grow: 2;">
                   <div class="definedImageArea">
-                    <div class="branch">
-
-                    </div>
-                    <div class="branch">
-                      <div class="branchPlaceholder"></div>
-                      <div class="branchPlaceholder"></div>
-                    </div>
                   </div>
-                  <div class="definedTasks">
-                    <div class="definedTask">
-                      <p class="definedText">-</p>
+                  <div class="definedCases">
+                    <div class="definedCase">
+                      <p class="editableText definedEdit" role="textbox" contenteditable spellcheck="false"
+                      placeholder="Case 1 ..." onclick="editText(this);" onkeydown="keyInput(event, this);"
+                      onblur="finishEdit(this);"></p>
+                      <div class="definedTask">
+                        <p class="definedText">-</p>
+                      </div>
                     </div>
-                    <div class="definedTask">
-                      <p class="definedText">-</p>
+                    <div class="definedCase">
+                      <p class="editableText definedEdit" role="textbox" contenteditable spellcheck="false"
+                      placeholder="Case 2 ..." onclick="editText(this);" onkeydown="keyInput(event, this);"
+                      onblur="finishEdit(this);"></p>
+                      <div class="definedTask">
+                        <p class="definedText">-</p>
+                      </div>
                     </div>
                   </div>
                 </div>
                 <div class="defaultBranch">
                   <div class="defaultImageArea">
-                    <div class="defBranch">
-                      <div class="branchPlaceholder"></div>
-                      <div class="branchPlaceholder"></div>
-                    </div>
                   </div>
-                  <div class="defaultTasks">
-                    <div class="defaultTask">
-                      <p class="defaultText">-</p>
+                  <div class="defaultCases">
+                    <div class="defaultCase">
+                      <p class="editableText defaultEdit">Default</p>
+                      <div class="defaultTask">
+                        <p class="defaultText">-</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -524,8 +526,8 @@
         var diagrams = document.getElementsByClassName('diagramContainer');
         showDiagram('mainDiagram');
 
-        while(diagrams[0].childElementCount > 1){
-          diagrams[0].removeChild(diagrams[0].children[1]);
+        while(diagrams[0].childElementCount > 2){
+          diagrams[0].removeChild(diagrams[0].children[2]);
         }
 
         while(diagrams.length > 1){
