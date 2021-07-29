@@ -50,7 +50,6 @@ Der Name dieses Diagramms kann beliebig verändert werden und wird auch überall
 ## Roadmap
 
 In diesem Bereich werden alle bereits implementierten, kommende, sowie fehlerhaften Features aufgelistet.
-<details><summary>Features anzeigen</summary>
 
 ### Implementierte Features
 
@@ -87,9 +86,7 @@ In diesem Bereich werden alle bereits implementierten, kommende, sowie fehlerhaf
 
 ### Bekannte Fehler
 
-- Unterfunktion kann nicht vernünftig entfernt werden
-
-</details>
+- ~~Unterfunktion kann nicht vernünftig entfernt werden~~
 
 ## Autor
 
