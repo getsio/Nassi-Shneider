@@ -572,7 +572,7 @@
         var diagram = document.getElementById('templateDiagram');
         var newDiagram = diagram.content.cloneNode(diagram);
         newDiagram.children[0].id = name;
-        newDiagram.children[0].children[0].children[0].innerText = name;
+        newDiagram.children[0].children[1].children[0].innerText = name;
         diagramPanel.appendChild(newDiagram);
       }
 
@@ -580,13 +580,19 @@
       function showDiagram(diagramName){
         var activeDiagram = document.getElementsByClassName('activeDiagram')[0];
         var newActiveDiagram = document.getElementById(diagramName);
+        var errors = document.getElementsByClassName('nameError');
 
         if(activeDiagram != null){
           activeDiagram.classList.remove('activeDiagram');
           activeDiagram.children[0].classList.remove('activeError');
         }
+
         newActiveDiagram.classList.add('activeDiagram');
         newActiveDiagram.children[0].classList.add('activeError');
+
+        for(var i = 0; i < errors.length; i++){
+          errors[i].classList.add('hide');
+        }
       }
 
       // --- Diese Funktion fügt der zugehörigen Mehrfachverzweigung einen Zweig hinzu
