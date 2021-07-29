@@ -24,7 +24,9 @@ Es soll möglich sein, seine Diagramme teilen zu können und miteinander an dies
 
 Die Strukturen befinden sich im linken Menü des Editors.
 
-<img src="/uploads/1dba17a91a428d2b5fe3a6bbcc5f2075/Menü.PNG" alt="Bild des linken Strukturmenüs" width="140">
+<div align="center">
+  <img src="/uploads/1dba17a91a428d2b5fe3a6bbcc5f2075/Menü.PNG" alt="Bild des linken Strukturmenüs" width="140">
+</div>
 
 Mit einem klick auf die gewünschte Struktur, wird diese dem ausgewählten Diagramm hinzugefügt.
 Optional kann man die Struktur auch auf das Diagrammfeld oder in eine Verzweigung/Schleife "ziehen".
@@ -36,12 +38,16 @@ Fügt man eine Funktion ein und benennt diese, entsteht ein neue Option im Dropd
 Durch das Benennen einer Funktion wird im Hintergrund ein weiteres Diagramm erstellt (sozusagen ein **untergeordnetes** Diagramm), in
 welchem die Funktion definiert werden kann.
 
-<img src="/uploads/b2e43a504aea3e8da780aeb9c907fdac/Unterfunktion.png" alt="Dropdown-Menü mit Unterfunktion Test" width="200">
+<div align="center">
+  <img src="/uploads/b2e43a504aea3e8da780aeb9c907fdac/Unterfunktion.png" alt="Dropdown-Menü mit Unterfunktion Test" width="200">
+</div>
 
 Wählt man nun dieses **untergeordnete** Diagramm aus erhält man einen neuen Diagrammbereich, dessen Name mit dem der Funktion übereinstimmt.
 Der Name dieses Diagramms kann beliebig verändert werden und wird auch überall, in Verbindung mit der Funktion, umbenannt.
 
-<img src="/uploads/4892bb6744fd266f43f6551bdaf7f42d/Unterdiagramm.PNG" alt="Übersicht des Unterdiagramms Test" width="800">
+<div align="center">
+  <img src="/uploads/4892bb6744fd266f43f6551bdaf7f42d/Unterdiagramm.PNG" alt="Übersicht des Unterdiagramms Test" width="800">
+</div>
 
 ### Oberes Menü
 
