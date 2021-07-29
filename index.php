@@ -81,7 +81,7 @@
             <div class="draggables" onclick="appendStructure('templateBranch');" draggable="true" ondragstart="test(event);" ondragend="test2(event);">
               <img class="icons" src="svg/verzweigung.svg" alt="Bild einer Verzweigung" draggable="false">
             </div>
-            <div class="draggables" onclick="console.log('Mehrfachverzweigung');" draggable="true" ondragstart="test(event);" ondragend="test2(event);">
+            <div class="draggables" onclick="appendStructure('templateMultiplebranch');" draggable="true" ondragstart="test(event);" ondragend="test2(event);">
               <img class="icons" src="svg/mehrfachverzweigung.svg" alt="Bild einer Mehrfachverzweigung" draggable="false">
             </div>
             <div class="draggables" onclick="appendStructure('templateHeadcontrolled');" draggable="true" ondragstart="test(event);" ondragend="test2(event);">
@@ -103,9 +103,11 @@
             <p class="editableText" role="textbox" contenteditable spellcheck="false"
             placeholder="Aktion eingeben..." onclick="editText(this);" onkeydown="keyInput(event, this);"
             onblur="finishEdit(this);"></p>
-            <button class="removeButton" onclick="removeStructure(this);">
-              <img class="removeIcon" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
-            </button>
+            <div class="structButtons">
+              <button class="removeButton" onclick="removeStructure(this);">
+                <img class="removeIcon" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
+              </button>
+            </div>
           </div>
         </template>
         <template id="templateFunction">
@@ -115,9 +117,11 @@
             placeholder="Funktionsnamen eingeben..." onclick="editText(this);" onkeydown="keyInput(event, this);"
             onblur="finishEdit(this);"></p>
             <div class="blackLineVerticalRight"></div>
-            <button class="removeButton" onclick="removeStructure(this);">
-              <img class="removeIcon" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
-            </button>
+            <div class="structButtons">
+              <button class="removeButton" onclick="removeStructure(this);">
+                <img class="removeIcon" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
+              </button>
+            </div>
           </div>
         </template>
         <template id="templateBranch">
@@ -126,9 +130,11 @@
               <p class="editableText" role="textbox" contenteditable spellcheck="false"
               placeholder="Bedingung eingeben..." onclick="editText(this);" onkeydown="keyInput(event, this);"
               onblur="finishEdit(this);"></p>
-              <button class="removeButton" onclick="removeStructure(this);">
-                <img class="removeIcon" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
-              </button>
+              <div class="structButtons">
+                <button class="removeButton" onclick="removeStructure(this);">
+                  <img class="removeIcon" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
+                </button>
+              </div>
             </div>
             <div class="branchArea">
               <div class="trueBranch">
@@ -159,7 +165,70 @@
           </div>
         </template>
         <template id="templateMultiplebranch">
-
+          <div class="nassiMultiplebranch">
+            <div class="textArea">
+              <p class="editableText" role="textbox" contenteditable spellcheck="false"
+              placeholder="Bedingung eingeben..." onclick="editText(this);" onkeydown="keyInput(event, this);"
+              onblur="finishEdit(this);"></p>
+              <div class="structButtons">
+                <button class="removeButton" onclick="removeStructure(this);">
+                  <img class="removeIcon" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
+                </button>
+                <button class="removeBranchButton" onclick="removeBranch(this);">
+                  <img class="removeBranchIcon" src="svg/minus-solid.svg" alt="Bild eines Minus Symbols" draggable="false">
+                </button>
+                <button class="addBranchButton" onclick="addBranch(this);">
+                  <img class="addBranchIcon" src="svg/plus-solid.svg" alt="Bild eines Plus Symbols" draggable="false">
+                </button>
+              </div>
+            </div>
+            <div class="branchArea">
+              <div class="definedBranches" style="flex-grow: 2;">
+                <div class="definedImageArea">
+                </div>
+                <div class="definedCases">
+                  <div class="definedCase">
+                    <p class="editableText definedEdit" role="textbox" contenteditable spellcheck="false"
+                    placeholder="Case 1 ..." onclick="editText(this);" onkeydown="keyInput(event, this);"
+                    onblur="finishEdit(this);"></p>
+                    <div class="definedTask">
+                      <p class="definedText">-</p>
+                    </div>
+                  </div>
+                  <div class="definedCase">
+                    <p class="editableText definedEdit" role="textbox" contenteditable spellcheck="false"
+                    placeholder="Case 2 ..." onclick="editText(this);" onkeydown="keyInput(event, this);"
+                    onblur="finishEdit(this);"></p>
+                    <div class="definedTask">
+                      <p class="definedText">-</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="defaultBranch">
+                <div class="defaultImageArea">
+                </div>
+                <div class="defaultCases">
+                  <div class="defaultCase">
+                    <p class="editableText defaultEdit">Default</p>
+                    <div class="defaultTask">
+                      <p class="defaultText">-</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </template>
+        <template id="templateAdditionalBranch">
+          <div class="definedCase">
+            <p class="editableText definedEdit" role="textbox" contenteditable spellcheck="false"
+            placeholder="" onclick="editText(this);" onkeydown="keyInput(event, this);"
+            onblur="finishEdit(this);"></p>
+            <div class="definedTask">
+              <p class="definedText">-</p>
+            </div>
+          </div>
         </template>
         <template id="templateHeadcontrolled">
           <div class="nassiHeadcontrolled">
@@ -168,9 +237,11 @@
               <p class="editableText" role="textbox" contenteditable spellcheck="false"
               placeholder="Bedingung eingeben..." onclick="editText(this);" onkeydown="keyInput(event, this);"
               onblur="finishEdit(this);"></p>
-              <button class="removeButton" onclick="removeStructure(this);">
-                <img class="removeIcon" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
-              </button>
+              <div class="structButtons">
+                <button class="removeButton" onclick="removeStructure(this);">
+                  <img class="removeIcon" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
+                </button>
+              </div>
             </div>
             <div class="loopArea">
               <div class="blockLoop"></div>
@@ -187,9 +258,11 @@
               <div class="loopText">
                 <p class="editableText">-</p>
               </div>
-              <button class="removeButton" onclick="removeStructure(this);">
-                <img class="removeIcon" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
-              </button>
+              <div class="structButtons">
+                <button class="removeButton" onclick="removeStructure(this);">
+                  <img class="removeIcon" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
+                </button>
+              </div>
             </div>
             <div class="textArea">
               <div class="blockLoop"></div>
@@ -228,52 +301,6 @@
               placeholder="Überschrift eingeben..." onclick="editText(this);" onkeydown="keyInput(event, this);" 
               onblur="finishEdit(this);">Main (klicken zum Bearbeiten)</h2>
             </div>
-            <div class="nassiMultiplebranch">
-              <div class="textArea">
-                <p class="editableText" role="textbox" contenteditable spellcheck="false"
-                placeholder="Bedingung eingeben..." onclick="editText(this);" onkeydown="keyInput(event, this);"
-                onblur="finishEdit(this);"></p>
-                <button class="removeButton" onclick="removeStructure(this);">
-                  <img class="removeIcon" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
-                </button>
-              </div>
-              <div class="branchArea">
-                <div class="definedBranches" style="flex-grow: 2;">
-                  <div class="definedImageArea">
-                  </div>
-                  <div class="definedCases">
-                    <div class="definedCase">
-                      <p class="editableText definedEdit" role="textbox" contenteditable spellcheck="false"
-                      placeholder="Case 1 ..." onclick="editText(this);" onkeydown="keyInput(event, this);"
-                      onblur="finishEdit(this);"></p>
-                      <div class="definedTask">
-                        <p class="definedText">-</p>
-                      </div>
-                    </div>
-                    <div class="definedCase">
-                      <p class="editableText definedEdit" role="textbox" contenteditable spellcheck="false"
-                      placeholder="Case 2 ..." onclick="editText(this);" onkeydown="keyInput(event, this);"
-                      onblur="finishEdit(this);"></p>
-                      <div class="definedTask">
-                        <p class="definedText">-</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="defaultBranch">
-                  <div class="defaultImageArea">
-                  </div>
-                  <div class="defaultCases">
-                    <div class="defaultCase">
-                      <p class="editableText defaultEdit">Default</p>
-                      <div class="defaultTask">
-                        <p class="defaultText">-</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -283,7 +310,7 @@
       Aktion fertigstellen ------------------------------------ -<COMPLETED>-
       Funktion fertigstellen ---------------------------------- -<COMPLETED>-
       Verzweigung fertigstellen ------------------------------- -<COMPLETED>-
-      Mehrfachverzweigung fertigstellen
+      Mehrfachverzweigung fertigstellen ----------------------- -<COMPLETED>-
       Kopfgesteuerte Schleife fertigstellen ------------------- -<COMPLETED>-
       Fußgesteuerte Schleife fertigstellen -------------------- -<COMPLETED>-
       Strukturen löschbar ------------------------------------- -<COMPLETED>-
@@ -343,7 +370,7 @@
       // --- Funktion wird aufgerufen, wenn von der Schreib- zur Leseansicht und umgekehrt gewechselt wird
       function toggleEdit(){
         var inputs = document.getElementsByClassName('editableText');
-        var removeButtons = document.getElementsByClassName('removeButton');
+        var removeButtons = document.getElementsByClassName('structButtons');
 
         if(editMode){
           editIcon.src = "svg/lock-solid.svg";
@@ -556,6 +583,37 @@
           activeDiagram.classList.remove('activeDiagram');
         }
         document.getElementById(diagramName).classList.add('activeDiagram');
+      }
+
+      // --- Diese Funktion fügt der zugehörigen Mehrfachverzweigung einen Zweig hinzu
+      function addBranch(el){
+        var branchArea = el.parentElement.parentElement.nextElementSibling.children[0];
+        var cntBranches = parseInt(branchArea.style.flexGrow);
+        var appendArea = branchArea.children[1];
+        var diagramPanel = document.getElementById('diagramPanel');
+        var activeDiagram = document.getElementsByClassName('activeDiagram')[0];
+
+        branchArea.style.flexGrow = cntBranches + 1;
+        cntBranches++;
+
+        var structure = document.getElementById('templateAdditionalBranch');
+        var newBranch = structure.content.cloneNode(structure);
+
+        appendArea.appendChild(newBranch);
+        appendArea.lastElementChild.firstElementChild.setAttribute('placeholder', 'Case ' + cntBranches + ' ...'); 
+        diagramPanel.scroll(activeDiagram.offsetWidth, 0);
+      }
+
+      // --- Diese Funktion löscht aus der dazugehörigen Mehrfachverzweigung den letzten Zweig
+      function removeBranch(el){
+        var branchArea = el.parentElement.parentElement.nextElementSibling.children[0];
+        var cntBranches = parseInt(branchArea.style.flexGrow);
+        var appendArea = branchArea.children[1];
+
+        if(cntBranches > 2){
+          branchArea.style.flexGrow = cntBranches - 1;
+          appendArea.removeChild(appendArea.lastElementChild);
+        }
       }
     </script>
   </body>
