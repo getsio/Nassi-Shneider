@@ -290,7 +290,7 @@
         <!--- -------------------- Diagramarea -------------------- -->
         <div id="diagramPanel">
           <div class="diagramContainer activeDiagram" id="mainDiagram">
-            <div class="nameError hide">
+            <div class="nameError activeError hide">
               <p>Dieser Name ist bereits belegt. Bitte benutze einen anderen!</p>
               <button class="removeError" onclick="this.parentElement.classList.add('hide');">
                 <img class="removeIcon" src="svg/times-solid_white.svg" alt="Bild eines x Symbols" draggable="false">
@@ -438,6 +438,7 @@
       function finishEdit(el){
         // Text des Textfeldes ist leer
         var checkId = document.getElementById(el.innerText);
+        var nameError = document.getElementsByClassName("activeError")[0];
 
         if(el.innerText == ''){
           // Element ist vom Typen headerText (Diagrammüberschrift)
@@ -578,11 +579,14 @@
       // --- Funktion wird aufgerufen, wenn ein anderes Diagramm selektiert wird und zeigt dieses an
       function showDiagram(diagramName){
         var activeDiagram = document.getElementsByClassName('activeDiagram')[0];
+        var newActiveDiagram = document.getElementById(diagramName);
 
         if(activeDiagram != null){
           activeDiagram.classList.remove('activeDiagram');
+          activeDiagram.children[0].classList.remove('activeError');
         }
-        document.getElementById(diagramName).classList.add('activeDiagram');
+        newActiveDiagram.classList.add('activeDiagram');
+        newActiveDiagram.children[0].classList.add('activeError');
       }
 
       // --- Diese Funktion fügt der zugehörigen Mehrfachverzweigung einen Zweig hinzu
