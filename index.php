@@ -316,9 +316,9 @@
        - Bereits belegte IDs filtern -------------------------- -<COMPLETED>-
       NameError fixen (nur bei aktivem Diagramm anzeigen) ----- -<COMPLETED>-
       Drag & Drop
-       - on Drag Event fertigstellen -------------------------- -<COMPLETED>-
-       - dragOver event fertigstellen ------------------------- -<COMPLETED>-
-       - ...
+       - on Drag Event fertiggestellt ------------------------- -<COMPLETED>-
+       - on drag over Event fertiggestellt -------------------- -<COMPLETED>-
+       - on drop Event fertiggestellt
       Verschachtelung
        - in Verzweigung einfügen können
        - in Mehrfachverzweigung einfügen können
