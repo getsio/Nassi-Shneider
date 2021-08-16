@@ -43,17 +43,24 @@ function allowDrop(ev){
 //Die Funktion wird aufgerufen, sobald man mit einem "gedraggten" Objekt ein für "drops" valides Feld betritt
 function dragEnter(ev){
     resetBackground();
+    activateReadOnly();
+
     var targetStruct = ev.target;
 
-    if(ev.target.classList.contains('editableText') || ev.target.classList.contains('blackLineVerticalLeft') ||
-    ev.target.classList.contains('blackLineVerticalRight')){
+    if(ev.target.classList.contains('structCondition')){
         while(!targetStruct.classList.contains('nassiStruct')){
+            targetStruct = targetStruct.parentElement;
+        }
+    }else if(ev.target.classList.contains('subfunctionCondition')){
+        while(!targetStruct.classList.contains('nassiSubfunction')){
             targetStruct = targetStruct.parentElement;
         }
     }
 
-    if(targetStruct.classList.contains('nassiStruct')){
+    if(targetStruct.classList.value.includes('nassi')){
         targetStruct.classList.add('draggedOver');
+    }else if(targetStruct.classList.contains('diagramContainer')){
+        deactivateReadOnly();
     }
 }
 
@@ -62,5 +69,23 @@ function resetBackground(){
     var bg = document.getElementsByClassName("draggedOver");
     for(var i = 0; i < bg.length; i++){
         bg[i].classList.remove("draggedOver");
+    }
+}
+
+//Deaktiviert den readonly Modus der Inputfelder
+function deactivateReadOnly(){
+    var inputs = document.getElementsByClassName('editableText');
+    for(var i = 0; i < inputs.length; i++){
+        inputs[i].classList.remove('noneditableText');
+        inputs[i].contentEditable = 'true';
+    }
+}
+
+//Aktiviert den readonly Modus der Inputfelder
+function activateReadOnly(){
+    var inputs = document.getElementsByClassName('editableText');
+    for(var i = 0; i < inputs.length; i++){
+        inputs[i].classList.add('noneditableText');
+        inputs[i].contentEditable = 'false';
     }
 }

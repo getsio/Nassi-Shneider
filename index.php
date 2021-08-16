@@ -100,62 +100,62 @@
         <!--- -------------------- Templatearea -------------------- -->
         <template id="templateAction">
           <div class="nassiAction nassiStruct">
-            <p class="editableText" role="textbox" contenteditable spellcheck="false"
+            <p class="editableText structCondition" role="textbox" contenteditable spellcheck="false"
             placeholder="Aktion eingeben..."></p>
-            <div class="structButtons">
-              <button class="removeButton">
-                <img class="removeIcon" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
+            <div class="structButtons structCondition">
+              <button class="removeButton structCondition">
+                <img class="removeIcon structCondition" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
               </button>
             </div>
           </div>
         </template>
         <template id="templateFunction">
           <div class="nassiFunction nassiStruct">
-            <div class="blackLineVerticalLeft"></div>
-            <p class="editableText" role="textbox" contenteditable spellcheck="false"
+            <div class="blackLineVerticalLeft structCondition"></div>
+            <p class="editableText structCondition" role="textbox" contenteditable spellcheck="false"
             placeholder="Funktionsnamen eingeben..."></p>
-            <div class="blackLineVerticalRight"></div>
-            <div class="structButtons">
-              <button class="removeButton">
-                <img class="removeIcon" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
+            <div class="blackLineVerticalRight structCondition"></div>
+            <div class="structButtons structCondition">
+              <button class="removeButton structCondition">
+                <img class="removeIcon structCondition" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
               </button>
             </div>
           </div>
         </template>
         <template id="templateBranch">
           <div class="nassiBranch nassiStruct">
-            <div class="textArea">
-              <p class="editableText" role="textbox" contenteditable spellcheck="false"
+            <div class="textArea structCondition">
+              <p class="editableText structCondition" role="textbox" contenteditable spellcheck="false"
               placeholder="Bedingung eingeben..."></p>
-              <div class="structButtons">
-                <button class="removeButton">
-                  <img class="removeIcon" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
+              <div class="structButtons structCondition">
+                <button class="removeButton structCondition">
+                  <img class="removeIcon structCondition" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
                 </button>
               </div>
             </div>
-            <div class="branchArea">
-              <div class="trueBranch">
-                <div class="trueBranchImageArea">
-                  <div class="emptySpace"></div>
-                  <div class="emptySpace trueMark">
-                    <div class="blockFlex"></div>
-                    <p>true</p>
+            <div class="branchArea structCondition">
+              <div class="trueBranch structCondition">
+                <div class="trueBranchImageArea structCondition">
+                  <div class="emptySpace structCondition"></div>
+                  <div class="emptySpace trueMark structCondition">
+                    <div class="blockFlex structCondition"></div>
+                    <p class="structCondition">true</p>
                   </div>
                 </div>
-                <div class="trueDefault">
-                  <p class="trueText">-</p>
+                <div class="trueDefault subfunctionCondition nassiSubfunction">
+                  <p class="trueText subfunctionCondition">-</p>
                 </div>
               </div>
-              <div class="falseBranch">
-                <div class="falseBranchImageArea">
-                  <div class="emptySpace"></div>
-                  <div class="emptySpace falseMark">
-                    <div class="blockFlex"></div>
-                    <p>false</p>
+              <div class="falseBranch structCondition">
+                <div class="falseBranchImageArea structCondition">
+                  <div class="emptySpace structCondition"></div>
+                  <div class="emptySpace falseMark structCondition">
+                    <div class="blockFlex structCondition"></div>
+                    <p class="structCondition">false</p>
                   </div>
                 </div>
-                <div class="falseDefault">
-                  <p class="falseText">-</p>
+                <div class="falseDefault subfunctionCondition nassiSubfunction">
+                  <p class="falseText subfunctionCondition">-</p>
                 </div>
               </div>
             </div>
@@ -163,50 +163,50 @@
         </template>
         <template id="templateMultiplebranch">
           <div class="nassiMultiplebranch nassiStruct">
-            <div class="textArea">
-              <p class="editableText" role="textbox" contenteditable spellcheck="false"
+            <div class="textArea structCondition">
+              <p class="editableText structCondition" role="textbox" contenteditable spellcheck="false"
               placeholder="Bedingung eingeben..."></p>
-              <div class="structButtons">
-                <button class="removeButton">
-                  <img class="removeIcon" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
+              <div class="structButtons structCondition">
+                <button class="removeButton structCondition">
+                  <img class="removeIcon structCondition" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
                 </button>
-                <button class="removeBranchButton">
-                  <img class="removeBranchIcon" src="svg/minus-solid.svg" alt="Bild eines Minus Symbols" draggable="false">
+                <button class="removeBranchButton structCondition">
+                  <img class="removeBranchIcon structCondition" src="svg/minus-solid.svg" alt="Bild eines Minus Symbols" draggable="false">
                 </button>
-                <button class="addBranchButton">
-                  <img class="addBranchIcon" src="svg/plus-solid.svg" alt="Bild eines Plus Symbols" draggable="false">
+                <button class="addBranchButton structCondition">
+                  <img class="addBranchIcon structCondition" src="svg/plus-solid.svg" alt="Bild eines Plus Symbols" draggable="false">
                 </button>
               </div>
             </div>
-            <div class="branchArea">
-              <div class="definedBranches" style="flex-grow: 2;">
-                <div class="definedImageArea">
+            <div class="branchArea structCondition">
+              <div class="definedBranches structCondition" style="flex-grow: 2;">
+                <div class="definedImageArea structCondition">
                 </div>
-                <div class="definedCases">
-                  <div class="definedCase">
-                    <p class="editableText definedEdit" role="textbox" contenteditable spellcheck="false"
+                <div class="definedCases structCondition">
+                  <div class="definedCase structCondition">
+                    <p class="editableText definedEdit structCondition" role="textbox" contenteditable spellcheck="false"
                     placeholder="Case 1 ..."></p>
-                    <div class="definedTask">
-                      <p class="definedText">-</p>
+                    <div class="definedTask subfunctionCondition nassiSubfunction">
+                      <p class="definedText subfunctionCondition">-</p>
                     </div>
                   </div>
-                  <div class="definedCase">
-                    <p class="editableText definedEdit" role="textbox" contenteditable spellcheck="false"
+                  <div class="definedCase structCondition">
+                    <p class="editableText definedEdit structCondition" role="textbox" contenteditable spellcheck="false"
                     placeholder="Case 2 ..."></p>
-                    <div class="definedTask">
-                      <p class="definedText">-</p>
+                    <div class="definedTask subfunctionCondition nassiSubfunction">
+                      <p class="definedText subfunctionCondition">-</p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="defaultBranch">
-                <div class="defaultImageArea">
+              <div class="defaultBranch structCondition">
+                <div class="defaultImageArea structCondition">
                 </div>
-                <div class="defaultCases">
-                  <div class="defaultCase">
-                    <p class="editableText defaultEdit">Default</p>
-                    <div class="defaultTask">
-                      <p class="defaultText">-</p>
+                <div class="defaultCases structCondition">
+                  <div class="defaultCase structCondition">
+                    <p class="editableText defaultEdit structCondition">Default</p>
+                    <div class="defaultTask subfunctionCondition nassiSubfunction">
+                      <p class="defaultText subfunctionCondition">-</p>
                     </div>
                   </div>
                 </div>
@@ -215,50 +215,50 @@
           </div>
         </template>
         <template id="templateAdditionalBranch">
-          <div class="definedCase">
-            <p class="editableText definedEdit" role="textbox" contenteditable spellcheck="false"
+          <div class="definedCase structCondition">
+            <p class="editableText definedEdit structCondition" role="textbox" contenteditable spellcheck="false"
             placeholder=""></p>
-            <div class="definedTask">
-              <p class="definedText">-</p>
+            <div class="definedTask subfunctionCondition nassiSubfunction">
+              <p class="definedText subfunctionCondition">-</p>
             </div>
           </div>
         </template>
         <template id="templateHeadcontrolled">
           <div class="nassiHeadcontrolled nassiStruct">
-            <div class="textArea">
-              <div class="blockLoop"></div>
-              <p class="editableText" role="textbox" contenteditable spellcheck="false"
+            <div class="textArea structCondition">
+              <div class="blockLoop structCondition"></div>
+              <p class="editableText structCondition" role="textbox" contenteditable spellcheck="false"
               placeholder="Bedingung eingeben..."></p>
-              <div class="structButtons">
-                <button class="removeButton">
-                  <img class="removeIcon" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
+              <div class="structButtons structCondition">
+                <button class="removeButton structCondition">
+                  <img class="removeIcon structCondition" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
                 </button>
               </div>
             </div>
-            <div class="loopArea">
-              <div class="blockLoop"></div>
-              <div class="loopText">
-                <p class="editableText">-</p>
+            <div class="loopArea structCondition">
+              <div class="blockLoop structCondition"></div>
+              <div class="loopText subfunctionCondition nassiSubfunction">
+                <p class="editableText subfunctionCondition">-</p>
               </div>
             </div>
           </div>
         </template>
         <template id="templateFootcontrolled">
           <div class="nassiFootcontrolled nassiStruct">
-            <div class="loopArea">
-              <div class="blockLoop"></div>
-              <div class="loopText">
-                <p class="editableText">-</p>
+            <div class="loopArea structCondition">
+              <div class="blockLoop structCondition"></div>
+              <div class="loopText subfunctionCondition nassiSubfunction">
+                <p class="editableText subfunctionCondition">-</p>
               </div>
-              <div class="structButtons">
-                <button class="removeButton">
-                  <img class="removeIcon" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
+              <div class="structButtons structCondition">
+                <button class="removeButton structCondition">
+                  <img class="removeIcon structCondition" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
                 </button>
               </div>
             </div>
-            <div class="textArea">
-              <div class="blockLoop"></div>
-              <p class="editableText" role="textbox" contenteditable spellcheck="false"
+            <div class="textArea structCondition">
+              <div class="blockLoop structCondition"></div>
+              <p class="editableText structCondition" role="textbox" contenteditable spellcheck="false"
               placeholder="Bedingung eingeben..."></p>
             </div>
           </div>
