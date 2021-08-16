@@ -317,7 +317,7 @@
       NameError fixen (nur bei aktivem Diagramm anzeigen) ----- -<COMPLETED>-
       Drag & Drop
        - on Drag Event fertigstellen -------------------------- -<COMPLETED>-
-       - dragOver event fertigstellen
+       - dragOver event fertigstellen ------------------------- -<COMPLETED>-
        - ...
       Verschachtelung
        - in Verzweigung einfügen können

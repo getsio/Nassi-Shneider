@@ -32,7 +32,7 @@ document.getElementById('mainDiagram').addEventListener('dragenter', function(ev
 
 //Die Funktion wird beim "draggen" aufgerufen und speichert die id des Objektes
 function drag(ev){
-    ev.dataTransfer.setData("text", ev.target.id);
+    ev.dataTransfer.setData('text', ev.target.id);
 }
 
 //Die Funktion sorgt dafür, dass in dem Bereich "gedroppt" werden darf
@@ -43,6 +43,8 @@ function allowDrop(ev){
 //Die Funktion wird aufgerufen, sobald man mit einem "gedraggten" Objekt ein für "drops" valides Feld betritt
 function dragEnter(ev){
     resetBackground();
+    //resetBackground();
+    //resetBackground();
     activateReadOnly();
 
     var targetStruct = ev.target;
@@ -57,6 +59,14 @@ function dragEnter(ev){
         }
     }
 
+    if(targetStruct.classList.contains('nassiMultiplebranch')){
+        var subfunctionArea = targetStruct.getElementsByClassName('nassiSubfunction');
+
+        for(var i = 0; i < subfunctionArea.length; i++){
+            subfunctionArea[i].classList.add('draggedOver');
+        }
+    }
+
     if(targetStruct.classList.value.includes('nassi')){
         targetStruct.classList.add('draggedOver');
     }else if(targetStruct.classList.contains('diagramContainer')){
@@ -66,9 +76,9 @@ function dragEnter(ev){
 
 //Setzt den Hintergrund zurück
 function resetBackground(){
-    var bg = document.getElementsByClassName("draggedOver");
-    for(var i = 0; i < bg.length; i++){
-        bg[i].classList.remove("draggedOver");
+    var draggedOverElements = document.getElementsByClassName('draggedOver');
+    while(draggedOverElements.length > 0){
+        draggedOverElements[0].classList.remove('draggedOver');
     }
 }
 
