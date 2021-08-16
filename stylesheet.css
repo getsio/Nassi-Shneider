@@ -518,6 +518,10 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
     cursor: text;
 }
 
+.draggedOver{
+    background-color: #d7ecf7;
+}
+
 @media print{
     html, body{
         height: auto;

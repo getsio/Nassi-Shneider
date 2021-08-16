@@ -99,7 +99,7 @@
         </div>
         <!--- -------------------- Templatearea -------------------- -->
         <template id="templateAction">
-          <div class="nassiAction">
+          <div class="nassiAction nassiStruct">
             <p class="editableText" role="textbox" contenteditable spellcheck="false"
             placeholder="Aktion eingeben..."></p>
             <div class="structButtons">
@@ -110,7 +110,7 @@
           </div>
         </template>
         <template id="templateFunction">
-          <div class="nassiFunction">
+          <div class="nassiFunction nassiStruct">
             <div class="blackLineVerticalLeft"></div>
             <p class="editableText" role="textbox" contenteditable spellcheck="false"
             placeholder="Funktionsnamen eingeben..."></p>
@@ -123,7 +123,7 @@
           </div>
         </template>
         <template id="templateBranch">
-          <div class="nassiBranch">
+          <div class="nassiBranch nassiStruct">
             <div class="textArea">
               <p class="editableText" role="textbox" contenteditable spellcheck="false"
               placeholder="Bedingung eingeben..."></p>
@@ -162,7 +162,7 @@
           </div>
         </template>
         <template id="templateMultiplebranch">
-          <div class="nassiMultiplebranch">
+          <div class="nassiMultiplebranch nassiStruct">
             <div class="textArea">
               <p class="editableText" role="textbox" contenteditable spellcheck="false"
               placeholder="Bedingung eingeben..."></p>
@@ -224,7 +224,7 @@
           </div>
         </template>
         <template id="templateHeadcontrolled">
-          <div class="nassiHeadcontrolled">
+          <div class="nassiHeadcontrolled nassiStruct">
             <div class="textArea">
               <div class="blockLoop"></div>
               <p class="editableText" role="textbox" contenteditable spellcheck="false"
@@ -244,7 +244,7 @@
           </div>
         </template>
         <template id="templateFootcontrolled">
-          <div class="nassiFootcontrolled">
+          <div class="nassiFootcontrolled nassiStruct">
             <div class="loopArea">
               <div class="blockLoop"></div>
               <div class="loopText">
@@ -297,6 +297,7 @@
     <script src="js/options.js"></script>
     <script src="js/struct.js"></script>
     <script src="js/diagram.js"></script>
+    <script src="js/drag.js"></script>
     <!--
       /* -------------------- Todo Bereich --------------------
       Aktion fertigstellen ------------------------------------ -<COMPLETED>-
@@ -315,8 +316,8 @@
        - Bereits belegte IDs filtern -------------------------- -<COMPLETED>-
       NameError fixen (nur bei aktivem Diagramm anzeigen) ----- -<COMPLETED>-
       Drag & Drop
-       - ...
-       - ...
+       - on Drag Event fertigstellen -------------------------- -<COMPLETED>-
+       - dragOver event fertigstellen
        - ...
       Verschachtelung
        - in Verzweigung einfügen können

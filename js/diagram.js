@@ -16,15 +16,15 @@ mainHeader.addEventListener('keydown', function(event){
 });
 
 diagramSelectTopBar.addEventListener('click', function() {
-    showDiagram(diagramSelectTopBar.value);
+    showDiagram(diagramSelectTopBar.value, diagramSelect);
 });
 
 diagramSelect.addEventListener('click', function() {
-    showDiagram(diagramSelect.value);
+    showDiagram(diagramSelect.value, diagramSelectTopBar);
 });
 
 // --- Funktion wird aufgerufen, wenn ein anderes Diagramm selektiert wird und zeigt dieses an
-function showDiagram(diagramName){
+function showDiagram(diagramName, select){
     var activeDiagram = document.getElementsByClassName('activeDiagram')[0];
     var newActiveDiagram = document.getElementById(diagramName);
     var errors = document.getElementsByClassName('nameError');
@@ -39,6 +39,12 @@ function showDiagram(diagramName){
 
     for(var i = 0; i < errors.length; i++){
         errors[i].classList.add('hide');
+    }
+
+    for(var i = 0; i < select.length; i++){
+        if(select.options[i].value == diagramName){
+            select.options[i].selected = true;
+        }
     }
 }
 
@@ -152,9 +158,10 @@ function createNewDiagram(el){
     newDiagram.children[0].id = el.innerText;
     newDiagram.children[0].children[1].children[0].innerText = el.innerText;
     diagramPanel.appendChild(newDiagram);
+    newDiagram = diagramPanel.lastElementChild;
 
-    var closeErrorButton = diagramPanel.lastElementChild.firstElementChild.lastElementChild;
-    var functionHeader = diagramPanel.lastElementChild.lastElementChild.firstElementChild;
+    var closeErrorButton = newDiagram.firstElementChild.lastElementChild;
+    var functionHeader = newDiagram.lastElementChild.firstElementChild;
 
     closeErrorButton.addEventListener('click', function(){
         closeErrorButton.parentElement.classList.add('hide');
@@ -170,6 +177,14 @@ function createNewDiagram(el){
 
     functionHeader.addEventListener('keydown', function(event){
         keyInput(event, functionHeader);
+    });
+
+    newDiagram.addEventListener('dragover', function(event){
+        allowDrop(event);
+    });
+    
+    newDiagram.addEventListener('dragenter', function(event){
+        dragEnter(event);
     });
 
     functionHeader.nameBefore = '';
