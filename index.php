@@ -146,7 +146,7 @@
        - in Kopfgesteuerter Schleife einfügen können ---------- -<COMPLETED>-
        - in Fußgesteuerter Schleife einfügen können ----------- -<COMPLETED>-
       Druckansicht mit allen Unterfunktionen fertigstellen ---- -<COMPLETED>-
-      Download des Diagramms
+      Download des Diagramms ---------------------------------- -<COMPLETED>-
       Upload des Diagramms
        - Auswahlfeld zwischen Upload und Auswahl aus DB
        - Dateiupload fertigstellt

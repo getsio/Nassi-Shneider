@@ -31,7 +31,7 @@ document.getElementById('uploadButton').addEventListener('click', function() {
 });
 
 document.getElementById('downloadButton').addEventListener('click', function() {
-    console.log('Download');
+    download();
 });
 
 document.getElementById('saveButton').addEventListener('click', function() {
@@ -118,5 +118,39 @@ function removeAll(){
     while(diagramSelect.options.length > 1){
         diagramSelect.options[1].remove();
         diagramSelectTopBar.options[1].remove();
+    }
+}
+
+//Speichert das Diagramm in eine HTML Datei
+function download(){
+    var data = "";
+    var diagrams = document.getElementsByClassName("diagramContainer");
+    var heading = diagrams[0].children[1].firstElementChild.innerText;    
+
+    if(heading == "Main (klicken zum Bearbeiten)"){
+        heading = "unbenannt";
+    }
+
+    var type = "text/html";
+    var filename = heading + ".nash";
+
+    for(var i = 0; i < diagrams.length; i++){
+        data += diagrams[i].outerHTML;
+    }
+
+    var file = new Blob([data], {type: type});
+    if (window.navigator.msSaveOrOpenBlob) // IE10+
+        window.navigator.msSaveOrOpenBlob(file, filename);
+    else { // Others
+        var a = document.createElement("a"),
+        url = URL.createObjectURL(file);
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(function() {
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);  
+        }, 0); 
     }
 }
