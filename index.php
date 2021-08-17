@@ -50,9 +50,10 @@
           <button id="printButton" type="button" class="optionButtons">
             <img id="printIcon" class="optionIcons" src="svg/print-solid.svg" alt="Icon zum Drucken des Diagrammes" draggable="false">
           </button>
-          <button id="uploadButton" type="button" class="optionButtons">
+          <label for="uploadButton" id="uploadLabel" class="optionButtons">
             <img id="uploadIcon" class="optionIcons" src="svg/upload-solid.svg" alt="Icon zum Hochladen des Diagrammes" draggable="false">
-          </button>
+          </label>
+          <input type="file" id="uploadButton" accept=".nash">
           <button id="downloadButton" type="button" class="optionButtons">
             <img id="downloadIcon" class="optionIcons" src="svg/download-solid.svg" alt="Icon zum Herunterladen des Diagrammes" draggable="false">
           </button>
@@ -147,7 +148,7 @@
        - in Fußgesteuerter Schleife einfügen können ----------- -<COMPLETED>-
       Druckansicht mit allen Unterfunktionen fertigstellen ---- -<COMPLETED>-
       Download des Diagramms ---------------------------------- -<COMPLETED>-
-      Upload des Diagramms
+      Upload des Diagramms ------------------------------------ -<COMPLETED>-
        - Auswahlfeld zwischen Upload und Auswahl aus DB
        - Dateiupload fertigstellt
        - Datenkbankupload fertiggestellt

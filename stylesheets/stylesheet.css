@@ -51,6 +51,11 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
 }
 
 .menuButtons, .optionButtons{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
     background-color: inherit;
     outline: none;
     border: none;
@@ -58,6 +63,10 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
     height: 100%;
     padding: 0 0.8rem;
     transition: 0.1s;
+}
+
+input[type="file"]{
+    display: none;
 }
 
 .menuButtons{

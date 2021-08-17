@@ -15,16 +15,24 @@ mainHeader.addEventListener('keydown', function(event){
     keyInput(event, mainHeader);
 });
 
-diagramSelectTopBar.addEventListener('click', function() {
-    showDiagram(diagramSelectTopBar.value, diagramSelect);
+diagramSelectTopBar.addEventListener('click', function(){
+    showDiagram(diagramSelectTopBar.value);
 });
 
-diagramSelect.addEventListener('click', function() {
-    showDiagram(diagramSelect.value, diagramSelectTopBar);
+diagramSelectTopBar.addEventListener('change', function(){
+    changeSelect(diagramSelectTopBar.value, diagramSelect);
+});
+
+diagramSelect.addEventListener('click', function(){
+    showDiagram(diagramSelect.value);
+});
+
+diagramSelect.addEventListener('change', function(){
+    changeSelect(diagramSelect.value, diagramSelectTopBar);
 });
 
 // --- Funktion wird aufgerufen, wenn ein anderes Diagramm selektiert wird und zeigt dieses an
-function showDiagram(diagramName, select){
+function showDiagram(diagramName){
     var activeDiagram = document.getElementsByClassName('activeDiagram')[0];
     var newActiveDiagram = document.getElementById(diagramName);
     var errors = document.getElementsByClassName('nameError');
@@ -40,7 +48,10 @@ function showDiagram(diagramName, select){
     for(var i = 0; i < errors.length; i++){
         errors[i].classList.add('hide');
     }
+}
 
+// --- Wechselt beim mitgegebenen Select die ausgewählte Option
+function changeSelect(diagramName, select){
     for(var i = 0; i < select.length; i++){
         if(select.options[i].value == diagramName){
             select.options[i].selected = true;
@@ -73,12 +84,15 @@ function keyInput(ev, el){
 function finishEditMainHeader(el){
     if(el.innerText === ''){
         el.innerText = 'Main (klicken zum Bearbeiten)';
+    }else{
+        diagramSelect.options[0].text = el.innerText + ' (Main)';
+        diagramSelectTopBar.options[0].text = el.innerText + ' (Main)';
     }
 }
 
 // --- Funktion wird aufgerufen beim bestätigen eines neuen Unterdiagrammheaders
 function finishEditHeader(el, functionStruct){
-    var nameError = document.getElementsByClassName("activeError")[0];
+    var nameError = document.getElementsByClassName('activeError')[0];
     var checkId = document.getElementById(el.innerText);
     var blacklistedIds = Array.prototype.map.call(document.querySelectorAll('[id]'), function(el, i){
         return el.id;
@@ -98,7 +112,7 @@ function finishEditHeader(el, functionStruct){
 
 // --- Funktion wird aufgerufen beim bestätigen eines neuen Funktionsnamens
 function finishEditFunctionName(el){
-    var nameError = document.getElementsByClassName("activeError")[0];
+    var nameError = document.getElementsByClassName('activeError')[0];
     var checkId = document.getElementById(el.innerText);
     var blacklistedIds = Array.prototype.map.call(document.querySelectorAll('[id]'), function(el, i){
         return el.id;

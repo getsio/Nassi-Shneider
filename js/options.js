@@ -26,8 +26,8 @@ document.getElementById('printButton').addEventListener('click', function() {
     window.print();
 });
 
-document.getElementById('uploadButton').addEventListener('click', function() {
-    upload();
+document.getElementById('uploadButton').addEventListener('change', function(event) {
+    upload(event, document.getElementById('uploadButton'));
 });
 
 document.getElementById('downloadButton').addEventListener('click', function() {
@@ -53,7 +53,7 @@ function toggleEdit(){
     var spectateSeparator = document.getElementById('spectateSeparator');
 
     if(editMode){
-        editIcon.src = "svg/lock-solid.svg";
+        editIcon.src = 'svg/lock-solid.svg';
         dragPanel.classList.add('hide');
         spectateBar.classList.remove('hide');
         bottomContainer.classList.add('spectateMode');
@@ -71,7 +71,7 @@ function toggleEdit(){
 
         editMode = false;
     }else{
-        editIcon.src = "svg/unlock-solid.svg";
+        editIcon.src = 'svg/unlock-solid.svg';
         dragPanel.classList.remove('hide');
         spectateBar.classList.add('hide');
         bottomContainer.classList.remove('spectateMode');
@@ -94,10 +94,10 @@ function toggleEdit(){
 // --- Funktion wird aufgerufen, wenn die Appendrichtung geändert wird
 function toggleDirection(){
     if(appendAfter){
-        directionIcon.src = "svg/not-angle-double-down-solid.svg";
+        directionIcon.src = 'svg/not-angle-double-down-solid.svg';
         appendAfter = false;
     }else{
-        directionIcon.src = "svg/angle-double-down-solid.svg";
+        directionIcon.src = 'svg/angle-double-down-solid.svg';
         appendAfter = true;
     }
 }
@@ -123,16 +123,16 @@ function removeAll(){
 
 //Speichert das Diagramm in eine HTML Datei
 function download(){
-    var data = "";
-    var diagrams = document.getElementsByClassName("diagramContainer");
+    var data = '';
+    var diagrams = document.getElementsByClassName('diagramContainer');
     var heading = diagrams[0].children[1].firstElementChild.innerText;    
 
-    if(heading == "Main (klicken zum Bearbeiten)"){
-        heading = "unbenannt";
+    if(heading == 'Main (klicken zum Bearbeiten)'){
+        heading = 'unbenannt';
     }
 
-    var type = "text/html";
-    var filename = heading + ".nash";
+    var type = 'text/html';
+    var filename = heading + '.nash';
 
     for(var i = 0; i < diagrams.length; i++){
         data += diagrams[i].outerHTML;
@@ -142,7 +142,7 @@ function download(){
     if (window.navigator.msSaveOrOpenBlob) // IE10+
         window.navigator.msSaveOrOpenBlob(file, filename);
     else { // Others
-        var a = document.createElement("a"),
+        var a = document.createElement('a'),
         url = URL.createObjectURL(file);
         a.href = url;
         a.download = filename;
@@ -156,55 +156,57 @@ function download(){
 }
 
 //Die Funktion ermöglicht das Laden des gespeicherten Diagramms
-function uploadDiagram(ev, element){
-    var file = ev.target.files[0];        
+function upload(ev, element){
+    var file = ev.target.files[0];
     var fileReader = new FileReader();
 
     fileReader.readAsText(file);
     fileReader.onload = function(evt){
-        var newNode = document.createElement("node");
-        var allDiagrams = document.getElementsByClassName("saveDiagram");
-        var diaSelect = document.getElementById("diagramSelect");
+        var newNode = document.createElement('node');
+        var diagrams = document.getElementsByClassName('diagramContainer');
+        var diagramPanel = document.getElementById('diagramPanel');
 
-        //Löscht alle "Diagramme"
-        while(document.body.childElementCount > 4){
-            document.body.children[document.body.childElementCount-2].remove();
+        removeAll();
+        while(diagramPanel.childElementCount > 0){
+            diagramPanel.children[0].remove();
         }
+
         //Fügt die geladenen Diagramme ein
-        document.body.insertBefore(newNode, document.body.children[document.body.childElementCount-1])
+        diagramPanel.appendChild(newNode);
         newNode.outerHTML = evt.target.result;
 
         //Löscht alle Dropdown-Elemente, bis auf das erste
-        while(diaSelect.options.length > 1){
-            diaSelect.options[1].remove();
+        while(diagramSelect.options.length > 1){
+            diagramSelect.options[1].remove();
+            diagramSelectTopBar.options[1].remove();
         }
 
         //Setzt den Text vom ersten Dropdown-Punkt zurück
-        var heading = allDiagrams[0].children[0].children[0].children[0].innerText;
+        var heading = diagrams[0].children[1].firstElementChild.innerText;
 
-        if(heading == "Überschrift (anklicken zum Editieren)"){
-            heading = "Hauptprogramm";
+        if(heading == 'Main (klicken zum Bearbeiten)'){
+            heading = 'Main';
         }else{
-            heading += " (Main)";
+            heading += ' (Main)';
         }
-        diaSelect.options[0].innerText = heading;
+
+        diagramSelect.options[0].innerText = heading;
+        diagramSelectTopBar.options[0].innerText = heading;
 
         //diagramBefore Attribut wird mit dem Standarddiagramm belegt, Dropdown-Punkte werden dem Dropdown-Menü hinzugefügt
-        for(var i = 1; i < allDiagrams.length; i++){
-            allDiagrams[i].diagramBefore = allDiagrams[0];
-            var newOption = new Option(allDiagrams[i].id, allDiagrams[i].id);
-            diaSelect.add(newOption, undefined);
+        for(var i = 1; i < diagrams.length; i++){
+            var newOptionOne = new Option(diagrams[i].id, diagrams[i].id);
+            var newOptionTwo = new Option(diagrams[i].id, diagrams[i].id);
+            diagramSelect.add(newOptionOne);
+            diagramSelectTopBar.add(newOptionTwo);
         }
 
         //Wählt in dem Dropdown-Menü das aktive Diagramm aus
-        for(var i = 1; i < diaSelect.length; i++){
-            if(diaSelect.options[i].value == document.getElementsByClassName("activeDiagram")[0].id){
-                diaSelect.options[i].selected = true;
+        for(var i = 1; i < diagramSelect.length; i++){
+            if(diagramSelect.options[i].value == document.getElementsByClassName('activeDiagram')[0].id){
+                diagramSelect.options[i].selected = true;
+                diagramSelectTopBar.options[i].selected = true;
             }
         }
-
-        removeAllEvents();
-        addAllEvents();
-        resizeDiagram(0);
     }
 }
