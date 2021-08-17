@@ -77,44 +77,7 @@ function drop(ev){
 
     ev.preventDefault();
     var templateName = ev.dataTransfer.getData('templateName');
-    var executingFunction = getAppendFunction(templateName, targetStruct);
-
-    if(typeof executingFunction === 'function'){
-        executingFunction(targetStruct);
-    }
-}
-
-// --- Liefert je nach ausgewähltem Template die zu benutzende Funktion
-function getAppendFunction(templateName, targetStruct = null){
-    switch(templateName){
-        case 'templateAction':
-            return function(){
-                appendStructAction(targetStruct);
-            }
-        case 'templateFunction':
-            return function(){
-                appendStructFunction(targetStruct);
-            }
-        case 'templateBranch':
-            return function(){
-                appendStructBranch(targetStruct);
-            }
-        case 'templateMultiplebranch':
-            return function(){
-                appendStructMultiplebranch(targetStruct);
-            }
-        case 'templateHeadcontrolled':
-            return function(){
-                appendStructHeadcontrolled(targetStruct);
-            }
-        case 'templateFootcontrolled':
-            return function(){
-                appendStructFootcontrolled(targetStruct);
-            }
-        default:
-            console.log('nicht richtig');
-            break;
-    }
+    appendStruct(templateName, targetStruct);
 }
 
 // --- Liefert das anvisierte Ziel

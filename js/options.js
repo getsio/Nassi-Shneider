@@ -27,7 +27,7 @@ document.getElementById('printButton').addEventListener('click', function() {
 });
 
 document.getElementById('uploadButton').addEventListener('change', function(event) {
-    upload(event, document.getElementById('uploadButton'));
+    upload(event);
 });
 
 document.getElementById('downloadButton').addEventListener('click', function() {
@@ -121,7 +121,7 @@ function removeAll(){
     }
 }
 
-//Speichert das Diagramm in eine HTML Datei
+// --- Speichert das Diagramm in eine HTML Datei
 function download(){
     var data = '';
     var diagrams = document.getElementsByClassName('diagramContainer');
@@ -156,7 +156,7 @@ function download(){
 }
 
 //Die Funktion ermöglicht das Laden des gespeicherten Diagramms
-function upload(ev, element){
+function upload(ev){
     var file = ev.target.files[0];
     var fileReader = new FileReader();
 
@@ -166,7 +166,6 @@ function upload(ev, element){
         var diagrams = document.getElementsByClassName('diagramContainer');
         var diagramPanel = document.getElementById('diagramPanel');
 
-        removeAll();
         while(diagramPanel.childElementCount > 0){
             diagramPanel.children[0].remove();
         }
@@ -208,5 +207,40 @@ function upload(ev, element){
                 diagramSelectTopBar.options[i].selected = true;
             }
         }
+        addStructEvents();
+    }
+}
+
+// --- Fügt den Strukturen alle nötigen Events hinzu
+function addStructEvents(){
+    var actions = document.getElementsByClassName('nassiAction');
+    var functions = document.getElementsByClassName('nassiFunction');
+    var branches = document.getElementsByClassName('nassiBranch');
+    var multipleBranches = document.getElementsByClassName('nassiMultiplebranch');
+    var headcontrolled = document.getElementsByClassName('nassiHeadcontrolled');
+    var footcontrolled = document.getElementsByClassName('nassiFootcontrolled');
+
+    for(var i = 0; i < actions.length; i++){
+        addActionEvents(actions[i]);
+    }
+
+    for(var i = 0; i < functions.length; i++){
+        addFunctionEvents(functions[i]);
+    }
+
+    for(var i = 0; i < branches.length; i++){
+        addBranchEvents(branches[i]);
+    }
+
+    for(var i = 0; i < multipleBranches.length; i++){
+        addMultiplebranchEvents(multipleBranches[i]);
+    }
+
+    for(var i = 0; i < headcontrolled.length; i++){
+        addHeadcontrolledEvents(headcontrolled[i]);
+    }
+
+    for(var i = 0; i < footcontrolled.length; i++){
+        addFootcontrolledEvents(footcontrolled[i]);
     }
 }

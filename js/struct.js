@@ -1,35 +1,95 @@
 document.getElementById('appendAction').addEventListener('click', function() {
-    appendStructAction();
+    appendStruct('templateAction');
 });
 
 document.getElementById('appendFunction').addEventListener('click', function() {
-    appendStructFunction();
+    appendStruct('templateFunction');
 });
 
 document.getElementById('appendBranch').addEventListener('click', function() {
-    appendStructBranch();
+    appendStruct('templateBranch');
 });
 
 document.getElementById('appendMultiplebranch').addEventListener('click', function() {
-    appendStructMultiplebranch();
+    appendStruct('templateMultiplebranch');
 });
 
 document.getElementById('appendHeadcontrolled').addEventListener('click', function() {
-    appendStructHeadcontrolled();
+    appendStruct('templateHeadcontrolled');
 });
 
 document.getElementById('appendFootcontrolled').addEventListener('click', function() {
-    appendStructFootcontrolled();
+    appendStruct('templateFootcontrolled');
 });
 
-// --- Fügt dem aktiven Diagramm eine Aktion hinzu
-function appendStructAction(targetStruct = null){
-    var structure = templates.content.getElementById('templateAction');
+// --- Fügt dem Diagramm, abhängig von dem Target, die neue Struktur hinzu
+function appendStruct(templateName, targetStruct = null){
     var diagram = document.getElementsByClassName('activeDiagram')[0];
+    var structure = templates.content.getElementById(templateName);
     var newStructure = structure.content.cloneNode(true).firstElementChild;
 
-    var textArea = newStructure.firstElementChild;
-    var removeButton = newStructure.lastElementChild.firstElementChild;
+    switch(templateName){
+        case 'templateAction':
+            addActionEvents(newStructure);
+            break;
+        case 'templateFunction':
+            newStructure.children[1].nameBefore = '';
+            addFunctionEvents(newStructure);
+            break;
+        case 'templateBranch':
+            var branchArea = newStructure.children[1];
+
+            branchArea.children[0].children[1].defaultInnerHtml = branchArea.children[0].children[1].innerHTML;
+            branchArea.children[1].children[1].defaultInnerHtml = branchArea.children[1].children[1].innerHTML;
+            addBranchEvents(newStructure);
+
+            break;
+        case 'templateMultiplebranch':
+            var caseArea = newStructure.lastElementChild.firstElementChild.lastElementChild;
+            var defaultCaseArea = newStructure.lastElementChild.lastElementChild;
+            var defaultCaseContainer = defaultCaseArea.children[1].children[0].children[1];
+        
+            for(var i = 0; i < caseArea.childElementCount; i++){
+                caseArea.children[i].children[1].defaultInnerHtml = caseArea.children[i].children[1].innerHTML;
+            }
+            defaultCaseContainer.defaultInnerHtml = defaultCaseContainer.innerHTML;
+        
+            addMultiplebranchEvents(newStructure);
+            break;
+        case 'templateHeadcontrolled':
+            var innerloop = newStructure.children[1].children[1];
+            innerloop.defaultInnerHtml = innerloop.innerHTML;
+        
+            addHeadcontrolledEvents(newStructure);
+            break;
+        case 'templateFootcontrolled':
+            var innerloop = newStructure.children[0].children[1];
+            innerloop.defaultInnerHtml = innerloop.innerHTML;
+        
+            addFootcontrolledEvents(newStructure);
+            break;
+        default:
+            break;
+    }
+
+    if(targetStruct == null || targetStruct.classList.contains('diagramContainer')){
+        diagram.appendChild(newStructure);
+    }else if(targetStruct.classList.contains('nassiSubfunction')){
+        targetStruct.innerHTML = '';
+        targetStruct.appendChild(newStructure);
+    }else if(targetStruct.classList.contains('nassiStruct')){
+        if(appendAfter){
+            targetStruct.after(newStructure);
+        }else{
+            targetStruct.before(newStructure);
+        }
+    }
+}
+
+// --- Fügt der Aktion die Events zu
+function addActionEvents(struct){
+    var textArea = struct.firstElementChild;
+    var removeButton = struct.lastElementChild.firstElementChild;
     
     textArea.addEventListener('keydown', function(event){
         keyInput(event, textArea);
@@ -38,19 +98,12 @@ function appendStructAction(targetStruct = null){
     removeButton.addEventListener('click', function(){
         removeStructure(removeButton);
     });
-
-    appendStruct(diagram, newStructure, targetStruct);
 }
 
-// --- Fügt dem aktiven Diagramm eine Funktion hinzu
-function appendStructFunction(targetStruct = null){
-    var structure = templates.content.getElementById('templateFunction');
-    var diagram = document.getElementsByClassName('activeDiagram')[0];
-    var newStructure = structure.content.cloneNode(true).firstElementChild;
-    newStructure.children[1].nameBefore = '';
-
-    var textArea = newStructure.children[1];
-    var removeButton = newStructure.lastElementChild.firstElementChild;
+// --- Fügt der Funktion die Events zu
+function addFunctionEvents(struct){
+    var textArea = struct.children[1];
+    var removeButton = struct.lastElementChild.firstElementChild;
 
     textArea.addEventListener('click', function(){
         editFunctionName(textArea);
@@ -67,19 +120,12 @@ function appendStructFunction(targetStruct = null){
     removeButton.addEventListener('click', function(){
         removeStructure(removeButton);
     });
-
-    appendStruct(diagram, newStructure, targetStruct);
 }
 
-// --- Fügt dem aktiven Diagramm eine Verzweigung hinzu
-function appendStructBranch(targetStruct = null){
-    var structure = templates.content.getElementById('templateBranch');
-    var diagram = document.getElementsByClassName('activeDiagram')[0];
-    var newStructure = structure.content.cloneNode(true).firstElementChild;
-
-    var textArea = newStructure.firstElementChild.firstElementChild;
-    var removeButton = newStructure.firstElementChild.lastElementChild.firstElementChild;
-    var branchArea = newStructure.children[1];
+// --- Fügt der Verzweigung die Events zu
+function addBranchEvents(struct){
+    var textArea = struct.firstElementChild.firstElementChild;
+    var removeButton = struct.firstElementChild.lastElementChild.firstElementChild;
 
     textArea.addEventListener('keydown', function(event){
         keyInput(event, textArea);
@@ -88,30 +134,17 @@ function appendStructBranch(targetStruct = null){
     removeButton.addEventListener('click', function(){
         removeStructure(removeButton);
     });
-
-    branchArea.children[0].children[1].defaultInnerHtml = branchArea.children[0].children[1].innerHTML;
-    branchArea.children[1].children[1].defaultInnerHtml = branchArea.children[1].children[1].innerHTML;
-
-    appendStruct(diagram, newStructure, targetStruct);
 }
 
-// --- Fügt dem aktiven Diagramm eine Mehrfachverzweigung hinzu
-function appendStructMultiplebranch(targetStruct = null){
-    var structure = templates.content.getElementById('templateMultiplebranch');
-    var diagram = document.getElementsByClassName('activeDiagram')[0];
-    var newStructure = structure.content.cloneNode(true).firstElementChild;
-
-    var textArea = newStructure.firstElementChild.firstElementChild;
-    var removeButton = newStructure.firstElementChild.lastElementChild.firstElementChild;
-    var removeBranchButton = newStructure.firstElementChild.lastElementChild.children[1];
-    var addBranchButton = newStructure.firstElementChild.lastElementChild.lastElementChild;
-
-    var caseArea = newStructure.lastElementChild.firstElementChild.lastElementChild;
+// --- Fügt der Mehrfachverzweigung die Events zu
+function addMultiplebranchEvents(struct){
+    var textArea = struct.firstElementChild.firstElementChild;
+    var removeButton = struct.firstElementChild.lastElementChild.firstElementChild;
+    var removeBranchButton = struct.firstElementChild.lastElementChild.children[1];
+    var addBranchButton = struct.firstElementChild.lastElementChild.lastElementChild;
+    var caseArea = struct.lastElementChild.firstElementChild.lastElementChild;
     var caseOneText = caseArea.firstElementChild.firstElementChild;
     var caseTwoText = caseArea.lastElementChild.firstElementChild;
-
-    var defaultCaseArea = newStructure.lastElementChild.lastElementChild;
-    var defaultCaseContainer = defaultCaseArea.children[1].children[0].children[1];
 
     textArea.addEventListener('keydown', function(event){
         keyInput(event, textArea);
@@ -136,25 +169,12 @@ function appendStructMultiplebranch(targetStruct = null){
     caseTwoText.addEventListener('keydown', function(event){
         keyInput(event, caseTwoText);
     });
-
-    for(var i = 0; i < caseArea.childElementCount; i++){
-        caseArea.children[i].children[1].defaultInnerHtml = caseArea.children[i].children[1].innerHTML;
-    }
-
-    defaultCaseContainer.defaultInnerHtml = defaultCaseContainer.innerHTML;
-    appendStruct(diagram, newStructure, targetStruct);
 }
 
-// --- Fügt dem aktiven Diagramm eine kopfgesteuerte Schleife hinzu
-function appendStructHeadcontrolled(targetStruct = null){
-    var structure = templates.content.getElementById('templateHeadcontrolled');
-    var diagram = document.getElementsByClassName('activeDiagram')[0];
-    var newStructure = structure.content.cloneNode(true).firstElementChild;
-
-    var textArea = newStructure.firstElementChild.children[1];
-    var removeButton = newStructure.firstElementChild.children[2].firstElementChild;
-
-    var innerloop = newStructure.children[1].children[1];
+// --- Fügt der kopfgesteuerten Schleife die Events zu
+function addHeadcontrolledEvents(struct){
+    var textArea = struct.firstElementChild.children[1];
+    var removeButton = struct.firstElementChild.children[2].firstElementChild;
 
     textArea.addEventListener('keydown', function(event){
         keyInput(event, textArea);
@@ -163,21 +183,13 @@ function appendStructHeadcontrolled(targetStruct = null){
     removeButton.addEventListener('click', function(){
         removeStructure(removeButton);
     });
-
-    innerloop.defaultInnerHtml = innerloop.innerHTML;
-    appendStruct(diagram, newStructure, targetStruct);
 }
 
-// --- Fügt dem aktiven Diagramm eine fußgesteuerte Schleife hinzu
-function appendStructFootcontrolled(targetStruct = null){
-    var structure = templates.content.getElementById('templateFootcontrolled');
-    var diagram = document.getElementsByClassName('activeDiagram')[0];
-    var newStructure = structure.content.cloneNode(true).firstElementChild;
+// --- Fügt der fußgesteuerten Schleife die Events zu
+function addFootcontrolledEvents(struct){
+    var textArea = struct.lastElementChild.children[1];
+    var removeButton = struct.firstElementChild.children[2].firstElementChild;
 
-    var textArea = newStructure.lastElementChild.lastElementChild;
-    var removeButton = newStructure.firstElementChild.lastElementChild.firstElementChild;
-
-    var innerloop = newStructure.children[0].children[1];
 
     textArea.addEventListener('keydown', function(event){
         keyInput(event, textArea);
@@ -186,22 +198,4 @@ function appendStructFootcontrolled(targetStruct = null){
     removeButton.addEventListener('click', function(){
         removeStructure(removeButton);
     });
-
-    innerloop.defaultInnerHtml = innerloop.innerHTML;
-    appendStruct(diagram, newStructure, targetStruct);
-}
-
-function appendStruct(diagram, newStructure, targetStruct = null){
-    if(targetStruct == null || targetStruct.classList.contains('diagramContainer')){
-        diagram.appendChild(newStructure);
-    }else if(targetStruct.classList.contains('nassiSubfunction')){
-        targetStruct.innerHTML = '';
-        targetStruct.appendChild(newStructure);
-    }else if(targetStruct.classList.contains('nassiStruct')){
-        if(appendAfter){
-            targetStruct.after(newStructure);
-        }else{
-            targetStruct.before(newStructure);
-        }
-    }
 }
