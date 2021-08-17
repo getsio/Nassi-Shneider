@@ -153,8 +153,8 @@ function changeOldDiagram(el){
 
 // --- Funktion erstellt ein neues Diagramm
 function createNewDiagram(el){
-    var diagram = document.getElementById('templateDiagram');
-    var newDiagram = diagram.content.cloneNode(diagram).firstElementChild;
+    var diagram = templates.content.getElementById('templateDiagram');
+    var newDiagram = diagram.content.cloneNode(true).firstElementChild;
     newDiagram.id = el.innerText;
     newDiagram.children[1].children[0].innerText = el.innerText;
 
@@ -203,8 +203,8 @@ function addBranch(el){
     branchArea.style.flexGrow = cntBranches + 1;
     cntBranches++;
 
-    var structure = document.getElementById('templateAdditionalBranch');
-    var newBranch = structure.content.cloneNode(structure);
+    var structure = templates.content.getElementById('templateAdditionalBranch');
+    var newBranch = structure.content.cloneNode(true);
 
     appendArea.appendChild(newBranch);
     var textArea = appendArea.lastElementChild.firstElementChild;

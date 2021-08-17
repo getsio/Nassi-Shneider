@@ -24,7 +24,7 @@ document.getElementById('appendFootcontrolled').addEventListener('click', functi
 
 // --- Fügt dem aktiven Diagramm eine Aktion hinzu
 function appendStructAction(targetStruct = null){
-    var structure = document.getElementById('templateAction');
+    var structure = templates.content.getElementById('templateAction');
     var diagram = document.getElementsByClassName('activeDiagram')[0];
     var newStructure = structure.content.cloneNode(true).firstElementChild;
 
@@ -44,7 +44,7 @@ function appendStructAction(targetStruct = null){
 
 // --- Fügt dem aktiven Diagramm eine Funktion hinzu
 function appendStructFunction(targetStruct = null){
-    var structure = document.getElementById('templateFunction');
+    var structure = templates.content.getElementById('templateFunction');
     var diagram = document.getElementsByClassName('activeDiagram')[0];
     var newStructure = structure.content.cloneNode(true).firstElementChild;
     newStructure.children[1].nameBefore = '';
@@ -73,9 +73,9 @@ function appendStructFunction(targetStruct = null){
 
 // --- Fügt dem aktiven Diagramm eine Verzweigung hinzu
 function appendStructBranch(targetStruct = null){
-    var structure = document.getElementById('templateBranch');
+    var structure = templates.content.getElementById('templateBranch');
     var diagram = document.getElementsByClassName('activeDiagram')[0];
-    var newStructure = structure.content.cloneNode(structure).firstElementChild;
+    var newStructure = structure.content.cloneNode(true).firstElementChild;
 
     var textArea = newStructure.firstElementChild.firstElementChild;
     var removeButton = newStructure.firstElementChild.lastElementChild.firstElementChild;
@@ -97,9 +97,9 @@ function appendStructBranch(targetStruct = null){
 
 // --- Fügt dem aktiven Diagramm eine Mehrfachverzweigung hinzu
 function appendStructMultiplebranch(targetStruct = null){
-    var structure = document.getElementById('templateMultiplebranch');
+    var structure = templates.content.getElementById('templateMultiplebranch');
     var diagram = document.getElementsByClassName('activeDiagram')[0];
-    var newStructure = structure.content.cloneNode(structure).firstElementChild;
+    var newStructure = structure.content.cloneNode(true).firstElementChild;
 
     var textArea = newStructure.firstElementChild.firstElementChild;
     var removeButton = newStructure.firstElementChild.lastElementChild.firstElementChild;
@@ -147,9 +147,9 @@ function appendStructMultiplebranch(targetStruct = null){
 
 // --- Fügt dem aktiven Diagramm eine kopfgesteuerte Schleife hinzu
 function appendStructHeadcontrolled(targetStruct = null){
-    var structure = document.getElementById('templateHeadcontrolled');
+    var structure = templates.content.getElementById('templateHeadcontrolled');
     var diagram = document.getElementsByClassName('activeDiagram')[0];
-    var newStructure = structure.content.cloneNode(structure).firstElementChild;
+    var newStructure = structure.content.cloneNode(true).firstElementChild;
 
     var textArea = newStructure.firstElementChild.children[1];
     var removeButton = newStructure.firstElementChild.children[2].firstElementChild;
@@ -170,9 +170,9 @@ function appendStructHeadcontrolled(targetStruct = null){
 
 // --- Fügt dem aktiven Diagramm eine fußgesteuerte Schleife hinzu
 function appendStructFootcontrolled(targetStruct = null){
-    var structure = document.getElementById('templateFootcontrolled');
+    var structure = templates.content.getElementById('templateFootcontrolled');
     var diagram = document.getElementsByClassName('activeDiagram')[0];
-    var newStructure = structure.content.cloneNode(structure).firstElementChild;
+    var newStructure = structure.content.cloneNode(true).firstElementChild;
 
     var textArea = newStructure.lastElementChild.lastElementChild;
     var removeButton = newStructure.firstElementChild.lastElementChild.firstElementChild;

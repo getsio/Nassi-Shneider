@@ -1,0 +1,179 @@
+<template id="templateAction">
+    <div class="nassiAction nassiStruct">
+      <p class="editableText structCondition" role="textbox" contenteditable spellcheck="false"
+      placeholder="Aktion eingeben..."></p>
+      <div class="structButtons structCondition">
+        <button class="removeButton structCondition">
+          <img class="removeIcon structCondition" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
+        </button>
+      </div>
+    </div>
+  </template>
+  <template id="templateFunction">
+    <div class="nassiFunction nassiStruct">
+      <div class="blackLineVerticalLeft structCondition"></div>
+      <p class="editableText structCondition" role="textbox" contenteditable spellcheck="false"
+      placeholder="Funktionsnamen eingeben..."></p>
+      <div class="blackLineVerticalRight structCondition"></div>
+      <div class="structButtons structCondition">
+        <button class="removeButton structCondition">
+          <img class="removeIcon structCondition" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
+        </button>
+      </div>
+    </div>
+  </template>
+  <template id="templateBranch">
+    <div class="nassiBranch nassiStruct">
+      <div class="textArea structCondition">
+        <p class="editableText structCondition" role="textbox" contenteditable spellcheck="false"
+        placeholder="Bedingung eingeben..."></p>
+        <div class="structButtons structCondition">
+          <button class="removeButton structCondition">
+            <img class="removeIcon structCondition" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
+          </button>
+        </div>
+      </div>
+      <div class="branchArea structCondition">
+        <div class="trueBranch structCondition">
+          <div class="trueBranchImageArea structCondition">
+            <div class="emptySpace structCondition"></div>
+            <div class="emptySpace trueMark structCondition">
+              <div class="blockFlex structCondition"></div>
+              <p class="structCondition">true</p>
+            </div>
+          </div>
+          <div class="trueDefault subfunctionCondition nassiSubfunction">
+            <p class="trueText subfunctionCondition">-</p>
+          </div>
+        </div>
+        <div class="falseBranch structCondition">
+          <div class="falseBranchImageArea structCondition">
+            <div class="emptySpace structCondition"></div>
+            <div class="emptySpace falseMark structCondition">
+              <div class="blockFlex structCondition"></div>
+              <p class="structCondition">false</p>
+            </div>
+          </div>
+          <div class="falseDefault subfunctionCondition nassiSubfunction">
+            <p class="falseText subfunctionCondition">-</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+  <template id="templateMultiplebranch">
+    <div class="nassiMultiplebranch nassiStruct">
+      <div class="textArea structCondition">
+        <p class="editableText structCondition" role="textbox" contenteditable spellcheck="false"
+        placeholder="Bedingung eingeben..."></p>
+        <div class="structButtons structCondition">
+          <button class="removeButton structCondition">
+            <img class="removeIcon structCondition" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
+          </button>
+          <button class="removeBranchButton structCondition">
+            <img class="removeBranchIcon structCondition" src="svg/minus-solid.svg" alt="Bild eines Minus Symbols" draggable="false">
+          </button>
+          <button class="addBranchButton structCondition">
+            <img class="addBranchIcon structCondition" src="svg/plus-solid.svg" alt="Bild eines Plus Symbols" draggable="false">
+          </button>
+        </div>
+      </div>
+      <div class="branchArea structCondition">
+        <div class="definedBranches structCondition" style="flex-grow: 2;">
+          <div class="definedImageArea structCondition">
+          </div>
+          <div class="definedCases structCondition">
+            <div class="definedCase structCondition">
+              <p class="editableText definedEdit structCondition" role="textbox" contenteditable spellcheck="false"
+              placeholder="Case 1 ..."></p>
+              <div class="definedTask subfunctionCondition nassiSubfunction">
+                <p class="definedText subfunctionCondition">-</p>
+              </div>
+            </div>
+            <div class="definedCase structCondition">
+              <p class="editableText definedEdit structCondition" role="textbox" contenteditable spellcheck="false"
+              placeholder="Case 2 ..."></p>
+              <div class="definedTask subfunctionCondition nassiSubfunction">
+                <p class="definedText subfunctionCondition">-</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="defaultBranch structCondition">
+          <div class="defaultImageArea structCondition">
+          </div>
+          <div class="defaultCases structCondition">
+            <div class="defaultCase structCondition">
+              <p class="editableText defaultEdit structCondition">Default</p>
+              <div class="defaultTask subfunctionCondition nassiSubfunction">
+                <p class="defaultText subfunctionCondition">-</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+  <template id="templateAdditionalBranch">
+    <div class="definedCase structCondition">
+      <p class="editableText definedEdit structCondition" role="textbox" contenteditable spellcheck="false"
+      placeholder=""></p>
+      <div class="definedTask subfunctionCondition nassiSubfunction">
+        <p class="definedText subfunctionCondition">-</p>
+      </div>
+    </div>
+  </template>
+  <template id="templateHeadcontrolled">
+    <div class="nassiHeadcontrolled nassiStruct">
+      <div class="textArea structCondition">
+        <div class="blockLoop structCondition"></div>
+        <p class="editableText structCondition" role="textbox" contenteditable spellcheck="false"
+        placeholder="Bedingung eingeben..."></p>
+        <div class="structButtons structCondition">
+          <button class="removeButton structCondition">
+            <img class="removeIcon structCondition" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
+          </button>
+        </div>
+      </div>
+      <div class="loopArea structCondition">
+        <div class="blockLoop structCondition"></div>
+        <div class="loopText subfunctionCondition nassiSubfunction">
+          <p class="editableText subfunctionCondition">-</p>
+        </div>
+      </div>
+    </div>
+  </template>
+  <template id="templateFootcontrolled">
+    <div class="nassiFootcontrolled nassiStruct">
+      <div class="loopArea structCondition">
+        <div class="blockLoop structCondition"></div>
+        <div class="loopText subfunctionCondition nassiSubfunction">
+          <p class="editableText subfunctionCondition">-</p>
+        </div>
+        <div class="structButtons structCondition">
+          <button class="removeButton structCondition">
+            <img class="removeIcon structCondition" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
+          </button>
+        </div>
+      </div>
+      <div class="textArea structCondition">
+        <div class="blockLoop structCondition"></div>
+        <p class="editableText structCondition" role="textbox" contenteditable spellcheck="false"
+        placeholder="Bedingung eingeben..."></p>
+      </div>
+    </div>
+  </template>
+  <template id="templateDiagram">
+    <div class="diagramContainer">
+      <div class="nameError hide diagramDefaults">
+        <p class="diagramDefaults">Dieser Name ist bereits belegt. Bitte benutze einen anderen!</p>
+        <button class="removeError diagramDefaults">
+          <img class="removeIcon diagramDefaults" src="svg/times-solid_white.svg" alt="Bild eines x Symbols" draggable="false">
+        </button>
+      </div>
+      <div class="diagramHeader diagramDefaults">
+        <h2 class="editableText headerText diagramDefaults" role="textbox" contenteditable spellcheck="false" 
+        placeholder="Überschrift eingeben..."></h2>
+      </div>
+    </div>
+  </template>
