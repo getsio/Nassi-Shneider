@@ -29,8 +29,6 @@ function appendStructAction(){
     var newStructure = structure.content.cloneNode(structure);
     diagram.appendChild(newStructure);
 
-    console.log(newStructure);
-
     var textArea = diagram.lastElementChild.firstElementChild;
     var removeButton = diagram.lastElementChild.lastElementChild.firstElementChild;
 

@@ -265,14 +265,14 @@
         </template>
         <template id="templateDiagram">
           <div class="diagramContainer">
-            <div class="nameError hide">
-              <p>Dieser Name ist bereits belegt. Bitte benutze einen anderen!</p>
-              <button class="removeError">
-                <img class="removeIcon" src="svg/times-solid_white.svg" alt="Bild eines x Symbols" draggable="false">
+            <div class="nameError hide diagramDefaults">
+              <p class="diagramDefaults">Dieser Name ist bereits belegt. Bitte benutze einen anderen!</p>
+              <button class="removeError diagramDefaults">
+                <img class="removeIcon diagramDefaults" src="svg/times-solid_white.svg" alt="Bild eines x Symbols" draggable="false">
               </button>
             </div>
-            <div class="diagramHeader">
-              <h2 class="editableText headerText" role="textbox" contenteditable spellcheck="false" 
+            <div class="diagramHeader diagramDefaults">
+              <h2 class="editableText headerText diagramDefaults" role="textbox" contenteditable spellcheck="false" 
               placeholder="Überschrift eingeben..."></h2>
             </div>
           </div>
@@ -280,14 +280,14 @@
         <!--- -------------------- Diagramarea -------------------- -->
         <div id="diagramPanel">
           <div class="diagramContainer activeDiagram" id="mainDiagram">
-            <div class="nameError activeError hide">
-              <p>Dieser Name ist bereits belegt. Bitte benutze einen anderen!</p>
-              <button id="mainError" class="removeError">
-                <img class="removeIcon" src="svg/times-solid_white.svg" alt="Bild eines x Symbols" draggable="false">
+            <div class="nameError activeError hide diagramDefaults">
+              <p class="diagramDefaults">Dieser Name ist bereits belegt. Bitte benutze einen anderen!</p>
+              <button id="mainError" class="removeError diagramDefaults">
+                <img class="removeIcon diagramDefaults" src="svg/times-solid_white.svg" alt="Bild eines x Symbols" draggable="false">
               </button>
             </div>
-            <div class="diagramHeader">
-              <h2 id="mainHeader" class="editableText headerText" role="textbox" contenteditable spellcheck="false" 
+            <div class="diagramHeader diagramDefaults">
+              <h2 id="mainHeader" class="editableText headerText diagramDefaults" role="textbox" contenteditable spellcheck="false" 
               placeholder="Überschrift eingeben...">Main (klicken zum Bearbeiten)</h2>
             </div>
           </div>
