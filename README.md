@@ -72,16 +72,16 @@ In diesem Bereich werden alle bereits implementierten, kommende, sowie fehlerhaf
     - Umbenennung der Unterfunktion
     - entfernen
     - benutzte Namen filtern
-- Druckansicht
-
-### Kommende Features
-
 - Drag & Drop
 - Verschachtelung
     - Verzweigung
     - Mehrfachverzweigung
     - Kopfgesteuerte Schleife
     - Fußgesteuerte Schleife
+- Druckansicht
+
+### Kommende Features
+
 - Download
 - Upload
     - Auswahl zwischen Datei/DB
@@ -93,6 +93,7 @@ In diesem Bereich werden alle bereits implementierten, kommende, sowie fehlerhaf
 ### Bekannte Fehler
 
 - ~~Unterfunktion kann nicht vernünftig entfernt werden~~
+- ~~Falsches Struktur wird beim hinzufügen ausgewählt~~
 
 ## Autor
 
