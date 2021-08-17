@@ -30,34 +30,25 @@ document.getElementById('mainDiagram').addEventListener('dragenter', function(ev
     dragEnter(event);
 });
 
-//Die Funktion wird beim "draggen" aufgerufen und speichert die id des Objektes
+document.getElementById('mainDiagram').addEventListener('drop', function(event){
+    drop(event);
+});
+
+// --- Die Funktion wird beim "draggen" aufgerufen und speichert die id des Objektes
 function drag(ev){
     ev.dataTransfer.setData('text', ev.target.id);
 }
 
-//Die Funktion sorgt dafür, dass in dem Bereich "gedroppt" werden darf
+// --- Die Funktion sorgt dafür, dass in dem Bereich "gedroppt" werden darf
 function allowDrop(ev){
     ev.preventDefault();
 }
 
-//Die Funktion wird aufgerufen, sobald man mit einem "gedraggten" Objekt ein für "drops" valides Feld betritt
+// --- Die Funktion wird aufgerufen, sobald man mit einem "gedraggten" Objekt ein für "drops" valides Feld betritt
 function dragEnter(ev){
     resetBackground();
-    //resetBackground();
-    //resetBackground();
     activateReadOnly();
-
-    var targetStruct = ev.target;
-
-    if(ev.target.classList.contains('structCondition')){
-        while(!targetStruct.classList.contains('nassiStruct')){
-            targetStruct = targetStruct.parentElement;
-        }
-    }else if(ev.target.classList.contains('subfunctionCondition')){
-        while(!targetStruct.classList.contains('nassiSubfunction')){
-            targetStruct = targetStruct.parentElement;
-        }
-    }
+    var targetStruct = getTarget(ev.target);
 
     if(targetStruct.classList.contains('nassiMultiplebranch')){
         var subfunctionArea = targetStruct.getElementsByClassName('nassiSubfunction');
@@ -74,7 +65,32 @@ function dragEnter(ev){
     }
 }
 
-//Setzt den Hintergrund zurück
+// --- Die Funktion wird aufgerufen, wenn das "gedraggte" Objekt in ein valides Feld "gedroppt" wird
+function drop(ev){
+    resetBackground();
+    deactivateReadOnly();
+    var targetStruct = getTarget(ev.target);
+
+    console.log(targetStruct);
+}
+
+function getTarget(targeted){
+    var newTarget = targeted;
+
+    if(targeted.classList.contains('structCondition')){
+        while(!newTarget.classList.contains('nassiStruct')){
+            newTarget = newTarget.parentElement;
+        }
+    }else if(targeted.classList.contains('subfunctionCondition')){
+        while(!newTarget.classList.contains('nassiSubfunction')){
+            newTarget = newTarget.parentElement;
+        }
+    }
+
+    return newTarget;
+}
+
+// --- Setzt den Hintergrund zurück
 function resetBackground(){
     var draggedOverElements = document.getElementsByClassName('draggedOver');
     while(draggedOverElements.length > 0){
@@ -82,7 +98,7 @@ function resetBackground(){
     }
 }
 
-//Deaktiviert den readonly Modus der Inputfelder
+// --- Deaktiviert den readonly Modus der Inputfelder
 function deactivateReadOnly(){
     var inputs = document.getElementsByClassName('editableText');
     for(var i = 0; i < inputs.length; i++){
@@ -91,7 +107,7 @@ function deactivateReadOnly(){
     }
 }
 
-//Aktiviert den readonly Modus der Inputfelder
+// --- Aktiviert den readonly Modus der Inputfelder
 function activateReadOnly(){
     var inputs = document.getElementsByClassName('editableText');
     for(var i = 0; i < inputs.length; i++){

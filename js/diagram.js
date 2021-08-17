@@ -187,6 +187,10 @@ function createNewDiagram(el){
         dragEnter(event);
     });
 
+    newDiagram.addEventListener('drop', function(event){
+        drop(event);
+    });
+
     functionHeader.nameBefore = '';
 }
 

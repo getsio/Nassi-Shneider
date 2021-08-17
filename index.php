@@ -297,7 +297,7 @@
     <script src="js/options.js"></script>
     <script src="js/struct.js"></script>
     <script src="js/diagram.js"></script>
-    <script src="js/drag.js"></script>
+    <script src="js/drag_and_drop.js"></script>
     <!--
       /* -------------------- Todo Bereich --------------------
       Aktion fertigstellen ------------------------------------ -<COMPLETED>-
