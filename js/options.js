@@ -27,7 +27,7 @@ document.getElementById('printButton').addEventListener('click', function() {
 });
 
 document.getElementById('uploadButton').addEventListener('click', function() {
-    console.log('Upload');
+    upload();
 });
 
 document.getElementById('downloadButton').addEventListener('click', function() {
@@ -152,5 +152,59 @@ function download(){
             document.body.removeChild(a);
             window.URL.revokeObjectURL(url);  
         }, 0); 
+    }
+}
+
+//Die Funktion ermöglicht das Laden des gespeicherten Diagramms
+function uploadDiagram(ev, element){
+    var file = ev.target.files[0];        
+    var fileReader = new FileReader();
+
+    fileReader.readAsText(file);
+    fileReader.onload = function(evt){
+        var newNode = document.createElement("node");
+        var allDiagrams = document.getElementsByClassName("saveDiagram");
+        var diaSelect = document.getElementById("diagramSelect");
+
+        //Löscht alle "Diagramme"
+        while(document.body.childElementCount > 4){
+            document.body.children[document.body.childElementCount-2].remove();
+        }
+        //Fügt die geladenen Diagramme ein
+        document.body.insertBefore(newNode, document.body.children[document.body.childElementCount-1])
+        newNode.outerHTML = evt.target.result;
+
+        //Löscht alle Dropdown-Elemente, bis auf das erste
+        while(diaSelect.options.length > 1){
+            diaSelect.options[1].remove();
+        }
+
+        //Setzt den Text vom ersten Dropdown-Punkt zurück
+        var heading = allDiagrams[0].children[0].children[0].children[0].innerText;
+
+        if(heading == "Überschrift (anklicken zum Editieren)"){
+            heading = "Hauptprogramm";
+        }else{
+            heading += " (Main)";
+        }
+        diaSelect.options[0].innerText = heading;
+
+        //diagramBefore Attribut wird mit dem Standarddiagramm belegt, Dropdown-Punkte werden dem Dropdown-Menü hinzugefügt
+        for(var i = 1; i < allDiagrams.length; i++){
+            allDiagrams[i].diagramBefore = allDiagrams[0];
+            var newOption = new Option(allDiagrams[i].id, allDiagrams[i].id);
+            diaSelect.add(newOption, undefined);
+        }
+
+        //Wählt in dem Dropdown-Menü das aktive Diagramm aus
+        for(var i = 1; i < diaSelect.length; i++){
+            if(diaSelect.options[i].value == document.getElementsByClassName("activeDiagram")[0].id){
+                diaSelect.options[i].selected = true;
+            }
+        }
+
+        removeAllEvents();
+        addAllEvents();
+        resizeDiagram(0);
     }
 }
