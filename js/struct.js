@@ -29,6 +29,8 @@ function appendStructAction(){
     var newStructure = structure.content.cloneNode(structure);
     diagram.appendChild(newStructure);
 
+    console.log(newStructure);
+
     var textArea = diagram.lastElementChild.firstElementChild;
     var removeButton = diagram.lastElementChild.lastElementChild.firstElementChild;
 
@@ -78,6 +80,7 @@ function appendStructBranch(){
 
     var textArea = diagram.lastElementChild.firstElementChild.firstElementChild;
     var removeButton = diagram.lastElementChild.firstElementChild.lastElementChild.firstElementChild;
+    var branchArea = diagram.lastElementChild.children[1]
 
     textArea.addEventListener('keydown', function(event){
         keyInput(event, textArea);
@@ -86,6 +89,9 @@ function appendStructBranch(){
     removeButton.addEventListener('click', function(){
         removeStructure(removeButton);
     });
+
+    branchArea.children[0].children[1].defaultInnerHtml = branchArea.children[0].children[1].innerHTML;
+    branchArea.children[1].children[1].defaultInnerHtml = branchArea.children[1].children[1].innerHTML;
 }
 
 // --- Fügt dem aktiven Diagramm eine Mehrfachverzweigung hinzu
@@ -103,6 +109,9 @@ function appendStructMultiplebranch(){
     var caseArea = diagram.lastElementChild.lastElementChild.firstElementChild.lastElementChild;
     var caseOneText = caseArea.firstElementChild.firstElementChild;
     var caseTwoText = caseArea.lastElementChild.firstElementChild;
+
+    var defaultCaseArea = diagram.lastElementChild.lastElementChild.lastElementChild;
+    var defaultCaseContainer = defaultCaseArea.children[1].children[0].children[1];
 
     textArea.addEventListener('keydown', function(event){
         keyInput(event, textArea);
@@ -127,6 +136,12 @@ function appendStructMultiplebranch(){
     caseTwoText.addEventListener('keydown', function(event){
         keyInput(event, caseTwoText);
     });
+
+    for(var i = 0; i < caseArea.childElementCount; i++){
+        caseArea.children[i].children[1].defaultInnerHtml = caseArea.children[i].children[1].innerHTML;
+    }
+
+    defaultCaseContainer.defaultInnerHtml = defaultCaseContainer.innerHTML;
 }
 
 // --- Fügt dem aktiven Diagramm eine kopfgesteuerte Schleife hinzu
@@ -139,6 +154,8 @@ function appendStructHeadcontrolled(){
     var textArea = diagram.lastElementChild.firstElementChild.children[1];
     var removeButton = diagram.lastElementChild.firstElementChild.children[2].firstElementChild;
 
+    var innerloop = diagram.lastElementChild.children[1].children[1];
+
     textArea.addEventListener('keydown', function(event){
         keyInput(event, textArea);
     });
@@ -146,6 +163,8 @@ function appendStructHeadcontrolled(){
     removeButton.addEventListener('click', function(){
         removeStructure(removeButton);
     });
+
+    innerloop.defaultInnerHtml = innerloop.innerHTML;
 }
 
 // --- Fügt dem aktiven Diagramm eine fußgesteuerte Schleife hinzu
@@ -158,6 +177,8 @@ function appendStructFootcontrolled(){
     var textArea = diagram.lastElementChild.lastElementChild.lastElementChild;
     var removeButton = diagram.lastElementChild.firstElementChild.lastElementChild.firstElementChild;
 
+    var innerloop = diagram.lastElementChild.children[0].children[1];
+
     textArea.addEventListener('keydown', function(event){
         keyInput(event, textArea);
     });
@@ -165,4 +186,6 @@ function appendStructFootcontrolled(){
     removeButton.addEventListener('click', function(){
         removeStructure(removeButton);
     });
+
+    innerloop.defaultInnerHtml = innerloop.innerHTML;
 }
