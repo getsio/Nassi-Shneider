@@ -60,6 +60,10 @@ function dragEnter(ev){
 
     if(targetStruct.classList.value.includes('nassi')){
         targetStruct.classList.add('draggedOver');
+        var structButtons = targetStruct.getElementsByClassName('structButtons')[0];
+        if(structButtons != null){
+            structButtons.classList.add('draggedOver');
+        }
     }else if(targetStruct.classList.contains('diagramContainer')){
         deactivateReadOnly();
     }

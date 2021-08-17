@@ -366,14 +366,14 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
 .trueBranchImageArea{
     max-height: calc(calc(19.2px + 2rem) * 2);
     flex-grow: 1;
-    background: url('svg/leftLine.svg') no-repeat;
+    background: url('../svg/leftLine.svg') no-repeat;
     background-size: 100% 100%;
 }
 
 .falseBranchImageArea{
     max-height: calc(calc(19.2px + 2rem) * 2);
     flex-grow: 1;
-    background: url('svg/rightLine.svg') no-repeat;
+    background: url('../svg/rightLine.svg') no-repeat;
     background-size: 100% 100%;
 }
 
@@ -412,13 +412,13 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
     flex-direction: row;
     flex-grow: 1;
     height: 6rem;
-    background: url('svg/leftLine.svg') no-repeat;
+    background: url('../svg/leftLine.svg') no-repeat;
     background-size: 100% 100%;
     background-color: inherit;
 }
 
 .defaultImageArea{
-    background: url('svg/rightLine.svg') no-repeat;
+    background: url('../svg/rightLine.svg') no-repeat;
     background-size: 100% 100%;
     background-color: inherit;
 }
@@ -472,7 +472,7 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
 }
 
 .removeButton, .addBranchButton, .removeBranchButton{
-    background-color: white;
+    background-color: transparent;
     outline: none;
     border: none;
     transition: 0.1s;
