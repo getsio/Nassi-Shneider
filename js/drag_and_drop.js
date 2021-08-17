@@ -73,51 +73,54 @@ function dragEnter(ev){
 function drop(ev){
     resetBackground();
     deactivateReadOnly();
+    var executingFunction;
     var targetStruct = getTarget(ev.target);
 
     ev.preventDefault();
     var templateName = ev.dataTransfer.getData('templateName');
-    var templateRef = document.getElementById(templateName);
-
-    var executingFunction;
 
     console.log(appendAfter);
     console.log(targetStruct);
-    console.log(templateRef);
 
     if(targetStruct.classList.contains('diagramContainer')){
         executingFunction = getAppendFunction(templateName);
+    }else if(targetStruct.classList.contains('nassiSubfunction')){
+        console.log('nassiSubfunction');
+    }else if(targetStruct.classList.contains('nassiStruct')){
+        console.log('nassiStruct');
     }
 
-    executingFunction();
+    if(typeof executingFunction === 'function'){
+        executingFunction();
+    }
 }
 
 // --- Liefert je nach ausgewähltem Template die zu benutzende Funktion
-function getAppendFunction(templateName){
+function getAppendFunction(templateName, targetStruct = null){
     switch(templateName){
         case 'templateAction':
             return function(){
-                appendStructAction();
+                appendStructAction(targetStruct);
             }
         case 'templateFunction':
             return function(){
-                appendStructFunction();
+                appendStructFunction(targetStruct);
             }
         case 'templateBranch':
             return function(){
-                appendStructBranch();
+                appendStructBranch(targetStruct);
             }
         case 'templateMultiplebranch':
             return function(){
-                appendStructMultiplebranch();
+                appendStructMultiplebranch(targetStruct);
             }
         case 'templateHeadcontrolled':
             return function(){
-                appendStructHeadcontrolled();
+                appendStructHeadcontrolled(targetStruct);
             }
         case 'templateFootcontrolled':
             return function(){
-                appendStructFootcontrolled();
+                appendStructFootcontrolled(targetStruct);
             }
         default:
             console.log('nicht richtig');

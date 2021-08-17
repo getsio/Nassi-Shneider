@@ -42,7 +42,7 @@ mainError.addEventListener('click', function(){
     mainError.parentElement.classList.add('hide');
 });
 
-    // --- Funktion wird aufgerufen, wenn von der Schreib- zur Leseansicht und umgekehrt gewechselt wird
+// --- Funktion wird aufgerufen, wenn von der Schreib- zur Leseansicht und umgekehrt gewechselt wird
 function toggleEdit(){
     var inputs = document.getElementsByClassName('editableText');
     var removeButtons = document.getElementsByClassName('structButtons');
