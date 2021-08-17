@@ -39,7 +39,7 @@ function appendStructAction(targetStruct = null){
         removeStructure(removeButton);
     });
 
-    diagram.appendChild(newStructure);
+    appendStruct(diagram, newStructure, targetStruct);
 }
 
 // --- Fügt dem aktiven Diagramm eine Funktion hinzu
@@ -68,7 +68,7 @@ function appendStructFunction(targetStruct = null){
         removeStructure(removeButton);
     });
 
-    diagram.appendChild(newStructure);
+    appendStruct(diagram, newStructure, targetStruct);
 }
 
 // --- Fügt dem aktiven Diagramm eine Verzweigung hinzu
@@ -92,7 +92,7 @@ function appendStructBranch(targetStruct = null){
     branchArea.children[0].children[1].defaultInnerHtml = branchArea.children[0].children[1].innerHTML;
     branchArea.children[1].children[1].defaultInnerHtml = branchArea.children[1].children[1].innerHTML;
 
-    diagram.appendChild(newStructure);
+    appendStruct(diagram, newStructure, targetStruct);
 }
 
 // --- Fügt dem aktiven Diagramm eine Mehrfachverzweigung hinzu
@@ -142,7 +142,7 @@ function appendStructMultiplebranch(targetStruct = null){
     }
 
     defaultCaseContainer.defaultInnerHtml = defaultCaseContainer.innerHTML;
-    diagram.appendChild(newStructure);
+    appendStruct(diagram, newStructure, targetStruct);
 }
 
 // --- Fügt dem aktiven Diagramm eine kopfgesteuerte Schleife hinzu
@@ -165,7 +165,7 @@ function appendStructHeadcontrolled(targetStruct = null){
     });
 
     innerloop.defaultInnerHtml = innerloop.innerHTML;
-    diagram.appendChild(newStructure);
+    appendStruct(diagram, newStructure, targetStruct);
 }
 
 // --- Fügt dem aktiven Diagramm eine fußgesteuerte Schleife hinzu
@@ -188,5 +188,20 @@ function appendStructFootcontrolled(targetStruct = null){
     });
 
     innerloop.defaultInnerHtml = innerloop.innerHTML;
-    diagram.appendChild(newStructure);
+    appendStruct(diagram, newStructure, targetStruct);
+}
+
+function appendStruct(diagram, newStructure, targetStruct = null){
+    if(targetStruct == null || targetStruct.classList.contains('diagramContainer')){
+        diagram.appendChild(newStructure);
+    }else if(targetStruct.classList.contains('nassiSubfunction')){
+        targetStruct.innerHTML = '';
+        targetStruct.appendChild(newStructure);
+    }else if(targetStruct.classList.contains('nassiStruct')){
+        if(appendAfter){
+            targetStruct.after(newStructure);
+        }else{
+            targetStruct.before(newStructure);
+        }
+    }
 }

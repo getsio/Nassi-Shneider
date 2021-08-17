@@ -315,16 +315,16 @@
        - Unterfunktion entfernen ------------------------------ -<COMPLETED>-
        - Bereits belegte IDs filtern -------------------------- -<COMPLETED>-
       NameError fixen (nur bei aktivem Diagramm anzeigen) ----- -<COMPLETED>-
-      Drag & Drop
+      Drag & Drop --------------------------------------------- -<COMPLETED>-
        - on Drag Event fertiggestellt ------------------------- -<COMPLETED>-
        - on drag over Event fertiggestellt -------------------- -<COMPLETED>-
-       - on drop Event fertiggestellt
-      Verschachtelung
-       - in Verzweigung einfügen können
-       - in Mehrfachverzweigung einfügen können
-       - in Kopfgesteuerter Schleife einfügen können
-       - in Fußgesteuerter Schleife einfügen können
-      Druckansicht mit allen Unterfunktionen fertigstellen ----- -<COMPLETED>-
+       - on drop Event fertiggestellt ------------------------- -<COMPLETED>-
+      Verschachtelung ----------------------------------------- -<COMPLETED>-
+       - in Verzweigung einfügen können ----------------------- -<COMPLETED>-
+       - in Mehrfachverzweigung einfügen können --------------- -<COMPLETED>-
+       - in Kopfgesteuerter Schleife einfügen können ---------- -<COMPLETED>-
+       - in Fußgesteuerter Schleife einfügen können ----------- -<COMPLETED>-
+      Druckansicht mit allen Unterfunktionen fertigstellen ---- -<COMPLETED>-
       Download des Diagramms
       Upload des Diagramms
        - Auswahlfeld zwischen Upload und Auswahl aus DB

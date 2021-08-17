@@ -154,11 +154,9 @@ function changeOldDiagram(el){
 // --- Funktion erstellt ein neues Diagramm
 function createNewDiagram(el){
     var diagram = document.getElementById('templateDiagram');
-    var newDiagram = diagram.content.cloneNode(diagram);
-    newDiagram.children[0].id = el.innerText;
-    newDiagram.children[0].children[1].children[0].innerText = el.innerText;
-    diagramPanel.appendChild(newDiagram);
-    newDiagram = diagramPanel.lastElementChild;
+    var newDiagram = diagram.content.cloneNode(diagram).firstElementChild;
+    newDiagram.id = el.innerText;
+    newDiagram.children[1].children[0].innerText = el.innerText;
 
     var closeErrorButton = newDiagram.firstElementChild.lastElementChild;
     var functionHeader = newDiagram.lastElementChild.firstElementChild;
@@ -192,6 +190,7 @@ function createNewDiagram(el){
     });
 
     functionHeader.nameBefore = '';
+    diagramPanel.appendChild(newDiagram);
 }
 
 // --- Diese Funktion fügt der zugehörigen Mehrfachverzweigung einen Zweig hinzu
@@ -238,6 +237,10 @@ function removeStructure(el){
         parent = parent.parentElement;
     }
 
+    if(parent.parentElement.classList.contains('nassiSubfunction')){
+        var nassiSubfunction = parent.parentElement;
+    }
+
     if(parent.classList.contains('nassiFunction') && parent.children[1].innerText != ''){
         var functionName = parent.children[1].innerText;
         document.getElementById(functionName).remove();
@@ -258,4 +261,8 @@ function removeStructure(el){
     }
 
     parent.remove();
+
+    if(nassiSubfunction != null && nassiSubfunction.innerHTML == ''){
+        nassiSubfunction.innerHTML = nassiSubfunction.defaultInnerHtml;
+    }
 }

@@ -73,25 +73,14 @@ function dragEnter(ev){
 function drop(ev){
     resetBackground();
     deactivateReadOnly();
-    var executingFunction;
     var targetStruct = getTarget(ev.target);
 
     ev.preventDefault();
     var templateName = ev.dataTransfer.getData('templateName');
-
-    console.log(appendAfter);
-    console.log(targetStruct);
-
-    if(targetStruct.classList.contains('diagramContainer')){
-        executingFunction = getAppendFunction(templateName);
-    }else if(targetStruct.classList.contains('nassiSubfunction')){
-        console.log('nassiSubfunction');
-    }else if(targetStruct.classList.contains('nassiStruct')){
-        console.log('nassiStruct');
-    }
+    var executingFunction = getAppendFunction(templateName, targetStruct);
 
     if(typeof executingFunction === 'function'){
-        executingFunction();
+        executingFunction(targetStruct);
     }
 }
 
