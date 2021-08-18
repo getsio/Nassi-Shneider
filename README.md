@@ -93,6 +93,7 @@ In diesem Bereich werden alle bereits implementierten, kommende, sowie fehlerhaf
 
 - ~~Unterfunktion kann nicht vernünftig entfernt werden~~
 - ~~Falsches Struktur wird beim hinzufügen ausgewählt~~
+- ~~Dragbereich verbreitert sich bei langen Funktionsnamen~~
 
 ## Autor
 
