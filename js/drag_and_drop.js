@@ -46,19 +46,19 @@ document.getElementById('appendFootcontrolled').addEventListener('dragend', func
     resetBackground();
 });
 
-document.getElementById('mainDiagram').addEventListener('dragover', function(event){
+document.getElementById('mainDiagram').addEventListener('dragover', function(event) {
     allowDrop(event);
 });
 
-document.getElementById('main').addEventListener('dragenter', function(event){
+document.getElementById('main').addEventListener('dragenter', function(event) {
     dragEnter(event);
 });
 
-document.getElementById('mainDiagram').addEventListener('drop', function(event){
+document.getElementById('mainDiagram').addEventListener('drop', function(event) {
     drop(event);
 });
 
-document.getElementById('mainDiagram').addEventListener('dragleave', function(event){
+document.getElementById('mainDiagram').addEventListener('dragleave', function(event) {
     dragLeave(event);
 });
 

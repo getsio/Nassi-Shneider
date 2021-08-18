@@ -2,12 +2,16 @@ var editMode = true;
 var appendAfter = true;
 var mainError = document.getElementById('mainError');
 
-document.getElementById('menuButton').addEventListener('click', function() {
-    console.log('Menü');
+document.getElementById('main').addEventListener('click', function(event) {
+    closeMenus(event);
 });
 
-document.getElementById('gearButton').addEventListener('click', function(event) {
-    toggleOptionsWindow(event);
+document.getElementById('menuButton').addEventListener('click', function() {
+    toggleMenu(document.getElementById('menuButton').parentElement);
+});
+
+document.getElementById('gearButton').addEventListener('click', function() {
+    toggleMenu(document.getElementById('gearButton').parentElement);
 });
 
 document.getElementById('editButton').addEventListener('click', function() {
@@ -265,7 +269,17 @@ function addStructEvents(){
     }
 }
 
+function closeMenus(ev){
+    console.log(ev.target);
+}
+
 // --- Öffnet/Schließt das Optionsfenster
-function toggleOptionsWindow(ev) {
-    console.log(ev);
+function toggleMenu(menuWrapper){
+    var menuContainer = menuWrapper.getElementsByClassName('menuContainer')[0];
+
+    if(menuContainer.classList.contains('hide')){
+        menuContainer.classList.remove('hide');
+    }else{
+        menuContainer.classList.add('hide');
+    }
 }

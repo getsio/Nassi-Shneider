@@ -65,9 +65,16 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
 #optionMenu{
     position: absolute;
     right: 0;
+    font-size: 1.4rem;
+    padding: 0;
     height: 5rem;
     width: 5rem;
     background-color: palegreen;
+    /*background: #fff;*/
+    border: 0;
+    border-radius: 0 0 .4rem .4rem;
+    box-shadow: 0 0.04rem 0.8rem 0 rgb(37 36 35 / 30%);
+    z-index: 10000000;
 }
 
 .menuButtons, .optionButtons{

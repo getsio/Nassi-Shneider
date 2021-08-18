@@ -20,12 +20,12 @@
       <!-- -------------------- Topbar -------------------- -->
       <div id="topbar">
         <div class="topleftPanel">
-          <div class="menuWrapper openMenu">
+          <div id="mainMenuWrapper" class="menuWrapper openMenu">
             <button id="menuButton" type="button" class="menuButtons openMenu">
               <img class="menuIcon openMenu" src="svg/menu.svg" alt="Icon des Menüs" draggable="false">
             </button>
-            <div id="mainMenu" class="openMenu">
-              
+            <div id="mainMenu" class="menuContainer openMenu">
+
             </div>
           </div>
           <p class="programName">Nassi-Shneiderman Editor</p>
@@ -38,11 +38,11 @@
           
         </div>
         <div class="toprightPanel">
-          <div class="menuWrapper openMenu">
+          <div id="optionMenuWrapper" class="menuWrapper openMenu">
             <button id="gearButton" type="button" class="optionButtons openMenu">
               <img id="gearIcon" class="optionIcons openMenu" src="svg/cog-solid.svg" alt="Icon der Optionen" draggable="false">
             </button>
-            <div id="optionMenu" class="openMenu">
+            <div id="optionMenu" class="menuContainer openMenu">
 
             </div>
           </div>
