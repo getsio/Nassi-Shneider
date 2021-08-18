@@ -50,7 +50,31 @@
               <img id="gearIcon" class="optionIcons openMenu" src="svg/cog-solid.svg" alt="Icon der Optionen" draggable="false">
             </button>
             <div id="optionMenu" class="menuContainer openMenu hide">
-
+              <div id="userInformation" class="openMenu">
+                <div id="userOverlay" class="openMenu">
+                  <div id="userPicture" class="openMenu">
+                    <p id="userInitials" class="openMenu">
+                      <?=substr($_SESSION['vorname'], 0, 1) . substr($_SESSION['nachname'], 0, 1);?>
+                    </p>
+                  </div>
+                </div>
+                <div id="userDetails" class="openMenu">
+                  <p id="userName" class="openMenu">
+                    <?=$_SESSION['nachname'] . ', ' . $_SESSION['vorname'];?>
+                  </p>
+                  <p id="userEmail" class="openMenu">
+                    <?=$_SESSION['mail'];?>
+                  </p>
+                  <p id="userNumber" class="openMenu">
+                    <?='Personalnummer: ' . ltrim($_SESSION['personalnr'], '0');?>
+                  </p>
+                </div>
+              </div>
+              <div class="menuDivider openMenu"></div>
+              <a id="logoutButton" href="#" class="openMenu optionMenuButtons">
+                  <img id="logoutIcon" class="optionMenuIcons openMenu" src="svg/sign-out-alt-solid.svg" alt="Icon des Logouts" draggable="false">
+                  <p id="logoutText" class="openMenu">Abmelden</p>
+              </a>
             </div>
           </div>
           <div class="blockFlex"></div>

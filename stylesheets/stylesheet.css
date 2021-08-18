@@ -63,18 +63,105 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
 }
 
 #optionMenu{
+    display: flex;
+    flex-direction: column;
     position: absolute;
     right: 0;
     font-size: 1.4rem;
-    padding: 0;
-    height: 5rem;
-    width: 5rem;
-    background-color: palegreen;
-    /*background: #fff;*/
+    padding: .8rem 0;
+    background: #fff;
     border: 0;
     border-radius: 0 0 .4rem .4rem;
     box-shadow: 0 0.04rem 0.8rem 0 rgb(37 36 35 / 30%);
     z-index: 10000000;
+}
+
+.menuDivider{
+    width: 100%;
+    height: .2rem;
+    background-color: #f3f2f1;
+    margin: .6rem 0;
+}
+
+.optionMenuButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 14px;
+    color: #484644;
+    text-decoration: none;
+    padding: 0.4rem 1.2rem;
+    transition: 0.1s;
+}
+
+.optionMenuButtons:hover{
+    background-color: #f3f2f1;
+}
+
+.optionMenuButtons p{
+    margin: 0;
+    margin-left: .3rem;
+}
+
+.optionMenuIcons{
+    width: .8rem;
+    padding: 0 0.1rem;
+}
+
+#userInformation{
+    display: flex;
+    flex-direction: row;
+    height: 3.1rem;
+    margin: .6rem 1.2rem;
+}
+
+#userOverlay, #userDetails{
+    background-color: transparent;
+}
+
+#userPicture{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(231 206 209);
+    height: 100%;
+    width: 3.1rem;
+    border-radius: 50%;
+}
+
+#userInitials{
+    margin: 0;
+    color: rgb(83 34 38);
+    font-weight: bold;
+    cursor: default;
+}
+
+#userDetails{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: .5rem;
+}
+
+#userName, #userEmail, #userNumber{
+    margin: 0;
+    font-size: 12px;
+}
+
+#userName{
+    font-size: 14px;
+    font-weight: 500;
+    color: #252423;
+}
+
+#userEmail{
+    color: #605e5c;
+}
+
+#userNumber{
+    color: #484644;
+    margin-top: .25rem;
 }
 
 .menuButtons, .optionButtons{
