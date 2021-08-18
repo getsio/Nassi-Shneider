@@ -269,8 +269,14 @@ function addStructEvents(){
     }
 }
 
-function closeMenus(ev){
-    console.log(ev.target);
+function closeMenus(ev = null){
+    if(!ev || !ev.target.classList.contains('openMenu')){
+        var menus = document.getElementsByClassName('menuContainer');
+
+        for(var i = 0; i < menus.length; i++){
+            menus[i].classList.add('hide');
+        }
+    }
 }
 
 // --- Öffnet/Schließt das Optionsfenster
@@ -278,6 +284,7 @@ function toggleMenu(menuWrapper){
     var menuContainer = menuWrapper.getElementsByClassName('menuContainer')[0];
 
     if(menuContainer.classList.contains('hide')){
+        closeMenus();
         menuContainer.classList.remove('hide');
     }else{
         menuContainer.classList.add('hide');

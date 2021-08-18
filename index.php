@@ -15,6 +15,13 @@
   <body>
     <?php
       session_start();
+
+      // Nur zu Testzwecken eingebaut;
+      $_SESSION['samaccountname'] = 'TsiokaGe';
+      $_SESSION['nachname'] = 'Tsiokas';
+      $_SESSION['vorname'] = 'Georgios';
+      $_SESSION['personalnr'] = '009116';
+      $_SESSION['mail'] = 'Georgios.Tsiokas@bogestra.de';
     ?>
     <div id="main">
       <!-- -------------------- Topbar -------------------- -->
@@ -24,7 +31,7 @@
             <button id="menuButton" type="button" class="menuButtons openMenu">
               <img class="menuIcon openMenu" src="svg/menu.svg" alt="Icon des Menüs" draggable="false">
             </button>
-            <div id="mainMenu" class="menuContainer openMenu">
+            <div id="mainMenu" class="menuContainer openMenu hide">
 
             </div>
           </div>
@@ -42,7 +49,7 @@
             <button id="gearButton" type="button" class="optionButtons openMenu">
               <img id="gearIcon" class="optionIcons openMenu" src="svg/cog-solid.svg" alt="Icon der Optionen" draggable="false">
             </button>
-            <div id="optionMenu" class="menuContainer openMenu">
+            <div id="optionMenu" class="menuContainer openMenu hide">
 
             </div>
           </div>
