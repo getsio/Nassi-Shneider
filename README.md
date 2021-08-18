@@ -79,12 +79,11 @@ In diesem Bereich werden alle bereits implementierten, kommende, sowie fehlerhaf
     - Kopfgesteuerte Schleife
     - Fußgesteuerte Schleife
 - Druckansicht
+- Download
+- Upload
 
 ### Kommende Features
 
-- Download
-- Upload
-    - Auswahl zwischen Datei/DB
 - Speichern in DB
 - Automatisches Speichern in Intervallen
 - platzierte Strukturen verschieben
