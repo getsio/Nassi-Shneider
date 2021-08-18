@@ -20,9 +20,14 @@
       <!-- -------------------- Topbar -------------------- -->
       <div id="topbar">
         <div class="topleftPanel">
-          <button id="menuButton" type="button" class="menuButtons">
-            <img class="menuIcon" src="svg/menu.svg" alt="Icon des Menüs" draggable="false">
-          </button>
+          <div class="menuWrapper openMenu">
+            <button id="menuButton" type="button" class="menuButtons openMenu">
+              <img class="menuIcon openMenu" src="svg/menu.svg" alt="Icon des Menüs" draggable="false">
+            </button>
+            <div id="mainMenu" class="openMenu">
+              
+            </div>
+          </div>
           <p class="programName">Nassi-Shneiderman Editor</p>
           <div id="spectateSeparator" class="hide"></div>
           <select id="diagramSelectTopBar" class="hide">
@@ -33,9 +38,14 @@
           
         </div>
         <div class="toprightPanel">
-          <button id="gearButton" type="button" class="optionButtons">
-            <img id="gearIcon" class="optionIcons" src="svg/cog-solid.svg" alt="Icon der Optionen" draggable="false">
-          </button>
+          <div class="menuWrapper openMenu">
+            <button id="gearButton" type="button" class="optionButtons openMenu">
+              <img id="gearIcon" class="optionIcons openMenu" src="svg/cog-solid.svg" alt="Icon der Optionen" draggable="false">
+            </button>
+            <div id="optionMenu" class="openMenu">
+
+            </div>
+          </div>
           <div class="blockFlex"></div>
           <button id="editButton" type="button" class="optionButtons">
             <img id="editIcon" class="optionIcons" src="svg/unlock-solid.svg" alt="Icon zum sperren/entsperren der Editierung" draggable="false">

@@ -6,8 +6,8 @@ document.getElementById('menuButton').addEventListener('click', function() {
     console.log('Menü');
 });
 
-document.getElementById('gearButton').addEventListener('click', function() {
-    console.log('Optionen');
+document.getElementById('gearButton').addEventListener('click', function(event) {
+    toggleOptionsWindow(event);
 });
 
 document.getElementById('editButton').addEventListener('click', function() {
@@ -243,4 +243,9 @@ function addStructEvents(){
     for(var i = 0; i < footcontrolled.length; i++){
         addFootcontrolledEvents(footcontrolled[i]);
     }
+}
+
+// --- Öffnet/Schließt das Optionsfenster
+function toggleOptionsWindow(ev) {
+    console.log(ev);
 }

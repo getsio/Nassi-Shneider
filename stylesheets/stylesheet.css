@@ -50,6 +50,26 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
     align-items: center;
 }
 
+.menuWrapper{
+    position: relative;
+    height: 100%;
+}
+
+#mainMenu{
+    position: absolute;
+    height: 5rem;
+    width: 5rem;
+    background-color: pink;
+}
+
+#optionMenu{
+    position: absolute;
+    right: 0;
+    height: 5rem;
+    width: 5rem;
+    background-color: palegreen;
+}
+
 .menuButtons, .optionButtons{
     display: flex;
     flex-direction: column;
