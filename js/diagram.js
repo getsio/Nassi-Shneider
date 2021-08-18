@@ -203,6 +203,10 @@ function createNewDiagram(el){
         drop(event);
     });
 
+    newDiagram.addEventListener('dragleave', function(event){
+        dragLeave(event);
+    });
+
     functionHeader.nameBefore = '';
     diagramPanel.appendChild(newDiagram);
 }

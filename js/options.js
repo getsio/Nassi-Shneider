@@ -213,12 +213,32 @@ function upload(ev){
 
 // --- Fügt den Strukturen alle nötigen Events hinzu
 function addStructEvents(){
+    var diagrams = document.getElementsByClassName('diagramContainer');
     var actions = document.getElementsByClassName('nassiAction');
     var functions = document.getElementsByClassName('nassiFunction');
     var branches = document.getElementsByClassName('nassiBranch');
     var multipleBranches = document.getElementsByClassName('nassiMultiplebranch');
     var headcontrolled = document.getElementsByClassName('nassiHeadcontrolled');
     var footcontrolled = document.getElementsByClassName('nassiFootcontrolled');
+
+
+    for(var i = 0; i < diagrams.length; i++){
+        diagrams[i].addEventListener('dragover', function(event){
+            allowDrop(event);
+        });
+        
+        diagrams[i].addEventListener('dragenter', function(event){
+            dragEnter(event);
+        });
+        
+        diagrams[i].addEventListener('drop', function(event){
+            drop(event);
+        });
+        
+        diagrams[i].addEventListener('dragleave', function(event){
+            dragLeave(event);
+        });
+    }
 
     for(var i = 0; i < actions.length; i++){
         addActionEvents(actions[i]);
