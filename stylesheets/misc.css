@@ -1,0 +1,41 @@
+.hide{
+    display: none !important;
+}
+
+.blackLine{
+    /*background-color: #8A7356;    Farbe für Links */
+    background-color: #8a8a8a;
+    height: 1px;
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.blackLineVerticalLeft, .blackLineVerticalRight{
+    background-color: black;
+    height: 100%;
+    width: 1px;
+}
+
+.blackLineVerticalLeft{
+    margin-left: 2rem;
+}
+
+.blackLineVerticalRight{
+    margin-right: 2rem;
+}
+
+.blocker{
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.blockFlex{
+    width: 1.5rem;
+    height: 100%;
+}
+
+.blockFlexWide{
+    width: 4rem;
+    height: 100%;
+}

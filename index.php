@@ -9,7 +9,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <link rel="stylesheet" href="stylesheets/menus.css">
+    <link rel="stylesheet" href="stylesheets/struct.css">
+    <link rel="stylesheet" href="stylesheets/animations.css">
+    <link rel="stylesheet" href="stylesheets/print.css">
+    <link rel="stylesheet" href="stylesheets/misc.css">
     <title>Nassi-Shneiderman - Editor</title>
   </head>
   <body>
@@ -167,37 +172,6 @@
     <script src="js/diagram.js"></script>
     <script src="js/drag_and_drop.js"></script>
     <!--
-      /* -------------------- Todo Bereich --------------------
-      Aktion fertigstellen ------------------------------------ -<COMPLETED>-
-      Funktion fertigstellen ---------------------------------- -<COMPLETED>-
-      Verzweigung fertigstellen ------------------------------- -<COMPLETED>-
-      Mehrfachverzweigung fertigstellen ----------------------- -<COMPLETED>-
-      Kopfgesteuerte Schleife fertigstellen ------------------- -<COMPLETED>-
-      Fußgesteuerte Schleife fertigstellen -------------------- -<COMPLETED>-
-      Strukturen löschbar ------------------------------------- -<COMPLETED>-
-      Diagramme löschen --------------------------------------- -<COMPLETED>-
-      Unterfunktionen erstellen ------------------------------- -<COMPLETED>-
-       - Unterfunktion dem Dropdown hinzufügen ---------------- -<COMPLETED>-
-       - Unterfunktion im Maindiagram umbenennen -------------- -<COMPLETED>-
-       - Unterfunktion im Header umbenennen ------------------- -<COMPLETED>-
-       - Unterfunktion entfernen ------------------------------ -<COMPLETED>-
-       - Bereits belegte IDs filtern -------------------------- -<COMPLETED>-
-      NameError fixen (nur bei aktivem Diagramm anzeigen) ----- -<COMPLETED>-
-      Drag & Drop --------------------------------------------- -<COMPLETED>-
-       - on Drag Event fertiggestellt ------------------------- -<COMPLETED>-
-       - on drag over Event fertiggestellt -------------------- -<COMPLETED>-
-       - on drop Event fertiggestellt ------------------------- -<COMPLETED>-
-      Verschachtelung ----------------------------------------- -<COMPLETED>-
-       - in Verzweigung einfügen können ----------------------- -<COMPLETED>-
-       - in Mehrfachverzweigung einfügen können --------------- -<COMPLETED>-
-       - in Kopfgesteuerter Schleife einfügen können ---------- -<COMPLETED>-
-       - in Fußgesteuerter Schleife einfügen können ----------- -<COMPLETED>-
-      Druckansicht mit allen Unterfunktionen fertigstellen ---- -<COMPLETED>-
-      Download des Diagramms ---------------------------------- -<COMPLETED>-
-      Upload des Diagramms ------------------------------------ -<COMPLETED>-
-       - Auswahlfeld zwischen Upload und Auswahl aus DB
-       - Dateiupload fertigstellt
-       - Datenkbankupload fertiggestellt
       Speichern des Diagrammes in der DB
       Speichern des Diagramms in der DB in intervallen
       Optionsmenü

@@ -189,7 +189,6 @@ function addHeadcontrolledEvents(struct){
 function addFootcontrolledEvents(struct){
     var textArea = struct.lastElementChild.children[1];
     var removeButton = struct.lastElementChild.lastElementChild.firstElementChild;
-    console.log(removeButton);
 
     textArea.addEventListener('keydown', function(event){
         keyInput(event, textArea);

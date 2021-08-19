@@ -1,0 +1,54 @@
+@media print{
+    html, body{
+        height: auto;
+    }
+
+    #bottomContainer{
+        display: block;
+    }
+
+    #diagramPanel{
+        display: block;
+        position: relative;
+        overflow: hidden;
+        break-inside: auto;
+    }
+
+    .diagramContainer{
+        display: flex;
+        position: relative;
+        max-height: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        background-color: white;
+        flex-grow: 1;
+        margin: 0;
+        overflow: hidden;
+        break-inside: avoid;
+        break-after: page;
+    }
+
+    .blackLineVerticalLeft, .blackLineVerticalRight{
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+    }
+
+    .trueBranchImageArea, .falseBranchImageArea, .definedImageArea, .defaultImageArea{
+        background-size: 100% 100%;
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+    }
+
+    .removeButton{
+        display: none;
+    }
+
+    #dragPanel{
+        display: none;
+    }
+
+    #topbar{
+        display: none;
+    }
+}
