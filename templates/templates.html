@@ -84,6 +84,7 @@
           </div>
           <div class="definedCases structCondition">
             <div class="definedCase structCondition">
+              <div class="emptySpaceMulti structCondition"></div>
               <p class="editableText definedEdit structCondition" role="textbox" contenteditable spellcheck="false"
               placeholder="Case 1 ..."></p>
               <div class="definedTask subfunctionCondition nassiSubfunction">
@@ -91,6 +92,7 @@
               </div>
             </div>
             <div class="definedCase structCondition">
+              <div class="emptySpaceMulti structCondition"></div>
               <p class="editableText definedEdit structCondition" role="textbox" contenteditable spellcheck="false"
               placeholder="Case 2 ..."></p>
               <div class="definedTask subfunctionCondition nassiSubfunction">
@@ -104,6 +106,7 @@
           </div>
           <div class="defaultCases structCondition">
             <div class="defaultCase structCondition">
+              <div class="emptySpaceMulti structCondition"></div>
               <p class="editableText defaultEdit structCondition">Default</p>
               <div class="defaultTask subfunctionCondition nassiSubfunction">
                 <p class="defaultText subfunctionCondition">-</p>
@@ -116,6 +119,7 @@
   </template>
   <template id="templateAdditionalBranch">
     <div class="definedCase structCondition">
+      <div class="emptySpaceMulti structCondition"></div>
       <p class="editableText definedEdit structCondition" role="textbox" contenteditable spellcheck="false"
       placeholder=""></p>
       <div class="definedTask subfunctionCondition nassiSubfunction">
@@ -124,8 +128,8 @@
     </div>
   </template>
   <template id="templateHeadcontrolled">
-    <div class="nassiHeadcontrolled nassiStruct">
-      <div class="textArea structCondition">
+    <div class="nassiHeadcontrolled nassiStruct nassiLoop">
+      <div class="textArea structCondition loopTextArea">
         <div class="blockLoop structCondition"></div>
         <p class="editableText structCondition" role="textbox" contenteditable spellcheck="false"
         placeholder="Bedingung eingeben..."></p>
@@ -144,7 +148,7 @@
     </div>
   </template>
   <template id="templateFootcontrolled">
-    <div class="nassiFootcontrolled nassiStruct">
+    <div class="nassiFootcontrolled nassiStruct nassiLoop">
       <div class="loopArea structCondition">
         <div class="blockLoop structCondition"></div>
         <div class="loopText subfunctionCondition nassiSubfunction">
@@ -156,7 +160,7 @@
           </button>
         </div>
       </div>
-      <div class="textArea structCondition">
+      <div class="textArea structCondition loopTextArea">
         <div class="blockLoop structCondition"></div>
         <p class="editableText structCondition" role="textbox" contenteditable spellcheck="false"
         placeholder="Bedingung eingeben..."></p>

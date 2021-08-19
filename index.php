@@ -23,6 +23,7 @@
       $_SESSION['department'] = 'AZUBFI';
       $_SESSION['personalnr'] = '009116';
       $_SESSION['mail'] = 'Georgios.Tsiokas@bogestra.de';
+      // ---------------------------------------------------
 
       $initials = substr($_SESSION['vorname'], 0, 1) . substr($_SESSION['nachname'], 0, 1);
       $fullname = $_SESSION['nachname'] . ', ' . $_SESSION['vorname'];

@@ -51,15 +51,20 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
 }
 
 .menuWrapper{
-    position: relative;
     height: 100%;
+}
+
+#optionMenuWrapper{
+    position: relative;
 }
 
 #mainMenu{
     position: absolute;
-    height: 5rem;
-    width: 5rem;
-    background-color: pink;
+    height: 100%;
+    width: 20rem;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 192, 203, 0.377);
 }
 
 #optionMenu{
@@ -96,7 +101,7 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
 }
 
 .optionMenuButtons:hover{
-    background-color: #f3f2f1;
+    background-color: #ebebeb;
 }
 
 .optionMenuButtons p{
@@ -448,6 +453,11 @@ input[type="file"]{
     background-color: inherit;
 }
 
+.nassiSubfunction .nassiAction, .nassiSubfunction .nassiFunction, .nassiSubfunction .nassiBranch, .nassiSubfunction .nassiMultiplebranch,
+.nassiSubfunction .nassiHeadcontrolled, .nassiSubfunction .nassiFootcontrolled{
+    flex-grow: 1;
+}
+
 .innerStructure{
     flex-grow: 1;
 }
@@ -470,6 +480,8 @@ input[type="file"]{
 .branchArea{
     margin-top: calc(calc(19.2px + 2rem) * -1);
     width: 100%;
+    align-items: stretch;
+    flex-grow: 1;
 }
 
 .trueBranch, .trueBranchImageArea, .falseBranch, .falseBranchImageArea{
@@ -505,6 +517,11 @@ input[type="file"]{
     height: calc(19.2px + 2rem);
     width: 100%;
     flex-grow: 1;
+}
+
+.emptySpaceMulti{
+    height: 3rem;
+    width: 100%;
 }
 
 .trueMark, .falseMark{
@@ -545,8 +562,9 @@ input[type="file"]{
     display: flex;
     flex-direction: row;
     flex-grow: 1;
+    height: 100%;
     background-color: inherit;
-    margin-top: -3rem;
+    margin-top: -6rem;
 }
 
 .definedCase, .defaultCase{
@@ -580,6 +598,10 @@ input[type="file"]{
     cursor: unset;
 }
 
+.nassiSubfunction{
+    flex-grow: 1;
+}
+
 .structButtons{
     position: absolute;
     top: 0;
@@ -610,26 +632,28 @@ input[type="file"]{
     width: calc(2rem + 1px);
 }
 
-.nassiHeadcontrolled .textArea, .nassiFootcontrolled .textArea{
+.nassiHeadcontrolled .loopTextArea, .nassiFootcontrolled .loopTextArea{
     justify-content: start;
 }
 
-.nassiHeadcontrolled .textArea .editableText, .nassiFootcontrolled .textArea .editableText{
+.nassiHeadcontrolled .loopTextArea .editableText, .nassiFootcontrolled .loopTextArea .editableText{
     text-align: start;
 }
 
 .loopArea{
     display: flex;
     position: relative;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
     background-color: inherit;
     width: 100%;
+    flex-grow: 1;
 }
 
 .loopText{
     flex-grow: 1;
     outline: solid black 1px;
+    background-color: white;
 }
 
 .loopText .editableText{
