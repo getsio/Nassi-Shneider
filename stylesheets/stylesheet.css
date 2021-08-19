@@ -112,7 +112,7 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
 #userInformation{
     display: flex;
     flex-direction: row;
-    height: 3.1rem;
+    height: 2.8rem;
     margin: .6rem 1.2rem;
 }
 
@@ -126,7 +126,7 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
     justify-content: center;
     background-color: rgb(231 206 209);
     height: 100%;
-    width: 3.1rem;
+    width: 2.8rem;
     border-radius: 50%;
 }
 
@@ -144,7 +144,7 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
     margin-left: .5rem;
 }
 
-#userName, #userEmail, #userNumber{
+#userName, #userEmail, #userDepartment{
     margin: 0;
     font-size: 12px;
 }
@@ -155,13 +155,8 @@ select, option, input, button, p, span, h1, h2, h3, h4, h5, h6, a, div{
     color: #252423;
 }
 
-#userEmail{
+#userEmail, #userDepartment{
     color: #605e5c;
-}
-
-#userNumber{
-    color: #484644;
-    margin-top: .25rem;
 }
 
 .menuButtons, .optionButtons{

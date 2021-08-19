@@ -20,8 +20,12 @@
       $_SESSION['samaccountname'] = 'TsiokaGe';
       $_SESSION['nachname'] = 'Tsiokas';
       $_SESSION['vorname'] = 'Georgios';
+      $_SESSION['department'] = 'AZUBFI';
       $_SESSION['personalnr'] = '009116';
       $_SESSION['mail'] = 'Georgios.Tsiokas@bogestra.de';
+
+      $initials = substr($_SESSION['vorname'], 0, 1) . substr($_SESSION['nachname'], 0, 1);
+      $fullname = $_SESSION['nachname'] . ', ' . $_SESSION['vorname'];
     ?>
     <div id="main">
       <!-- -------------------- Topbar -------------------- -->
@@ -54,19 +58,19 @@
                 <div id="userOverlay" class="openMenu">
                   <div id="userPicture" class="openMenu">
                     <p id="userInitials" class="openMenu">
-                      <?=substr($_SESSION['vorname'], 0, 1) . substr($_SESSION['nachname'], 0, 1);?>
+                      <?=$initials?>
                     </p>
                   </div>
                 </div>
                 <div id="userDetails" class="openMenu">
                   <p id="userName" class="openMenu">
-                    <?=$_SESSION['nachname'] . ', ' . $_SESSION['vorname'];?>
+                    <?=$fullname?>
+                  </p>
+                  <p id="userDepartment" class="openMenu">
+                    <?=$_SESSION['department'];?>
                   </p>
                   <p id="userEmail" class="openMenu">
                     <?=$_SESSION['mail'];?>
-                  </p>
-                  <p id="userNumber" class="openMenu">
-                    <?='Personalnummer: ' . ltrim($_SESSION['personalnr'], '0');?>
                   </p>
                 </div>
               </div>
