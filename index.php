@@ -43,7 +43,12 @@
               <img class="menuIcon openMenu" src="svg/menu/menu.svg" alt="Icon des Menüs" draggable="false">
             </button>
             <div id="mainMenu" class="menuContainer openMenu hide">
-
+              <div id="mainMenuTop" class="openMenu">
+                <button id="mainMenuButton" type="button" class="menuButtons openMenu">
+                  <img class="menuIcon openMenu" src="svg/menu/menu_alt.svg" alt="Icon des Menüs" draggable="false">
+                </button>
+                <p id="mainMenuProgramName" class="programName openMenu">Nassi-Shneiderman Editor</p>
+              </div>
             </div>
           </div>
           <p class="programName">Nassi-Shneiderman Editor</p>
@@ -82,7 +87,7 @@
                 </div>
               </div>
               <div class="menuDivider openMenu"></div>
-              <a id="logoutButton" href="#" class="openMenu optionMenuButtons">
+              <a id="logoutButton" href="#" class="openMenu optionMenuButtons" draggable="false">
                   <img id="logoutIcon" class="optionMenuIcons openMenu" src="svg/options/sign-out-alt-solid.svg" alt="Icon des Logouts" draggable="false">
                   <p id="logoutText" class="openMenu">Abmelden</p>
               </a>

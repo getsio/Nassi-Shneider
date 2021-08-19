@@ -7,12 +7,29 @@
 }
 
 #mainMenu{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     position: absolute;
     height: 100%;
     width: 20rem;
     top: 0;
     left: 0;
-    background-color: rgba(255, 192, 203, 0.377);
+    background-color: #fff;
+    z-index: 2147483647;
+    box-shadow: 1.6rem 0 1.8rem -0.4rem rgb(0 0 0 / 15%);
+}
+
+#mainMenuTop{
+    display: flex;
+    flex-direction: row;
+    height: 3rem;
+}
+
+#mainMenuProgramName{
+    padding: 0;
+    padding-left: 1.3rem;
+    color: #242424;
 }
 
 #optionMenu{
@@ -27,6 +44,10 @@
     border-radius: 0 0 .4rem .4rem;
     box-shadow: 0 0.04rem 0.8rem 0 rgb(37 36 35 / 30%);
     z-index: 10000000;
+}
+
+#mainMenuButton:hover{
+    background-color: #ebebeb;
 }
 
 .menuDivider{
@@ -88,6 +109,7 @@
     color: rgb(83 34 38);
     font-weight: bold;
     cursor: default;
+    user-select: none;
 }
 
 #userDetails{
@@ -125,4 +147,8 @@
     height: 100%;
     padding: 0 0.8rem;
     transition: 0.1s;
+}
+
+.menuButtons{
+    padding: 0 1.4rem;
 }
