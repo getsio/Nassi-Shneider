@@ -611,6 +611,14 @@ input[type="file"]{
     background-color: white;
 }
 
+.nassiFootcontrolled .structButtons{
+    top: 1px;
+}
+
+.nassiSubfunction .nassiBranch .structButtons, .nassiSubfunction .nassiMultiplebranch .structButtons{
+    right: 1px;
+}
+
 .removeButton, .addBranchButton, .removeBranchButton{
     background-color: transparent;
     outline: none;
