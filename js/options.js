@@ -57,7 +57,7 @@ function toggleEdit(){
     var spectateSeparator = document.getElementById('spectateSeparator');
 
     if(editMode){
-        editIcon.src = 'svg/lock-solid.svg';
+        editIcon.src = 'svg/options/lock-solid.svg';
         dragPanel.classList.add('hide');
         spectateBar.classList.remove('hide');
         bottomContainer.classList.add('spectateMode');
@@ -75,7 +75,7 @@ function toggleEdit(){
 
         editMode = false;
     }else{
-        editIcon.src = 'svg/unlock-solid.svg';
+        editIcon.src = 'svg/options/unlock-solid.svg';
         dragPanel.classList.remove('hide');
         spectateBar.classList.add('hide');
         bottomContainer.classList.remove('spectateMode');
@@ -98,10 +98,10 @@ function toggleEdit(){
 // --- Funktion wird aufgerufen, wenn die Appendrichtung geändert wird
 function toggleDirection(){
     if(appendAfter){
-        directionIcon.src = 'svg/not-angle-double-down-solid.svg';
+        directionIcon.src = 'svg/options/not-angle-double-down-solid.svg';
         appendAfter = false;
     }else{
-        directionIcon.src = 'svg/angle-double-down-solid.svg';
+        directionIcon.src = 'svg/options/angle-double-down-solid.svg';
         appendAfter = true;
     }
 }

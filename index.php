@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- -------------------- Stylesheets -------------------- -->
     <link rel="stylesheet" href="stylesheets/main.css">
     <link rel="stylesheet" href="stylesheets/menus.css">
     <link rel="stylesheet" href="stylesheets/struct.css">
@@ -39,7 +40,7 @@
         <div class="topleftPanel">
           <div id="mainMenuWrapper" class="menuWrapper openMenu">
             <button id="menuButton" type="button" class="menuButtons openMenu">
-              <img class="menuIcon openMenu" src="svg/menu.svg" alt="Icon des Menüs" draggable="false">
+              <img class="menuIcon openMenu" src="svg/menu/menu.svg" alt="Icon des Menüs" draggable="false">
             </button>
             <div id="mainMenu" class="menuContainer openMenu hide">
 
@@ -57,7 +58,7 @@
         <div class="toprightPanel">
           <div id="optionMenuWrapper" class="menuWrapper openMenu">
             <button id="gearButton" type="button" class="optionButtons openMenu">
-              <img id="gearIcon" class="optionIcons openMenu" src="svg/cog-solid.svg" alt="Icon der Optionen" draggable="false">
+              <img id="gearIcon" class="optionIcons openMenu" src="svg/options/cog-solid.svg" alt="Icon der Optionen" draggable="false">
             </button>
             <div id="optionMenu" class="menuContainer openMenu hide">
               <div id="userInformation" class="openMenu">
@@ -82,34 +83,34 @@
               </div>
               <div class="menuDivider openMenu"></div>
               <a id="logoutButton" href="#" class="openMenu optionMenuButtons">
-                  <img id="logoutIcon" class="optionMenuIcons openMenu" src="svg/sign-out-alt-solid.svg" alt="Icon des Logouts" draggable="false">
+                  <img id="logoutIcon" class="optionMenuIcons openMenu" src="svg/options/sign-out-alt-solid.svg" alt="Icon des Logouts" draggable="false">
                   <p id="logoutText" class="openMenu">Abmelden</p>
               </a>
             </div>
           </div>
           <div class="blockFlex"></div>
           <button id="editButton" type="button" class="optionButtons">
-            <img id="editIcon" class="optionIcons" src="svg/unlock-solid.svg" alt="Icon zum sperren/entsperren der Editierung" draggable="false">
+            <img id="editIcon" class="optionIcons" src="svg/options/unlock-solid.svg" alt="Icon zum sperren/entsperren der Editierung" draggable="false">
           </button>
           <button id="directionButton" type="button" class="optionButtons">
-            <img id="directionIcon" class="optionIcons" src="svg/angle-double-down-solid.svg" alt="Icon zum Bestimmen der Anhängrichtung" draggable="false">
+            <img id="directionIcon" class="optionIcons" src="svg/options/angle-double-down-solid.svg" alt="Icon zum Bestimmen der Anhängrichtung" draggable="false">
           </button>
           <div class="blockFlexWide"></div>
           <button id="trashButton" type="button" class="optionButtons">
-            <img id="trashIcon" class="optionIcons" src="svg/trash-solid.svg" alt="Icon zum Löschen des Diagrammes" draggable="false">
+            <img id="trashIcon" class="optionIcons" src="svg/options/trash-solid.svg" alt="Icon zum Löschen des Diagrammes" draggable="false">
           </button>
           <button id="printButton" type="button" class="optionButtons">
-            <img id="printIcon" class="optionIcons" src="svg/print-solid.svg" alt="Icon zum Drucken des Diagrammes" draggable="false">
+            <img id="printIcon" class="optionIcons" src="svg/options/print-solid.svg" alt="Icon zum Drucken des Diagrammes" draggable="false">
           </button>
           <label for="uploadButton" id="uploadLabel" class="optionButtons">
-            <img id="uploadIcon" class="optionIcons" src="svg/upload-solid.svg" alt="Icon zum Hochladen des Diagrammes" draggable="false">
+            <img id="uploadIcon" class="optionIcons" src="svg/options/upload-solid.svg" alt="Icon zum Hochladen des Diagrammes" draggable="false">
           </label>
           <input type="file" id="uploadButton" accept=".nash">
           <button id="downloadButton" type="button" class="optionButtons">
-            <img id="downloadIcon" class="optionIcons" src="svg/download-solid.svg" alt="Icon zum Herunterladen des Diagrammes" draggable="false">
+            <img id="downloadIcon" class="optionIcons" src="svg/options/download-solid.svg" alt="Icon zum Herunterladen des Diagrammes" draggable="false">
           </button>
           <button id="saveButton" type="button" class="optionButtons">
-            <img id="saveIcon" class="optionIcons" src="svg/save-solid.svg" alt="Icon zum Speichern des Diagrammes" draggable="false">
+            <img id="saveIcon" class="optionIcons" src="svg/options/save-solid.svg" alt="Icon zum Speichern des Diagrammes" draggable="false">
           </button>
         </div>
       </div>
@@ -125,22 +126,22 @@
           </div>
           <div id="iconContainer">
             <div id="appendAction" class="draggables" draggable="true">
-              <img class="icons" src="svg/aktion.svg" alt="Bild einer Aktion" draggable="false">
+              <img class="icons" src="svg/structIcons/aktion.svg" alt="Bild einer Aktion" draggable="false">
             </div>
             <div id="appendFunction" class="draggables" draggable="true">
-              <img class="icons" src="svg/funktion.svg" alt="Bild einer Funktion" draggable="false">
+              <img class="icons" src="svg/structIcons/funktion.svg" alt="Bild einer Funktion" draggable="false">
             </div>
             <div id="appendBranch" class="draggables" draggable="true">
-              <img class="icons" src="svg/verzweigung.svg" alt="Bild einer Verzweigung" draggable="false">
+              <img class="icons" src="svg/structIcons/verzweigung.svg" alt="Bild einer Verzweigung" draggable="false">
             </div>
             <div id="appendMultiplebranch" class="draggables" draggable="true">
-              <img class="icons" src="svg/mehrfachverzweigung.svg" alt="Bild einer Mehrfachverzweigung" draggable="false">
+              <img class="icons" src="svg/structIcons/mehrfachverzweigung.svg" alt="Bild einer Mehrfachverzweigung" draggable="false">
             </div>
             <div id="appendHeadcontrolled" class="draggables" draggable="true">
-              <img class="icons" src="svg/kopfgesteuert.svg" alt="Bild einer kopfgesteuerten Schleife" draggable="false">
+              <img class="icons" src="svg/structIcons/kopfgesteuert.svg" alt="Bild einer kopfgesteuerten Schleife" draggable="false">
             </div>
             <div id="appendFootcontrolled" class="draggables" draggable="true">
-              <img class="icons" src="svg/fußgesteuert.svg" alt="Bild einer fußgesteuerten Schleife" draggable="false">
+              <img class="icons" src="svg/structIcons/fußgesteuert.svg" alt="Bild einer fußgesteuerten Schleife" draggable="false">
             </div>
           </div>
           <div id="footer">
@@ -155,7 +156,7 @@
             <div class="nameError activeError hide diagramDefaults">
               <p class="diagramDefaults">Dieser Name ist bereits belegt. Bitte benutze einen anderen!</p>
               <button id="mainError" class="removeError diagramDefaults">
-                <img class="removeIcon diagramDefaults" src="svg/times-solid_white.svg" alt="Bild eines x Symbols" draggable="false">
+                <img class="removeIcon diagramDefaults" src="svg/struct/times-solid_white.svg" alt="Bild eines x Symbols" draggable="false">
               </button>
             </div>
             <div class="diagramHeader diagramDefaults">
