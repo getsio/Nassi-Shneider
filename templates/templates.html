@@ -4,7 +4,7 @@
       placeholder="Aktion eingeben..."></p>
       <div class="structButtons structCondition">
         <button class="removeButton structCondition">
-          <img class="removeIcon structCondition" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
+          <img class="removeIcon structCondition" src="svg/struct/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
         </button>
       </div>
     </div>
@@ -17,7 +17,7 @@
       <div class="blackLineVerticalRight structCondition"></div>
       <div class="structButtons structCondition">
         <button class="removeButton structCondition">
-          <img class="removeIcon structCondition" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
+          <img class="removeIcon structCondition" src="svg/struct/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
         </button>
       </div>
     </div>
@@ -29,7 +29,7 @@
         placeholder="Bedingung eingeben..."></p>
         <div class="structButtons structCondition">
           <button class="removeButton structCondition">
-            <img class="removeIcon structCondition" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
+            <img class="removeIcon structCondition" src="svg/struct/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
           </button>
         </div>
       </div>
@@ -68,13 +68,13 @@
         placeholder="Bedingung eingeben..."></p>
         <div class="structButtons structCondition">
           <button class="removeButton structCondition">
-            <img class="removeIcon structCondition" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
+            <img class="removeIcon structCondition" src="svg/struct/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
           </button>
           <button class="removeBranchButton structCondition">
-            <img class="removeBranchIcon structCondition" src="svg/minus-solid.svg" alt="Bild eines Minus Symbols" draggable="false">
+            <img class="removeBranchIcon structCondition" src="svg/struct/minus-solid.svg" alt="Bild eines Minus Symbols" draggable="false">
           </button>
           <button class="addBranchButton structCondition">
-            <img class="addBranchIcon structCondition" src="svg/plus-solid.svg" alt="Bild eines Plus Symbols" draggable="false">
+            <img class="addBranchIcon structCondition" src="svg/struct/plus-solid.svg" alt="Bild eines Plus Symbols" draggable="false">
           </button>
         </div>
       </div>
@@ -84,6 +84,7 @@
           </div>
           <div class="definedCases structCondition">
             <div class="definedCase structCondition">
+              <div class="emptySpaceMulti structCondition"></div>
               <p class="editableText definedEdit structCondition" role="textbox" contenteditable spellcheck="false"
               placeholder="Case 1 ..."></p>
               <div class="definedTask subfunctionCondition nassiSubfunction">
@@ -91,6 +92,7 @@
               </div>
             </div>
             <div class="definedCase structCondition">
+              <div class="emptySpaceMulti structCondition"></div>
               <p class="editableText definedEdit structCondition" role="textbox" contenteditable spellcheck="false"
               placeholder="Case 2 ..."></p>
               <div class="definedTask subfunctionCondition nassiSubfunction">
@@ -104,6 +106,7 @@
           </div>
           <div class="defaultCases structCondition">
             <div class="defaultCase structCondition">
+              <div class="emptySpaceMulti structCondition"></div>
               <p class="editableText defaultEdit structCondition">Default</p>
               <div class="defaultTask subfunctionCondition nassiSubfunction">
                 <p class="defaultText subfunctionCondition">-</p>
@@ -116,6 +119,7 @@
   </template>
   <template id="templateAdditionalBranch">
     <div class="definedCase structCondition">
+      <div class="emptySpaceMulti structCondition"></div>
       <p class="editableText definedEdit structCondition" role="textbox" contenteditable spellcheck="false"
       placeholder=""></p>
       <div class="definedTask subfunctionCondition nassiSubfunction">
@@ -124,14 +128,14 @@
     </div>
   </template>
   <template id="templateHeadcontrolled">
-    <div class="nassiHeadcontrolled nassiStruct">
-      <div class="textArea structCondition">
+    <div class="nassiHeadcontrolled nassiStruct nassiLoop">
+      <div class="textArea structCondition loopTextArea">
         <div class="blockLoop structCondition"></div>
         <p class="editableText structCondition" role="textbox" contenteditable spellcheck="false"
         placeholder="Bedingung eingeben..."></p>
         <div class="structButtons structCondition">
           <button class="removeButton structCondition">
-            <img class="removeIcon structCondition" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
+            <img class="removeIcon structCondition" src="svg/struct/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
           </button>
         </div>
       </div>
@@ -144,22 +148,22 @@
     </div>
   </template>
   <template id="templateFootcontrolled">
-    <div class="nassiFootcontrolled nassiStruct">
+    <div class="nassiFootcontrolled nassiStruct nassiLoop">
       <div class="loopArea structCondition">
         <div class="blockLoop structCondition"></div>
         <div class="loopText subfunctionCondition nassiSubfunction">
           <p class="editableText subfunctionCondition">-</p>
         </div>
-        <div class="structButtons structCondition">
-          <button class="removeButton structCondition">
-            <img class="removeIcon structCondition" src="svg/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
-          </button>
-        </div>
       </div>
-      <div class="textArea structCondition">
+      <div class="textArea structCondition loopTextArea">
         <div class="blockLoop structCondition"></div>
         <p class="editableText structCondition" role="textbox" contenteditable spellcheck="false"
         placeholder="Bedingung eingeben..."></p>
+        <div class="structButtons structCondition">
+          <button class="removeButton structCondition">
+            <img class="removeIcon structCondition" src="svg/struct/times-solid.svg" alt="Bild eines x Symbols" draggable="false">
+          </button>
+        </div>
       </div>
     </div>
   </template>
@@ -168,7 +172,7 @@
       <div class="nameError hide diagramDefaults">
         <p class="diagramDefaults">Dieser Name ist bereits belegt. Bitte benutze einen anderen!</p>
         <button class="removeError diagramDefaults">
-          <img class="removeIcon diagramDefaults" src="svg/times-solid_white.svg" alt="Bild eines x Symbols" draggable="false">
+          <img class="removeIcon diagramDefaults" src="svg/struct/times-solid_white.svg" alt="Bild eines x Symbols" draggable="false">
         </button>
       </div>
       <div class="diagramHeader diagramDefaults">

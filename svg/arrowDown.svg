@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    version="1.1" baseProfile="full">
-    <title>Arrow Down</title>
-    <desc>Pfeil, der nach Unten zeigt (z.B. Dropdown-Menüs</desc>
-
-<polyline points="10,0 0,10 55,60 110,10 100,0 55,40"/>
-</svg>
