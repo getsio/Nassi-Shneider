@@ -3,31 +3,31 @@ var diagramSelect = document.getElementById('diagramSelect');
 var diagramPanel = document.getElementById('diagramPanel');
 var mainHeader = document.getElementById('mainHeader');
 
-mainHeader.addEventListener('click', function(){
+mainHeader.addEventListener('click', function() {
     editMainHeader(mainHeader);
 });
 
-mainHeader.addEventListener('blur', function(){
+mainHeader.addEventListener('blur', function() {
     finishEditMainHeader(mainHeader);
 });
 
-mainHeader.addEventListener('keydown', function(event){
+mainHeader.addEventListener('keydown', function(event) {
     keyInput(event, mainHeader);
 });
 
-diagramSelectTopBar.addEventListener('click', function(){
+diagramSelectTopBar.addEventListener('click', function() {
     showDiagram(diagramSelectTopBar.value);
 });
 
-diagramSelectTopBar.addEventListener('change', function(){
+diagramSelectTopBar.addEventListener('change', function() {
     changeSelect(diagramSelectTopBar.value, diagramSelect);
 });
 
-diagramSelect.addEventListener('click', function(){
+diagramSelect.addEventListener('click', function() {
     showDiagram(diagramSelect.value);
 });
 
-diagramSelect.addEventListener('change', function(){
+diagramSelect.addEventListener('change', function() {
     changeSelect(diagramSelect.value, diagramSelectTopBar);
 });
 
@@ -201,6 +201,10 @@ function createNewDiagram(el){
 
     newDiagram.addEventListener('drop', function(event){
         drop(event);
+    });
+
+    newDiagram.addEventListener('dragleave', function(event){
+        dragLeave(event);
     });
 
     functionHeader.nameBefore = '';

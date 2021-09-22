@@ -1,0 +1,154 @@
+.menuWrapper{
+    height: 100%;
+}
+
+#optionMenuWrapper{
+    position: relative;
+}
+
+#mainMenu{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    height: 100%;
+    width: 20rem;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 2147483647;
+    box-shadow: 1.6rem 0 1.8rem -0.4rem rgb(0 0 0 / 15%);
+}
+
+#mainMenuTop{
+    display: flex;
+    flex-direction: row;
+    height: 3rem;
+}
+
+#mainMenuProgramName{
+    padding: 0;
+    padding-left: 1.3rem;
+    color: #242424;
+}
+
+#optionMenu{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    font-size: 1.4rem;
+    padding: .8rem 0;
+    background: #fff;
+    border: 0;
+    border-radius: 0 0 .4rem .4rem;
+    box-shadow: 0 0.04rem 0.8rem 0 rgb(37 36 35 / 30%);
+    z-index: 10000000;
+}
+
+#mainMenuButton:hover{
+    background-color: #ebebeb;
+}
+
+.menuDivider{
+    width: 100%;
+    height: .2rem;
+    background-color: #f3f2f1;
+    margin: .6rem 0;
+}
+
+.optionMenuButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 14px;
+    color: #484644;
+    text-decoration: none;
+    padding: 0.4rem 1.2rem;
+    transition: 0.1s;
+}
+
+.optionMenuButtons:hover{
+    background-color: #ebebeb;
+}
+
+.optionMenuButtons p{
+    margin: 0;
+    margin-left: .3rem;
+}
+
+.optionMenuIcons{
+    width: .8rem;
+    padding: 0 0.1rem;
+}
+
+#userInformation{
+    display: flex;
+    flex-direction: row;
+    height: 2.8rem;
+    margin: .6rem 1.2rem;
+}
+
+#userOverlay, #userDetails{
+    background-color: transparent;
+}
+
+#userPicture{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(231 206 209);
+    height: 100%;
+    width: 2.8rem;
+    border-radius: 50%;
+}
+
+#userInitials{
+    margin: 0;
+    color: rgb(83 34 38);
+    font-weight: bold;
+    cursor: default;
+    user-select: none;
+}
+
+#userDetails{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: .5rem;
+}
+
+#userName, #userEmail, #userDepartment{
+    margin: 0;
+    font-size: 12px;
+}
+
+#userName{
+    font-size: 14px;
+    font-weight: 500;
+    color: #252423;
+}
+
+#userEmail, #userDepartment{
+    color: #605e5c;
+}
+
+.menuButtons, .optionButtons{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    background-color: inherit;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    height: 100%;
+    padding: 0 0.8rem;
+    transition: 0.1s;
+}
+
+.menuButtons{
+    padding: 0 1.4rem;
+}

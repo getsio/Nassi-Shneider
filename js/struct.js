@@ -47,10 +47,10 @@ function appendStruct(templateName, targetStruct = null){
         case 'templateMultiplebranch':
             var caseArea = newStructure.lastElementChild.firstElementChild.lastElementChild;
             var defaultCaseArea = newStructure.lastElementChild.lastElementChild;
-            var defaultCaseContainer = defaultCaseArea.children[1].children[0].children[1];
+            var defaultCaseContainer = defaultCaseArea.children[1].children[0].children[2];
         
             for(var i = 0; i < caseArea.childElementCount; i++){
-                caseArea.children[i].children[1].defaultInnerHtml = caseArea.children[i].children[1].innerHTML;
+                caseArea.children[i].children[2].defaultInnerHtml = caseArea.children[i].children[2].innerHTML;
             }
             defaultCaseContainer.defaultInnerHtml = defaultCaseContainer.innerHTML;
         
@@ -188,8 +188,7 @@ function addHeadcontrolledEvents(struct){
 // --- Fügt der fußgesteuerten Schleife die Events zu
 function addFootcontrolledEvents(struct){
     var textArea = struct.lastElementChild.children[1];
-    var removeButton = struct.firstElementChild.children[2].firstElementChild;
-
+    var removeButton = struct.lastElementChild.lastElementChild.firstElementChild;
 
     textArea.addEventListener('keydown', function(event){
         keyInput(event, textArea);

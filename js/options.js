@@ -2,12 +2,16 @@ var editMode = true;
 var appendAfter = true;
 var mainError = document.getElementById('mainError');
 
+document.getElementById('main').addEventListener('click', function(event) {
+    closeMenus(event);
+});
+
 document.getElementById('menuButton').addEventListener('click', function() {
-    console.log('Menü');
+    toggleMenu(document.getElementById('menuButton').parentElement);
 });
 
 document.getElementById('gearButton').addEventListener('click', function() {
-    console.log('Optionen');
+    toggleMenu(document.getElementById('gearButton').parentElement);
 });
 
 document.getElementById('editButton').addEventListener('click', function() {
@@ -53,7 +57,7 @@ function toggleEdit(){
     var spectateSeparator = document.getElementById('spectateSeparator');
 
     if(editMode){
-        editIcon.src = 'svg/lock-solid.svg';
+        editIcon.src = 'svg/options/lock-solid.svg';
         dragPanel.classList.add('hide');
         spectateBar.classList.remove('hide');
         bottomContainer.classList.add('spectateMode');
@@ -71,7 +75,7 @@ function toggleEdit(){
 
         editMode = false;
     }else{
-        editIcon.src = 'svg/unlock-solid.svg';
+        editIcon.src = 'svg/options/unlock-solid.svg';
         dragPanel.classList.remove('hide');
         spectateBar.classList.add('hide');
         bottomContainer.classList.remove('spectateMode');
@@ -94,10 +98,10 @@ function toggleEdit(){
 // --- Funktion wird aufgerufen, wenn die Appendrichtung geändert wird
 function toggleDirection(){
     if(appendAfter){
-        directionIcon.src = 'svg/not-angle-double-down-solid.svg';
+        directionIcon.src = 'svg/options/not-angle-double-down-solid.svg';
         appendAfter = false;
     }else{
-        directionIcon.src = 'svg/angle-double-down-solid.svg';
+        directionIcon.src = 'svg/options/angle-double-down-solid.svg';
         appendAfter = true;
     }
 }
@@ -213,12 +217,32 @@ function upload(ev){
 
 // --- Fügt den Strukturen alle nötigen Events hinzu
 function addStructEvents(){
+    var diagrams = document.getElementsByClassName('diagramContainer');
     var actions = document.getElementsByClassName('nassiAction');
     var functions = document.getElementsByClassName('nassiFunction');
     var branches = document.getElementsByClassName('nassiBranch');
     var multipleBranches = document.getElementsByClassName('nassiMultiplebranch');
     var headcontrolled = document.getElementsByClassName('nassiHeadcontrolled');
     var footcontrolled = document.getElementsByClassName('nassiFootcontrolled');
+
+
+    for(var i = 0; i < diagrams.length; i++){
+        diagrams[i].addEventListener('dragover', function(event){
+            allowDrop(event);
+        });
+        
+        diagrams[i].addEventListener('dragenter', function(event){
+            dragEnter(event);
+        });
+        
+        diagrams[i].addEventListener('drop', function(event){
+            drop(event);
+        });
+        
+        diagrams[i].addEventListener('dragleave', function(event){
+            dragLeave(event);
+        });
+    }
 
     for(var i = 0; i < actions.length; i++){
         addActionEvents(actions[i]);
@@ -242,5 +266,27 @@ function addStructEvents(){
 
     for(var i = 0; i < footcontrolled.length; i++){
         addFootcontrolledEvents(footcontrolled[i]);
+    }
+}
+
+function closeMenus(ev = null){
+    if(!ev || !ev.target.classList.contains('openMenu')){
+        var menus = document.getElementsByClassName('menuContainer');
+
+        for(var i = 0; i < menus.length; i++){
+            menus[i].classList.add('hide');
+        }
+    }
+}
+
+// --- Öffnet/Schließt das Optionsfenster
+function toggleMenu(menuWrapper){
+    var menuContainer = menuWrapper.getElementsByClassName('menuContainer')[0];
+
+    if(menuContainer.classList.contains('hide')){
+        closeMenus();
+        menuContainer.classList.remove('hide');
+    }else{
+        menuContainer.classList.add('hide');
     }
 }

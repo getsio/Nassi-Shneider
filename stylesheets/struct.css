@@ -1,0 +1,318 @@
+[contenteditable]:empty::before{
+    content: attr(placeholder);
+    position: relative;
+    color: gray;
+    background-color: transparent;
+}
+
+.diagramContainer{
+    display: none;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    background-color: white;
+    flex-grow: 1;
+    margin: 2rem;
+    padding: 2rem;
+}
+
+.activeDiagram{
+    display: flex;
+}
+
+.nameError{
+    position: relative;
+    background-color: #ab1212;
+}
+
+.nameError p{
+    color: white;
+    text-align: center;
+}
+
+.removeError{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    transition: 0.1s;
+}
+
+.removeError:hover{
+    background-color: #580e0e;
+}
+
+.diagramHeader{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding: 0 2rem;
+}
+
+.editableText, .trueText, .falseText, .definedText, .defaultText{
+    white-space: nowrap;
+    margin: 1rem 0;
+    padding: 0 4rem;
+    outline: none;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+.trueText, .falseText, .definedText, .defaultText{
+    cursor: unset;
+}
+
+.noneditableText{
+    cursor: unset;
+}
+
+.headerText{
+    height: 2.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#spectateBar{
+    height: 0.35rem;
+    background-color: #E29E21;
+}
+
+.spectateMode{
+    height: calc(100vh - 3.35rem) !important;
+}
+
+.nassiAction, .nassiFunction, .nassiBranch, .nassiMultiplebranch, .nassiHeadcontrolled, .nassiFootcontrolled,
+.textArea, .branchArea, .trueBranch, .falseBranch, .trueBranchImageArea, .falseBranchImageArea, .trueDefault, .falseDefault{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    outline: 1px solid black;
+    background-color: inherit;
+}
+
+.nassiSubfunction .nassiAction, .nassiSubfunction .nassiFunction, .nassiSubfunction .nassiBranch, .nassiSubfunction .nassiMultiplebranch,
+.nassiSubfunction .nassiHeadcontrolled, .nassiSubfunction .nassiFootcontrolled{
+    flex-grow: 1;
+    height: 100%;
+}
+
+.innerStructure{
+    flex-grow: 1;
+}
+
+.nassiFunction{
+    justify-content: space-between;
+}
+
+.nassiBranch, .nassiMultiplebranch, .nassiHeadcontrolled, .nassiFootcontrolled{
+    flex-direction: column;
+}
+
+.textArea{
+    width: 100%;
+    background-color: transparent;
+    z-index: 1;
+    outline: none;
+}
+
+.branchArea{
+    margin-top: calc(calc(19.2px + 2rem) * -1);
+    width: 100%;
+    align-items: stretch;
+    flex-grow: 1;
+}
+
+.trueBranch, .trueBranchImageArea, .falseBranch, .falseBranchImageArea{
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: stretch;
+    justify-content: stretch;
+    height: 100%;
+    outline: none;
+}
+
+.trueBranchImageArea{
+    max-height: calc(calc(19.2px + 2rem) * 2);
+    flex-grow: 1;
+    background: url('../svg/struct/leftLine.svg') no-repeat;
+    background-size: 100% 100%;
+}
+
+.falseBranchImageArea{
+    max-height: calc(calc(19.2px + 2rem) * 2);
+    flex-grow: 1;
+    background: url('../svg/struct/rightLine.svg') no-repeat;
+    background-size: 100% 100%;
+}
+
+.trueDefault, .falseDefault{
+    flex-direction: column;
+    align-items: stretch;
+    flex-grow: 1;
+}
+
+.emptySpace{
+    height: calc(19.2px + 2rem);
+    width: 100%;
+    flex-grow: 1;
+}
+
+.emptySpaceMulti{
+    height: 3rem;
+    width: 100%;
+}
+
+.trueMark, .falseMark{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+
+.falseMark{
+    flex-direction: row-reverse;
+}
+
+.definedBranches, .defaultBranch{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: inherit;
+}
+
+.definedImageArea, .defaultImageArea{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    height: 6rem;
+    background: url('../svg/struct/leftLine.svg') no-repeat;
+    background-size: 100% 100%;
+    background-color: inherit;
+}
+
+.defaultImageArea{
+    background: url('../svg/struct/rightLine.svg') no-repeat;
+    background-size: 100% 100%;
+    background-color: inherit;
+}
+
+.definedCases, .defaultCases{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    height: 100%;
+    background-color: inherit;
+    margin-top: -6rem;
+}
+
+.definedCase, .defaultCase{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-width: 15rem;
+    background-color: transparent;
+}
+
+.definedTask, .defaultTask{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    flex-grow: 1;
+    outline: 1px solid black;
+    background-color: white;
+    border-top: 1px solid black;
+}
+
+.definedEdit, .defaultEdit{
+    text-align: start;
+    z-index: 1;
+    height: 1.2rem;
+    margin: 1.2rem 0 0.6rem 0;
+}
+
+.defaultEdit{
+    text-align: end;
+    cursor: unset;
+}
+
+.nassiSubfunction{
+    flex-grow: 1;
+}
+
+.structButtons{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: white;
+}
+
+.nassiFootcontrolled .structButtons{
+    top: 1px;
+}
+
+.nassiSubfunction .nassiBranch .structButtons, .nassiSubfunction .nassiMultiplebranch .structButtons{
+    right: 1px;
+}
+
+.removeButton, .addBranchButton, .removeBranchButton{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    transition: 0.1s;
+}
+
+.removeButton:hover, .addBranchButton:hover, .removeBranchButton:hover{
+    background-color: #d1d1d1;
+}
+
+.removeIcon, .addBranchIcon, .removeBranchIcon{
+    width: 0.8rem;
+    height: auto;
+}
+
+.blockLoop{
+    height: 100%;
+    width: calc(2rem + 1px);
+}
+
+.nassiHeadcontrolled .loopTextArea, .nassiFootcontrolled .loopTextArea{
+    justify-content: start;
+}
+
+.nassiHeadcontrolled .loopTextArea .editableText, .nassiFootcontrolled .loopTextArea .editableText{
+    text-align: start;
+}
+
+.loopArea{
+    display: flex;
+    position: relative;
+    align-items: stretch;
+    justify-content: center;
+    background-color: inherit;
+    width: 100%;
+    flex-grow: 1;
+}
+
+.loopText{
+    flex-grow: 1;
+    outline: solid black 1px;
+    background-color: white;
+}
+
+.loopText .editableText{
+    cursor: text;
+}
+
+.draggedOver{
+    background-color: #d7ecf7;
+}

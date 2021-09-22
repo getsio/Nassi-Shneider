@@ -46,19 +46,19 @@ document.getElementById('appendFootcontrolled').addEventListener('dragend', func
     resetBackground();
 });
 
-document.getElementById('mainDiagram').addEventListener('dragover', function(event){
+document.getElementById('mainDiagram').addEventListener('dragover', function(event) {
     allowDrop(event);
 });
 
-document.getElementById('main').addEventListener('dragenter', function(event){
+document.getElementById('main').addEventListener('dragenter', function(event) {
     dragEnter(event);
 });
 
-document.getElementById('mainDiagram').addEventListener('drop', function(event){
+document.getElementById('mainDiagram').addEventListener('drop', function(event) {
     drop(event);
 });
 
-document.getElementById('mainDiagram').addEventListener('dragleave', function(event){
+document.getElementById('mainDiagram').addEventListener('dragleave', function(event) {
     dragLeave(event);
 });
 
@@ -79,8 +79,44 @@ function dragEnter(ev){
     resetBackground();
     activateReadOnly();
     var targetStruct = getTarget(ev.target);
+    var multiplebranches = targetStruct.getElementsByClassName('nassiMultiplebranch');
 
-    if(targetStruct.classList.contains('nassiMultiplebranch')){
+    if(targetStruct.classList.value.includes('nassi') || targetStruct.classList.contains('diagramContainer')){
+        isDropZone = true;
+        targetStruct.classList.add('draggedOver');
+
+        var structButtons = targetStruct.getElementsByClassName('structButtons');
+
+        for(var i = 0; i < structButtons.length; i++){
+            if(structButtons[i] != null){
+                structButtons[i].classList.add('draggedOver');
+            }
+        }
+
+        for(var i = 0; i < multiplebranches.length; i++){
+            var subfunctionArea = multiplebranches[i].getElementsByClassName('nassiSubfunction');
+
+            for(var j = 0; j < subfunctionArea.length; j++){
+                subfunctionArea[j].classList.add('draggedOver');
+            }
+        }
+
+        if(targetStruct.getElementsByClassName('nassiLoop')){
+            var loopArea = targetStruct.getElementsByClassName('loopText');
+
+            for(var i = 0; i < loopArea.length; i++){
+                loopArea[i].classList.add('draggedOver');
+            }
+        }
+
+        if(targetStruct.classList.contains('diagramContainer')){
+            deactivateReadOnly();
+        }
+    }else{
+        isDropZone = false;
+    }
+
+    /*if(targetStruct.classList.contains('nassiMultiplebranch')){
         isDropZone = true;
         targetStruct.classList.add('draggedOver');
         var subfunctionArea = targetStruct.getElementsByClassName('nassiSubfunction');
@@ -109,7 +145,7 @@ function dragEnter(ev){
         }
     }else{
         isDropZone = false;
-    }
+    }*/
 }
 
 // --- Die Funktion wird aufgerufen, wenn das "gedraggte" Objekt in ein valides Feld "gedroppt" wird
