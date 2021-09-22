@@ -100,6 +100,7 @@
 .nassiSubfunction .nassiAction, .nassiSubfunction .nassiFunction, .nassiSubfunction .nassiBranch, .nassiSubfunction .nassiMultiplebranch,
 .nassiSubfunction .nassiHeadcontrolled, .nassiSubfunction .nassiFootcontrolled{
     flex-grow: 1;
+    height: 100%;
 }
 
 .innerStructure{
