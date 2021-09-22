@@ -225,7 +225,10 @@ function addBranch(el){
     var newBranch = structure.content.cloneNode(true);
 
     appendArea.appendChild(newBranch);
-    var textArea = appendArea.lastElementChild.firstElementChild;
+    var textArea = appendArea.lastElementChild.children[1];
+    var newBranch = appendArea.lastElementChild.lastElementChild;
+
+    newBranch.defaultInnerHtml = newBranch.innerHTML;
 
     textArea.setAttribute('placeholder', 'Case ' + cntBranches + ' ...'); 
     diagramPanel.scroll(activeDiagram.offsetWidth, 0);

@@ -115,37 +115,6 @@ function dragEnter(ev){
     }else{
         isDropZone = false;
     }
-
-    /*if(targetStruct.classList.contains('nassiMultiplebranch')){
-        isDropZone = true;
-        targetStruct.classList.add('draggedOver');
-        var subfunctionArea = targetStruct.getElementsByClassName('nassiSubfunction');
-
-        for(var i = 0; i < subfunctionArea.length; i++){
-            subfunctionArea[i].classList.add('draggedOver');
-        }
-    }else if(targetStruct.classList.value.includes('nassi') || targetStruct.classList.contains('diagramContainer')){
-        isDropZone = true;
-        targetStruct.classList.add('draggedOver');
-        var structButtons = targetStruct.getElementsByClassName('structButtons');
-
-        for(var i = 0; i < structButtons.length; i++){
-            if(structButtons[i] != null){
-                structButtons[i].classList.add('draggedOver');
-            }
-        }
-
-        if(targetStruct.classList.contains('diagramContainer')){
-            deactivateReadOnly();
-            var subfunctionArea = targetStruct.getElementsByClassName('nassiSubfunction');
-
-            for(var i = 0; i < subfunctionArea.length; i++){
-                subfunctionArea[i].classList.add('draggedOver');
-            }
-        }
-    }else{
-        isDropZone = false;
-    }*/
 }
 
 // --- Die Funktion wird aufgerufen, wenn das "gedraggte" Objekt in ein valides Feld "gedroppt" wird
